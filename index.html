@@ -4,8 +4,59 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="forside_sneakers.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
   <title>Frontpage</title>
+<style>
 
+        * {
+            margin: 0;
+            padding: 0;
+              font-family: 'Open Sans Condensed', sans-serif;
+
+        }
+
+
+    body {
+        display: grid;
+        grid-template-rows: 1fr auto;
+
+    }
+    /*                                      6 SNEAKER PÅ FORSIDE STARTER                                     */
+
+           .data-container {
+            display: grid;
+            max-width: 400px;
+            margin: 0 auto;
+            grid-gap: 10px;
+
+        }
+
+        .post-container {
+            padding: 1em;
+        }
+
+    [data-name] {
+        font-size: 15px;
+        margin-bottom: 5px;
+
+    }
+
+
+    .data-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .data-bottom p {
+   margin: 5px 0 15px;
+}
+
+  .data-container article img {
+            width: 100%;
+        }
+    /*                                      6 SNEAKER PÅ FORSIDE SLUTER                                     */
+    </style>
 </head>
 
 <body>
@@ -39,16 +90,46 @@
       <h2 data-name></h2>
       <img data-picture>
       <div class="data-bottom">
-        <p data-price></p>
         <p data-size></p>
+        <p data-price></p>
       </div>
     </article>
   </template>
 
-
-
-
   <script>
+      /*                           DAVID KODE STARTER - 6 SNEAKER POST PÅ FORSIDE                               */
+        let wpJSON;
+        let dest = document.querySelector(".data-container");
+        document.addEventListener("DOMContentLoaded", hentJson);
+
+        async function hentJson() {
+            console.log("hentJson");
+            let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/sneaker_post/?per_page=6");
+            wpJSON = await myJson.json();
+            visJson();
+        }
+
+        function visJson() {
+            console.log("visJson");
+            let myTemplate = document.querySelector(".data-template");
+            wpJSON.forEach(post => {
+                    let klon = myTemplate.cloneNode(true).content;
+                    if (post.type == "sneaker_post") {
+                        console.log("ifstatement");
+                        klon.querySelector("[data-name]").textContent = post.acf.name;
+
+                        klon.querySelector("[data-picture]").src = post.acf.picture;
+
+                        klon.querySelector("[data-price]").textContent = "Pris: " + post.acf.price + ",-";
+
+                        klon.querySelector("[data-size]").textContent = "EUR: " + post.acf.size;
+
+                        dest.appendChild(klon);
+
+                    }
+                })
+        }
+        /*                           DAVID KODE SLUTTER - 6 SNEAKER POST PÅ FORSIDE                        */
 
   </script>
 </body>

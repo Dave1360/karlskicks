@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="forside_sneakers.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <title>Frontpage</title>
@@ -12,6 +11,7 @@
         * {
             margin: 0;
             padding: 0;
+
         }
 
         h2 {
@@ -25,9 +25,12 @@
         body {
             display: grid;
             grid-template-rows: 1fr auto;
+
         }
 
         /*                                      6 SNEAKER PÅ FORSIDE STARTER                                     */
+
+
 
         .data-container {
             display: grid;
@@ -42,24 +45,37 @@
         }
 
         [data-name] {
+
             font-size: 20px;
             margin-bottom: 9px;
 
+            font-size: 15px;
+            margin-bottom: 5px;
+
         }
+
 
         .data-bottom {
             display: flex;
             justify-content: space-between;
+
             margin-bottom: 10px;
         }
 
         .data-bottom p {
             margin: 5px 0 0;
+
+        }
+
+        .data-bottom p {
+            margin: 5px 0 15px;
+
         }
 
         .data-container article img {
             width: 100%;
         }
+
 
         /*                                      6 SNEAKER PÅ FORSIDE SLUTER                                     */
 
@@ -102,6 +118,57 @@
 
         }
 
+
+        /*                                      6 SNEAKER PÅ FORSIDE SLUTTER                                     */
+
+
+
+        /*                    Miklas:             ;*/
+
+
+        #slideshow {
+            width: 100vw;
+            position: relative;
+            margin-bottom: 50px;
+
+        }
+
+        [data-slideshow] {
+            width: 100vw;
+        }
+
+        .arrows {
+            position: relative;
+            background-color: grey;
+            width: 10vw;
+            height: 10vw;
+        }
+
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 45%;
+            color: #FFF;
+            font-weight: bold;
+            font-size: 3em;
+            transition: 0.3s ease;
+            border-radius: 0 3px 3px 0;
+            margin: 0 20px;
+            background-color: transparent;
+        }
+
+        .prev:hover,
+        .next:hover {
+            font-size: 3.2em;
+        }
+
+
+        .slide {
+            display: none;
+        }
+
     </style>
 </head>
 
@@ -109,11 +176,19 @@
 
     <section id="slideshow">
         <div class="container">
+
+        <div class="container_slideshow">
+
             <section class="slideshow-container"></section>
+        </div>
         </div>
     </section>
 
-    <template class="slideshow-template">
+
+<!--    <template class="slideshow-template">-->
+
+    <template class="slideshow-template slide">
+
         <article class="slideshow-container">
             <img data-slideshow>
             <p data-title></p>
@@ -147,7 +222,12 @@
         /*                           DAVID KODE STARTER - 6 SNEAKER POST PÅ FORSIDE                               */
         let wpJSON;
         let dest = document.querySelector(".data-container");
+
+
+
         document.addEventListener("DOMContentLoaded", hentJson);
+
+
 
         async function hentJson() {
             console.log("hentJson");
@@ -165,6 +245,7 @@
                     console.log("ifstatement");
                     klon.querySelector("[data-name]").textContent = post.acf.name;
 
+
                     klon.querySelector("[data-picture]").src = post.acf.picture;
 
                     klon.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
@@ -175,14 +256,110 @@
                         window.location.href = "singleview.html?id=" + post.id;
                     })
 
+
+                    klon.querySelector("[data-picture]").src = post.acf.picture;
+
+                    klon.querySelector("[data-price]").textContent = "Pris: " + post.acf.price + ",-";
+
+                    klon.querySelector("[data-size]").textContent = "EUR: " + post.acf.size;
+
+
                     dest.appendChild(klon);
 
                 }
             })
         }
+
+
+
         /*                           DAVID KODE SLUTTER - 6 SNEAKER POST PÅ FORSIDE                        */
+
+        /*                           Miklas Slideshow Starter                                       */
+
+        let slideNumber = 1;
+        let slides = document.querySelectorAll(".slide");
+
+
+        let wpJSONSlideshow;
+        let destSlideshow = document.querySelector(".slideshow-container");
+
+        async function hentJsonSlideshow() {
+            console.log("hentJsonSlideshow");
+            let myJsonSlideshow = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/slide_show/?per_page=6");
+            wpJSONSlideshow = await myJsonSlideshow.json();
+            visJsonSlideshow();
+        }
+
+        function visJsonSlideshow() {
+            console.log("visJsonSlideshow");
+            let myTemplateSlideshow = document.querySelector(".slideshow-template");
+            wpJSONSlideshow.forEach(postSlideshow => {
+                    let klon = myTemplateSlideshow.cloneNode(true).content;
+                    if (postSlideshow.acf.id == slideNumber) {
+
+
+                        klon.querySelector("[data-slideshow]").src = postSlideshow.acf.picture;
+
+                        klon.querySelector("[data-title]").textContent = postSlideshow.acf.title;
+
+                        destSlideshow.appendChild(klon);
+
+                    }
+                   /* if (postSlideshow.acf.id = !slideNumber) {
+                            klon.querySelector("[data-slideshow]").src = "";
+                            destSlideshow.appendChild(klon);
+                        }*/
+
+                    })
+            }
+
+
+           /* function showSlides(n) {
+                let i;
+
+                if (n > 6) {
+                    slideNumber = 1
+                }
+                if (n < 1) {
+                    slideNumber = 6
+                }
+
+
+
+
+            }
+            showSlides(slideNumber);
+
+
+
+            function plusOne(n) {
+                showSlides(slideNumber += n);
+                visJsonSlideshow();
+            }
+
+            function autoSlide() {
+
+                if (slideNumber <= 6) {
+                    slideNumber++;
+                }
+                if (slideNumber > 6) {
+                    slideNumber = 1;
+                }
+
+
+
+                showSlides(slideNumber);
+                visJsonSlideshow();
+
+
+
+            }
+
+
+            setInterval(autoSlide, 5000);
+*/
+            document.addEventListener("DOMContentLoaded", hentJsonSlideshow);
 
     </script>
 </body>
-
 </html>

@@ -2,29 +2,28 @@
 <html lang="da">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="forside_sneakers.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-  <title>Frontpage</title>
-<style>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <title>Frontpage</title>
+    <style>
         * {
             margin: 0;
             padding: 0;
-              font-family: 'Open Sans Condensed', sans-serif;
+            font-family: 'Open Sans Condensed', sans-serif;
 
         }
 
 
-    body {
-        display: grid;
-        grid-template-rows: 1fr auto;
+        body {
+            display: grid;
+            grid-template-rows: 1fr auto;
 
-    }
-    /*                                      6 SNEAKER PÅ FORSIDE STARTER                                     */
+        }
 
-           .data-container {
+        /*                                      6 SNEAKER PÅ FORSIDE STARTER                                     */
+
+        .data-container {
             display: grid;
             max-width: 400px;
             margin: 0 auto;
@@ -36,71 +35,127 @@
             padding: 1em;
         }
 
-    [data-name] {
-        font-size: 15px;
-        margin-bottom: 5px;
+        [data-name] {
+            font-size: 15px;
+            margin-bottom: 5px;
 
-    }
+        }
 
 
-    .data-bottom {
-    display: flex;
-    justify-content: space-between;
-}
+        .data-bottom {
+            display: flex;
+            justify-content: space-between;
+        }
 
-    .data-bottom p {
-   margin: 5px 0 15px;
-}
+        .data-bottom p {
+            margin: 5px 0 15px;
+        }
 
-  .data-container article img {
+        .data-container article img {
             width: 100%;
         }
-    /*                                      6 SNEAKER PÅ FORSIDE SLUTER                                     */
+
+        /*                                      6 SNEAKER PÅ FORSIDE SLUTTER                                     */
+
+
+
+        /*                    Miklas:             ;*/
+
+
+        #slideshow {
+            width: 100vw;
+            position: relative;
+            margin-bottom: 50px;
+
+        }
+
+        [data-slideshow] {
+            width: 100vw;
+        }
+
+        .arrows {
+            position: relative;
+            background-color: grey;
+            width: 10vw;
+            height: 10vw;
+        }
+
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 45%;
+            color: #FFF;
+            font-weight: bold;
+            font-size: 3em;
+            transition: 0.3s ease;
+            border-radius: 0 3px 3px 0;
+            margin: 0 20px;
+            background-color: transparent;
+        }
+
+        .prev:hover,
+        .next:hover {
+            font-size: 3.2em;
+        }
+
+
+
+
+        .slide {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
 
-  <section id="slideshow">
-    <div class="container">
-        <section class="slideshow-container"></section>
-    </div>
-  </section>
+    <section id="slideshow">
+        <div class="container_slideshow">
+            <section class="slideshow-container"></section>
+        </div>
+    </section>
 
-  <template class="slideshow-template">
-    <article class="slideshow-container">
-      <img data-slideshow>
-      <p data-title></p>
-      <div class="arrows">
-        <a class="prev" onclick="plusOne(-1)">&#10094;</a>
-        <a class="next" onclick="plusOne(1)">&#10095;</a>
-      </div>
-    </article>
-  </template>
+    <template class="slideshow-template slide">
+        <article class="slideshow-container">
+            <img data-slideshow>
+            <p data-title></p>
+            <div class="arrows">
+                <a class="prev" onclick="plusOne(-1)">&#10094;</a>
+                <a class="next" onclick="plusOne(1)">&#10095;</a>
+            </div>
+        </article>
+    </template>
 
-  <main id="posts">
-    <div class="container">
-      <section class="data-container"></section>
-    </div>
-  </main>
+    <main id="posts">
+        <div class="container">
+            <section class="data-container"></section>
+        </div>
+    </main>
 
 
-  <template class="data-template">
-    <article class="post-container">
-      <h2 data-name></h2>
-      <img data-picture>
-      <div class="data-bottom">
-        <p data-size></p>
-        <p data-price></p>
-      </div>
-    </article>
-  </template>
+    <template class="data-template">
+        <article class="post-container">
+            <h2 data-name></h2>
+            <img data-picture>
+            <div class="data-bottom">
+                <p data-size></p>
+                <p data-price></p>
+            </div>
+        </article>
+    </template>
 
-  <script>
-      /*                           DAVID KODE STARTER - 6 SNEAKER POST PÅ FORSIDE                               */
+    <script>
+        /*                           DAVID KODE STARTER - 6 SNEAKER POST PÅ FORSIDE                               */
         let wpJSON;
         let dest = document.querySelector(".data-container");
+
+
+
         document.addEventListener("DOMContentLoaded", hentJson);
+
+
 
         async function hentJson() {
             console.log("hentJson");
@@ -113,25 +168,113 @@
             console.log("visJson");
             let myTemplate = document.querySelector(".data-template");
             wpJSON.forEach(post => {
-                    let klon = myTemplate.cloneNode(true).content;
-                    if (post.type == "sneaker_post") {
-                        console.log("ifstatement");
-                        klon.querySelector("[data-name]").textContent = post.acf.name;
+                let klon = myTemplate.cloneNode(true).content;
+                if (post.type == "sneaker_post") {
+                    console.log("ifstatement");
+                    klon.querySelector("[data-name]").textContent = post.acf.name;
 
-                        klon.querySelector("[data-picture]").src = post.acf.picture;
+                    klon.querySelector("[data-picture]").src = post.acf.picture;
 
-                        klon.querySelector("[data-price]").textContent = "Pris: " + post.acf.price + ",-";
+                    klon.querySelector("[data-price]").textContent = "Pris: " + post.acf.price + ",-";
 
-                        klon.querySelector("[data-size]").textContent = "EUR: " + post.acf.size;
+                    klon.querySelector("[data-size]").textContent = "EUR: " + post.acf.size;
 
-                        dest.appendChild(klon);
+                    dest.appendChild(klon);
 
-                    }
-                })
+                }
+            })
         }
+
+
+
         /*                           DAVID KODE SLUTTER - 6 SNEAKER POST PÅ FORSIDE                        */
 
-  </script>
+        /*                           Miklas Slideshow Starter                                       */
+
+        let slideNumber = 1;
+        let slides = document.querySelectorAll(".slide");
+
+
+        let wpJSONSlideshow;
+        let destSlideshow = document.querySelector(".slideshow-container");
+
+        async function hentJsonSlideshow() {
+            console.log("hentJsonSlideshow");
+            let myJsonSlideshow = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/slide_show/?per_page=6");
+            wpJSONSlideshow = await myJsonSlideshow.json();
+            visJsonSlideshow();
+        }
+
+        function visJsonSlideshow() {
+            console.log("visJsonSlideshow");
+            let myTemplateSlideshow = document.querySelector(".slideshow-template");
+            wpJSONSlideshow.forEach(postSlideshow => {
+                    let klon = myTemplateSlideshow.cloneNode(true).content;
+                    if (postSlideshow.acf.id == slideNumber) {
+
+
+                        klon.querySelector("[data-slideshow]").src = postSlideshow.acf.picture;
+
+                        klon.querySelector("[data-title]").textContent = postSlideshow.acf.title;
+
+                        destSlideshow.appendChild(klon);
+
+                    }
+                   /* if (postSlideshow.acf.id = !slideNumber) {
+                            klon.querySelector("[data-slideshow]").src = "";
+                            destSlideshow.appendChild(klon);
+                        }*/
+
+                    })
+            }
+
+
+           /* function showSlides(n) {
+                let i;
+
+                if (n > 6) {
+                    slideNumber = 1
+                }
+                if (n < 1) {
+                    slideNumber = 6
+                }
+
+
+
+
+            }
+            showSlides(slideNumber);
+
+
+
+            function plusOne(n) {
+                showSlides(slideNumber += n);
+                visJsonSlideshow();
+            }
+
+            function autoSlide() {
+
+                if (slideNumber <= 6) {
+                    slideNumber++;
+                }
+                if (slideNumber > 6) {
+                    slideNumber = 1;
+                }
+
+
+
+                showSlides(slideNumber);
+                visJsonSlideshow();
+
+
+
+            }
+
+
+            setInterval(autoSlide, 5000);
+*/
+            document.addEventListener("DOMContentLoaded", hentJsonSlideshow);
+    </script>
 </body>
 
 </html>

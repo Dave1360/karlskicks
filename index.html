@@ -77,7 +77,7 @@
         }
 
 
-        /*                                      6 SNEAKER PÅ FORSIDE SLUTER                                     */
+        /*                                      6 SNEAKER PÅ FORSIDE SLUTTER                                     */
 
 
         @media screen and (min-width:650px) {
@@ -126,78 +126,137 @@
         /*                    Miklas:             ;*/
 
 
-        #slideshow {
+        .slideshow {
             width: 100vw;
             position: relative;
-            margin-bottom: 50px;
 
         }
 
-        [data-slideshow] {
-            width: 100vw;
+        .slide {
+            display: none;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            max-height: 700px;
         }
 
         .arrows {
             position: relative;
-            background-color: grey;
-            width: 10vw;
-            height: 10vw;
-        }
+            left: 2px;
+            top: 7px;
 
+
+
+
+        }
 
         .prev,
         .next {
+            color: #575757;
+            font-weight: lighter;
+            font-size: 1em;
+            padding: 10px 15px;
+            margin: 0 -2px;
             cursor: pointer;
+            background: #dddddd;
+            transition: .4s;
+        }
+
+        .prev:hover, .next:hover {
+             background: #989898;
+        }
+
+        .slideBoxContainer {
+
             position: absolute;
-            top: 45%;
-            color: #FFF;
-            font-weight: bold;
-            font-size: 3em;
-            transition: 0.3s ease;
-            border-radius: 0 3px 3px 0;
-            margin: 0 20px;
-            background-color: transparent;
+            top: 70%;
+            left: 10%;
+
+
         }
 
-        .prev:hover,
-        .next:hover {
-            font-size: 3.2em;
+        .slideBoxContainer .textOnSlide a {
+            text-decoration: none;
+            color: #eadfdf;
         }
 
+        .textOnSlide {
+            transition: .3s;
+            background-color: #2e2d2d;
+            font-size: 4em;
+            text-transform: uppercase;
 
-        .slide {
-            display: none;
         }
 
+        .textOnSlide:hover {
+            background-color: #9d9b9b;
+        }
     </style>
 </head>
 
 <body>
 
-    <section id="slideshow">
-        <div class="container">
-
-        <div class="container_slideshow">
-
-            <section class="slideshow-container"></section>
-        </div>
-        </div>
-    </section>
+    <div class="slideshow">
 
 
-<!--    <template class="slideshow-template">-->
+        <div class="slide fade">
 
-    <template class="slideshow-template slide">
-
-        <article class="slideshow-container">
-            <img data-slideshow>
-            <p data-title></p>
-            <div class="arrows">
-                <a class="prev" onclick="plusOne(-1)">&#10094;</a>
-                <a class="next" onclick="plusOne(1)">&#10095;</a>
+            <img src="Untitled.png" alt="">
+            <div class="slideBoxContainer">
+                <div class="textOnSlide">
+                    <a href="https://illvid.dk/dyr/insekter/sover-insekter">
+                        <p>
+                            Har du nogensinde overvejet om insekter sover?
+                        </p>
+                    </a>
+                </div>
+                <div class="arrows">
+                    <a class="prev" onclick="plusOne(-1)">&#10094;</a>
+                    <a class="next" onclick="plusOne(1)">&#10095;</a>
+                </div>
             </div>
-        </article>
-    </template>
+        </div>
+        <div class="slide fade">
+
+            <img src="Untitled2.png" alt="">
+            <div class="slideBoxContainer">
+                <div class="textOnSlide">
+                    <a href="https://illvid.dk/dyr/insekter/sover-insekter">
+                        <p>
+                            Har du nogensinde overvejet om insekter sover?
+                        </p>
+                    </a>
+                </div>
+                <div class="arrows">
+                    <a class="prev" onclick="plusOne(-1)">&#10094;</a>
+                    <a class="next" onclick="plusOne(1)">&#10095;</a>
+                </div>
+            </div>
+        </div>
+        <div class="slide fade">
+
+            <img src="Untitled3.png" alt="">
+            <div class="slideBoxContainer">
+                <div class="textOnSlide">
+                    <a href="https://illvid.dk/dyr/insekter/sover-insekter">
+                        <p>
+                            Har du nogensinde overvejet om insekter sover?
+                        </p>
+                    </a>
+                </div>
+                <div class="arrows">
+                    <a class="prev" onclick="plusOne(-1)">&#10094;</a>
+                    <a class="next" onclick="plusOne(1)">&#10095;</a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
 
     <main id="posts">
         <div class="container">
@@ -279,87 +338,58 @@
         let slideNumber = 1;
         let slides = document.querySelectorAll(".slide");
 
+        function showSlides(n) {
+            let i;
 
-        let wpJSONSlideshow;
-        let destSlideshow = document.querySelector(".slideshow-container");
+            if (n > slides.length) {
+                slideNumber = 1
+            }
+            if (n < 1) {
+                slideNumber = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
 
-        async function hentJsonSlideshow() {
-            console.log("hentJsonSlideshow");
-            let myJsonSlideshow = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/slide_show/?per_page=6");
-            wpJSONSlideshow = await myJsonSlideshow.json();
-            visJsonSlideshow();
+            slides[slideNumber - 1].style.display = "block";
+
+
+
         }
 
-        function visJsonSlideshow() {
-            console.log("visJsonSlideshow");
-            let myTemplateSlideshow = document.querySelector(".slideshow-template");
-            wpJSONSlideshow.forEach(postSlideshow => {
-                    let klon = myTemplateSlideshow.cloneNode(true).content;
-                    if (postSlideshow.acf.id == slideNumber) {
+        showSlides(slideNumber);
 
 
-                        klon.querySelector("[data-slideshow]").src = postSlideshow.acf.picture;
+        console.log(slides.length);
 
-                        klon.querySelector("[data-title]").textContent = postSlideshow.acf.title;
+        function plusOne(n) {
+            showSlides(slideNumber += n);
+        }
 
-                        destSlideshow.appendChild(klon);
 
-                    }
-                   /* if (postSlideshow.acf.id = !slideNumber) {
-                            klon.querySelector("[data-slideshow]").src = "";
-                            destSlideshow.appendChild(klon);
-                        }*/
 
-                    })
+
+        function autoSlide() {
+            console.log(slideNumber);
+
+            if (slideNumber <= slides.length) {
+                slideNumber++;
+            }
+            if (slideNumber > slides.length) {
+                slideNumber = 1;
             }
 
 
-           /* function showSlides(n) {
-                let i;
 
-                if (n > 6) {
-                    slideNumber = 1
-                }
-                if (n < 1) {
-                    slideNumber = 6
-                }
-
-
-
-
-            }
             showSlides(slideNumber);
 
 
 
-            function plusOne(n) {
-                showSlides(slideNumber += n);
-                visJsonSlideshow();
-            }
-
-            function autoSlide() {
-
-                if (slideNumber <= 6) {
-                    slideNumber++;
-                }
-                if (slideNumber > 6) {
-                    slideNumber = 1;
-                }
+        }
 
 
-
-                showSlides(slideNumber);
-                visJsonSlideshow();
-
-
-
-            }
-
-
-            setInterval(autoSlide, 5000);
-*/
-            document.addEventListener("DOMContentLoaded", hentJsonSlideshow);
-
+        /*setInterval(autoSlide, 5000);*/
     </script>
 </body>
+
 </html>

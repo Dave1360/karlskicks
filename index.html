@@ -147,9 +147,6 @@
             left: 2px;
             top: 7px;
 
-
-
-
         }
 
         .prev,
@@ -164,15 +161,16 @@
             transition: .4s;
         }
 
-        .prev:hover, .next:hover {
-             background: #989898;
+        .prev:hover,
+        .next:hover {
+            background: #989898;
         }
 
         .slideBoxContainer {
 
             position: absolute;
-            top: 70%;
-            left: 10%;
+            top: 60%;
+            left: 5%;
 
 
         }
@@ -185,13 +183,31 @@
         .textOnSlide {
             transition: .3s;
             background-color: #2e2d2d;
-            font-size: 4em;
+            font-size: 1.5em;
             text-transform: uppercase;
+            padding: 10px;
 
         }
 
         .textOnSlide:hover {
             background-color: #9d9b9b;
+        }
+
+        @media screen and (min-width:900px) {
+            .textOnSlide {
+                font-size: 2em;
+            }
+
+        }
+
+        @media screen and (min-width:1300px) {
+            .textOnSlide {
+                font-size: 3em;
+            }
+            .slide img {
+            max-height: 590px;
+        }
+
         }
     </style>
 </head>
@@ -388,7 +404,7 @@
         }
 
 
-        /*setInterval(autoSlide, 5000);*/
+        setInterval(autoSlide, 5000);
     </script>
 </body>
 

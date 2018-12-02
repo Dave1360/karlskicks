@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<style>
+
+        .data-container {
+            display: grid;
+            max-width: 400px;
+            margin: 0 auto;
+            grid-gap: 10px;
+
+        }
+
+        .post-container {
+            padding: 1em;
+        }
+
+        [data-name] {
+
+            font-size: 20px;
+            margin-bottom: 9px;
+
+            font-size: 15px;
+            margin-bottom: 5px;
+
+        }
+
+
+        .data-bottom {
+            display: flex;
+            justify-content: space-between;
+
+            margin-bottom: 10px;
+        }
+
+        .data-bottom p {
+            margin: 5px 0 0;
+
+        }
+
+        .data-bottom p {
+            margin: 5px 0 15px;
+
+        }
+
+        .data-container article img {
+            width: 100%;
+        }
+
+
+    </style>
+<body>
+
+    <main class="posts">
+       <div class="container">
+        <section class="data-container">
+            <article class="post-container">
+              <h2 data-name></h2>
+            <img data-picture>
+            <div class="data-bottom">
+                <p data-size></p>
+                <p data-price></p>
+            </div>
+            <p data-description></p>
+            <hr>
+            </article>
+        </section>
+        </div>
+    </main>
+
+    <script>
+         let urlParams = new URLSearchParams(window.location.search);
+        let id = urlParams.get("id");
+        let wpJSON;
+        document.addEventListener("DOMContentLoaded", hentJson);
+
+        console.log(id);
+
+        async function hentJson() {
+            let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/sneaker_post/?per_page=6");
+            wpJSON = await myJson.json();
+            visJson();
+        }
+
+        function visJson() {
+
+
+
+            let display = document.querySelector(".data-container");
+
+            wpJSON.forEach(post => {
+             if (post.id == id) {
+
+                    display.querySelector("[data-name]").textContent = post.acf.name;
+
+                    display.querySelector("[data-picture]").src = post.acf.picture;
+
+                    display.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
+
+                    display.querySelector("[data-size]").textContent = "EUR: " + post.acf.size;
+                    display.querySelector("[data-description]").textContent = post.acf.description;
+
+
+             }
+            })
+
+        };
+        </script>
+</body>
+</html>

@@ -1,82 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <title>Document</title>
 </head>
 
 <style>
+    h2 {
+        font-family: 'Open Sans Condensed', sans-serif;
+    }
 
-        .data-container {
-            display: grid;
-            max-width: 400px;
-            margin: 0 auto;
-            grid-gap: 10px;
+    p {
+        font-family: 'Source Sans Pro', sans-serif;
+    }
 
+    hr {
+        border-color: #f7f7f7;
+        border-style: solid;
+        border-width: 1px;
+    }
+
+    .data-container {
+        display: grid;
+        max-width: 400px;
+        margin: 0 auto;
+        grid-gap: 10px;
+
+    }
+
+    .post-container {
+        padding: 1em;
+    }
+
+    [data-name] {
+        font-size: 25px;
+        margin-bottom: 9px;
+    }
+
+    [data-price],
+    [data-size] {
+        font-size: 20px;
+        font-family: 'Open Sans Condensed', sans-serif;
+    }
+
+
+    .data-bottom {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .data-bottom p {
+        margin: 5px 0 0;
+
+    }
+
+    .data-bottom p {
+        margin: 5px 0 15px;
+
+    }
+
+    .data-container article img {
+        width: 100%;
+    }
+
+    .selector {
+        width: 106px;
+        height: 20px;
+        background: rgba(216, 216, 216, 0.83);
+        margin: 15px 0 10px;
+        display: none;
+    }
+
+    .buy-button {
+        width: 100%;
+        height: 50px;
+        background: black;
+        color: white;
+        text-transform: uppercase;
+        font-size: 13px;
+    }
+
+    [data-second-name] {
+        font-size: 20px;
+    }
+
+
+    @media screen and (min-width:900px) {
+           .data-container {
+            max-width: 800px;
         }
 
         .post-container {
-            padding: 1em;
-        }
-
-        [data-name] {
-
-            font-size: 20px;
-            margin-bottom: 9px;
-
-            font-size: 15px;
-            margin-bottom: 5px;
-
-        }
-
-
-        .data-bottom {
             display: flex;
-            justify-content: space-between;
-
-            margin-bottom: 10px;
         }
 
-        .data-bottom p {
-            margin: 5px 0 0;
+        .left-box {
+            flex-basis: 350px;
+            margin: auto;
+        }
+        .right-box{
+            flex-basis: 350px;
+        }
+    }
 
+    @media screen and (min-width:1300px) {
+        .data-container {
+            max-width: 1200px;
         }
 
-        .data-bottom p {
-            margin: 5px 0 15px;
-
+        .left-box {
+            flex-basis: 550px;
+            margin: auto;
         }
 
-        .data-container article img {
-            width: 100%;
+        .right-box{
+            flex-basis: 550px;
         }
+    }
+</style>
 
-
-    </style>
 <body>
 
     <main class="posts">
-       <div class="container">
-        <section class="data-container">
-            <article class="post-container">
-              <h2 data-name></h2>
-            <img data-picture>
-            <div class="data-bottom">
-                <p data-size></p>
-                <p data-price></p>
-            </div>
-            <p data-description></p>
-            <hr>
-            </article>
-        </section>
+        <div class="container">
+            <section class="data-container">
+                <article class="post-container">
+                    <div class="right-box">
+                        <h2 data-name></h2>
+                        <img data-picture>
+                    </div>
+                    <div class="left-box">
+                        <div class="selector-wrapper">
+                            <select data-option="option1" class="selector">
+                                <option value="Big">Big</option>
+                                <option value="Small">Small</option>
+                            </select>
+                            <select data-option1="option1" class="selector">
+                                <option value="1">1</option>
+                                <option value="3">3</option>
+                                <option value="5">5</option>
+                                <option value=10>10</option>
+                            </select>
+                            <hr>
+                            <button class="buy-button">add to cart</button>
+                            <hr>
+                        </div>
+                        <div class="data-bottom">
+                            <p data-size></p>
+                            <p data-price></p>
+                        </div>
+                        <h2 data-second-name></h2>
+                        <p data-description></p>
+                    </div>
+                </article>
+            </section>
         </div>
     </main>
 
     <script>
-         let urlParams = new URLSearchParams(window.location.search);
+        let urlParams = new URLSearchParams(window.location.search);
         let id = urlParams.get("id");
         let wpJSON;
         document.addEventListener("DOMContentLoaded", hentJson);
@@ -96,7 +183,7 @@
             let display = document.querySelector(".data-container");
 
             wpJSON.forEach(post => {
-             if (post.id == id) {
+                if (post.id == id) {
 
                     display.querySelector("[data-name]").textContent = post.acf.name;
 
@@ -105,13 +192,16 @@
                     display.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
 
                     display.querySelector("[data-size]").textContent = "EUR: " + post.acf.size;
+
                     display.querySelector("[data-description]").textContent = post.acf.description;
 
+                    display.querySelector("[data-second-name]").textContent = post.acf.name;
 
-             }
+                }
             })
 
         };
-        </script>
+    </script>
 </body>
+
 </html>

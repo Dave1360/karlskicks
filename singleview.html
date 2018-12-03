@@ -30,10 +30,12 @@
         margin: 0 auto;
         grid-gap: 10px;
 
+
     }
 
     .post-container {
         padding: 1em;
+
     }
 
     [data-name] {
@@ -77,18 +79,70 @@
     }
 
     .buy-button {
-        width: 100%;
+        width: 240px;
         height: 50px;
         background: black;
         color: white;
         text-transform: uppercase;
-        font-size: 13px;
+        font-size: 20px;
+        border: none;
+        font-family: 'Open Sans Condensed', sans-serif;
+        cursor: pointer;
+
     }
 
     [data-second-name] {
         font-size: 20px;
     }
 
+    .quantity {
+        margin-bottom: 10px;
+         width: 100%;
+        display: flex;
+        font-size: 20px;
+}
+
+    .quantity-value-box {
+        display: flex;
+        padding-right: 10px;
+    }
+
+     .quantity p {
+        background-color:  #E1E8EE;
+        width: 30px;
+        height: 50px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 50px;
+        margin: 0;
+        font-family: 'Open Sans Condensed', sans-serif;
+        border-left: 0.8px solid rgba(199, 199, 199, 0.67);
+        border-right: 0.8px solid rgba(199, 199, 199, 0.67);
+
+    }
+
+    .plus-btn, .minus-btn {
+        width: 30px;
+        height: 50px;
+        background-color: #E1E8EE;
+        border: none;
+        cursor: pointer;
+}
+
+    .plus-btn:active, .minus-btn:active
+   {
+      background-color: rgb(211, 217, 222);
+
+}
+    .plus-btn:focus, .minus-btn:focus {
+        outline: 0;
+    }
+
+    @media screen and (min-width:419px) {
+        .buy-button {
+            width: 270px;
+        }
+    }
 
     @media screen and (min-width:900px) {
            .data-container {
@@ -99,11 +153,14 @@
             display: flex;
         }
 
-        .left-box {
+        .right-box {
             flex-basis: 350px;
-            margin: auto;
+           margin: auto;
+            margin-top: 55px;
+
+
         }
-        .right-box{
+        .left-box{
             flex-basis: 350px;
         }
     }
@@ -113,28 +170,33 @@
             max-width: 1200px;
         }
 
-        .left-box {
+        .right-box {
             flex-basis: 550px;
-            margin: auto;
+
+
         }
 
-        .right-box{
+        .left-box{
             flex-basis: 550px;
+
+        }
+
+        .buy-button {
+            width: 450px;
         }
     }
 </style>
 
 <body>
 
-    <main class="posts">
-        <div class="container">
+
             <section class="data-container">
                 <article class="post-container">
-                    <div class="right-box">
+                    <div class="left-box">
                         <h2 data-name></h2>
                         <img data-picture>
                     </div>
-                    <div class="left-box">
+                    <div class="right-box">
                         <div class="selector-wrapper">
                             <select data-option="option1" class="selector">
                                 <option value="Big">Big</option>
@@ -147,8 +209,24 @@
                                 <option value=10>10</option>
                             </select>
                             <hr>
+                            <div class="quantity">
+                               <div class="quantity-value-box">
+                                <button class="minus-btn"type="button" name="button" onClick="minusOne()">
+                                    -
+                                </button>
+
+                                <p><a class="clicks">1</a></p>
+
+                                 <button class="plus-btn" type="button" name="button" onClick="plusOne()">
+                                    +
+                                </button>
+                          </div>
+                           <div class="quantity-buy-button">
                             <button class="buy-button">add to cart</button>
+                                </div>
+                            </div>
                             <hr>
+
                         </div>
                         <div class="data-bottom">
                             <p data-size></p>
@@ -159,8 +237,8 @@
                     </div>
                 </article>
             </section>
-        </div>
-    </main>
+
+
 
     <script>
         let urlParams = new URLSearchParams(window.location.search);
@@ -201,6 +279,23 @@
             })
 
         };
+
+        let clinks = 0;
+
+        function plusOne() {
+            clinks += 1;
+            document.querySelector(".clicks").innerHTML = clinks;
+        }
+
+        function minusOne() {
+            if (clinks > 1) {
+                clinks -= 1;
+                document.querySelector(".clicks").innerHTML = clinks;
+            } else {
+                document.querySelector(".clicks").innerHTML = 1;
+
+            }
+        }
     </script>
 </body>
 

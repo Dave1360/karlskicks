@@ -70,12 +70,31 @@
         width: 100%;
     }
 
+
     .selector {
-        width: 106px;
-        height: 20px;
-        background: rgba(216, 216, 216, 0.83);
-        margin: 15px 0 10px;
+        width: 165px;
+        height: 50px;
+        background-color: #E1E8EE;
+        margin: 0 0 10px;
+        border: none;
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 17px;
+    }
+
+    .selector-wrapper {
+        display: flex;
+        justify-content: space-between;
         display: none;
+
+    }
+
+    .right-box h3 {
+        margin-bottom: 4px;
+        font-family: 'Open Sans Condensed', sans-serif;
+        color: #666;
+        text-transform: uppercase;
+        font-size: 17px;
+        margin-top: 4px;
     }
 
     .buy-button {
@@ -127,6 +146,7 @@
         background-color: #E1E8EE;
         border: none;
         cursor: pointer;
+
 }
 
     .plus-btn:active, .minus-btn:active
@@ -163,6 +183,11 @@
         .left-box{
             flex-basis: 350px;
         }
+
+           .right-box h3 {
+            margin-top: 0px;
+        }
+
     }
 
     @media screen and (min-width:1300px) {
@@ -184,6 +209,11 @@
         .buy-button {
             width: 450px;
         }
+
+        .selector {
+            width: 270px;
+        }
+
     }
 </style>
 
@@ -197,18 +227,27 @@
                         <img data-picture>
                     </div>
                     <div class="right-box">
+
                         <div class="selector-wrapper">
+                           <div class="size">
+                           <h3>Size</h3>
                             <select data-option="option1" class="selector">
                                 <option value="Big">Big</option>
                                 <option value="Small">Small</option>
                             </select>
+                        </div>
+                           <div class="set">
+                           <h3>Set</h3>
                             <select data-option1="option1" class="selector">
                                 <option value="1">1</option>
                                 <option value="3">3</option>
                                 <option value="5">5</option>
                                 <option value=10>10</option>
                             </select>
+                            </div>
+                             </div>
                             <hr>
+                            <h3>Quantity</h3>
                             <div class="quantity">
                                <div class="quantity-value-box">
                                 <button class="minus-btn"type="button" name="button" onClick="minusOne()">
@@ -227,7 +266,7 @@
                             </div>
                             <hr>
 
-                        </div>
+
                         <div class="data-bottom">
                             <p data-size></p>
                             <p data-price></p>
@@ -254,11 +293,9 @@
             visJson();
         }
 
+        let display = document.querySelector(".data-container");
+
         function visJson() {
-
-
-
-            let display = document.querySelector(".data-container");
 
             wpJSON.forEach(post => {
                 if (post.id == id) {
@@ -267,7 +304,7 @@
 
                     display.querySelector("[data-picture]").src = post.acf.picture;
 
-                    display.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
+                   display.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
 
                     display.querySelector("[data-size]").textContent = "EUR: " + post.acf.size;
 
@@ -275,27 +312,30 @@
 
                     display.querySelector("[data-second-name]").textContent = post.acf.name;
 
+                   if (post.type != "sneaker_post") {
+                      display.querySelector(".selector-wrapper").style.display = "block";
+                   }
                 }
             })
-
         };
 
-        let clinks = 0;
-
+        let clicks = 1;
         function plusOne() {
-            clinks += 1;
-            document.querySelector(".clicks").innerHTML = clinks;
+            clicks += 1;
+            document.querySelector(".clicks").innerHTML = clicks;
         }
 
         function minusOne() {
-            if (clinks > 1) {
-                clinks -= 1;
-                document.querySelector(".clicks").innerHTML = clinks;
+            if (clicks > 1) {
+                clicks -= 1;
+                document.querySelector(".clicks").innerHTML = clicks;
             } else {
                 document.querySelector(".clicks").innerHTML = 1;
 
             }
         }
+
+
     </script>
 </body>
 

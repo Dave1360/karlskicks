@@ -220,62 +220,62 @@
 <body>
 
 
-            <section class="data-container">
-                <article class="post-container">
-                    <div class="left-box">
-                        <h2 data-name></h2>
-                        <img data-picture>
+    <section class="data-container">
+        <article class="post-container">
+            <div class="left-box">
+                <h2 data-name></h2>
+                <img data-picture>
+            </div>
+            <div class="right-box">
+
+                <div class="selector-wrapper">
+                    <div class="size">
+                        <h3>Size</h3>
+                        <select data-option="option1" class="selector">
+                            <option value="Big">Big</option>
+                            <option value="Small">Small</option>
+                        </select>
                     </div>
-                    <div class="right-box">
-
-                        <div class="selector-wrapper">
-                           <div class="size">
-                           <h3>Size</h3>
-                            <select data-option="option1" class="selector">
-                                <option value="Big">Big</option>
-                                <option value="Small">Small</option>
-                            </select>
-                        </div>
-                           <div class="set">
-                           <h3>Set</h3>
-                            <select data-option1="option1" class="selector">
-                                <option value="1">1</option>
-                                <option value="3">3</option>
-                                <option value="5">5</option>
-                                <option value=10>10</option>
-                            </select>
-                            </div>
-                             </div>
-                            <hr>
-                            <h3>Quantity</h3>
-                            <div class="quantity">
-                               <div class="quantity-value-box">
-                                <button class="minus-btn"type="button" name="button" onClick="minusOne()">
-                                    -
-                                </button>
-
-                                <p><a class="clicks">1</a></p>
-
-                                 <button class="plus-btn" type="button" name="button" onClick="plusOne()">
-                                    +
-                                </button>
-                          </div>
-                           <div class="quantity-buy-button">
-                            <button class="buy-button">add to cart</button>
-                                </div>
-                            </div>
-                            <hr>
-
-
-                        <div class="data-bottom">
-                            <p data-size></p>
-                            <p data-price></p>
-                        </div>
-                        <h2 data-second-name></h2>
-                        <p data-description></p>
+                    <div class="set">
+                        <h3>Set</h3>
+                        <select data-option1="option1" class="selector">
+                            <option value="1">1</option>
+                            <option value="3">3</option>
+                            <option value="5">5</option>
+                            <option value=10>10</option>
+                        </select>
                     </div>
-                </article>
-            </section>
+                </div>
+                <hr>
+                <h3>Quantity</h3>
+                <div class="quantity">
+                    <div class="quantity-value-box">
+                        <button class="minus-btn" type="button" name="button">
+                            -
+                        </button>
+
+                        <p><a class="clicks">1</a></p>
+
+                        <button class="plus-btn" type="button" name="button">
+                            +
+                        </button>
+                    </div>
+                    <div class="quantity-buy-button">
+                        <button class="buy-button">add to cart</button>
+                    </div>
+                </div>
+                <hr>
+
+
+                <div class="data-bottom">
+                    <p data-size></p>
+                    <p data-price>Price: 1600,-</p>
+                </div>
+                <h2 data-second-name></h2>
+                <p data-description></p>
+            </div>
+        </article>
+    </section>
 
 
 
@@ -283,12 +283,13 @@
         let urlParams = new URLSearchParams(window.location.search);
         let id = urlParams.get("id");
         let wpJSON;
+        let wpProductJSON;
         document.addEventListener("DOMContentLoaded", hentJson);
 
         console.log(id);
 
         async function hentJson() {
-            let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/sneaker_post/?per_page=6");
+            let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/sneaker_post");
             wpJSON = await myJson.json();
             visJson();
         }
@@ -304,7 +305,7 @@
 
                     display.querySelector("[data-picture]").src = post.acf.picture;
 
-                   display.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
+                    //                   display.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
 
                     display.querySelector("[data-size]").textContent = "EUR: " + post.acf.size;
 
@@ -312,30 +313,42 @@
 
                     display.querySelector("[data-second-name]").textContent = post.acf.name;
 
-                   if (post.type != "sneaker_post") {
-                      display.querySelector(".selector-wrapper").style.display = "block";
-                   }
+                    if (post.type != "sneaker_post") {
+                        display.querySelector(".selector-wrapper").style.display = "block";
+                    }
+
+                    let clicks = 1;
+                    let totalPrice = post.acf.price;
+                    let currentPrice;
+                    let finalPrice;
+
+                    display.querySelector(".plus-btn").addEventListener("click", plusOne);
+
+                    function plusOne() {
+                        clicks += 1;
+                        currentPrice = clicks * totalPrice;
+                        document.querySelector(".clicks").innerHTML = clicks;
+                        console.log(currentPrice)
+                        display.querySelector("[data-price]").textContent = "Price: " + currentPrice + ",-";
+                    }
+
+                    display.querySelector(".minus-btn").addEventListener("click", minusOne);
+
+                    function minusOne() {
+                        if (clicks > 1) {
+                            clicks -= 1;
+                            finalPrice = (totalPrice * clicks);
+                            document.querySelector(".clicks").innerHTML = clicks;
+                            console.log(finalPrice)
+                            display.querySelector("[data-price]").textContent = "Price: " + finalPrice + ",-";
+                        } else {
+                            document.querySelector(".clicks").innerHTML = 1;
+
+                        }
+                    }
                 }
             })
         };
-
-        let clicks = 1;
-        function plusOne() {
-            clicks += 1;
-            document.querySelector(".clicks").innerHTML = clicks;
-        }
-
-        function minusOne() {
-            if (clicks > 1) {
-                clicks -= 1;
-                document.querySelector(".clicks").innerHTML = clicks;
-            } else {
-                document.querySelector(".clicks").innerHTML = 1;
-
-            }
-        }
-
-
     </script>
 </body>
 

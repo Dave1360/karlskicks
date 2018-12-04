@@ -306,7 +306,7 @@
 
         async function hentJson() {
             console.log("hentJson");
-            let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/sneaker_post/?per_page=6");
+            let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/product_post/?per_page=6");
             wpJSON = await myJson.json();
             visJson();
         }
@@ -316,7 +316,7 @@
             let myTemplate = document.querySelector(".data-template");
             wpJSON.forEach(post => {
                 let klon = myTemplate.cloneNode(true).content;
-                if (post.type == "sneaker_post") {
+                if (post.acf.type == "Sneakers") {
                     console.log("ifstatement");
                     klon.querySelector("[data-name]").textContent = post.acf.name;
 

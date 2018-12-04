@@ -269,7 +269,7 @@
 
                 <div class="data-bottom">
                     <p data-size></p>
-                    <p data-price>Price: 1600,-</p>
+                    <p data-price></p>
                 </div>
                 <h2 data-second-name></h2>
                 <p data-description></p>
@@ -289,14 +289,14 @@
         console.log(id);
 
         async function hentJson() {
-            let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/sneaker_post");
+            let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/product_post");
             wpJSON = await myJson.json();
             visJson();
         }
 
-        let display = document.querySelector(".data-container");
-
         function visJson() {
+
+            let display = document.querySelector(".data-container");
 
             wpJSON.forEach(post => {
                 if (post.id == id) {
@@ -305,15 +305,15 @@
 
                     display.querySelector("[data-picture]").src = post.acf.picture;
 
-                    //                   display.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
-
                     display.querySelector("[data-size]").textContent = "EUR: " + post.acf.size;
+
+                    display.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
 
                     display.querySelector("[data-description]").textContent = post.acf.description;
 
                     display.querySelector("[data-second-name]").textContent = post.acf.name;
 
-                    if (post.type != "sneaker_post") {
+                    if (post.acf.type != "Sneakers") {
                         display.querySelector(".selector-wrapper").style.display = "block";
                     }
 

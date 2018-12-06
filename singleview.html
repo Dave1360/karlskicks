@@ -2,20 +2,21 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <title>Document</title>
 </head>
 
 <style>
-  h2 {
+    h2 {
         font-family: 'Open Sans Condensed', sans-serif;
     }
 
     p {
         font-family: 'Source Sans Pro', sans-serif;
+        font-size: 15px;
     }
 
     hr {
@@ -45,7 +46,7 @@
 
     [data-price],
     [data-size] {
-        font-size: 20px;
+        font-size: 25px;
         font-family: 'Open Sans Condensed', sans-serif;
     }
 
@@ -85,7 +86,6 @@
         display: flex;
         justify-content: space-between;
         display: none;
-
     }
 
     .right-box h3 {
@@ -93,8 +93,8 @@
         font-family: 'Open Sans Condensed', sans-serif;
         color: #666;
         text-transform: uppercase;
-        font-size: 17px;
-        margin-top: 4px;
+        font-size: 20px;
+
     }
 
     .buy-button {
@@ -112,6 +112,11 @@
 
     [data-second-name] {
         font-size: 20px;
+    }
+
+    [data-description] {
+        font-size: 13px;
+        line-height: 1.5;
     }
 
     .quantity {
@@ -137,7 +142,7 @@
         font-family: 'Open Sans Condensed', sans-serif;
         border-left: 0.8px solid rgba(199, 199, 199, 0.67);
         border-right: 0.8px solid rgba(199, 199, 199, 0.67);
-
+         font-size: 25px;
     }
 
     .plus-btn, .minus-btn {
@@ -146,6 +151,7 @@
         background-color: #E1E8EE;
         border: none;
         cursor: pointer;
+        font-size: 20px;
 
 }
 
@@ -158,15 +164,15 @@
         outline: 0;
     }
 
-    @media screen and (min-width:419px) {
+    @media screen and (min-width:413px) {
         .buy-button {
             width: 270px;
         }
     }
 
-    @media screen and (min-width:900px) {
+    @media screen and (min-width:1000px) {
            .data-container {
-            max-width: 800px;
+            max-width: 1000px;
         }
 
         .post-container {
@@ -174,31 +180,33 @@
         }
 
         .right-box {
-            flex-basis: 350px;
-           margin: auto;
-            margin-top: 55px;
-
-
+            flex-basis: 450px;
+            margin: auto;
+            padding-top: 60px;
         }
         .left-box{
-            flex-basis: 350px;
+            flex-basis: 450px;
         }
 
            .right-box h3 {
             margin-top: 0px;
         }
 
+        .buy-button {
+            width: 370px;
+        }
+
     }
 
     @media screen and (min-width:1300px) {
+
         .data-container {
             max-width: 1200px;
         }
 
         .right-box {
             flex-basis: 550px;
-
-
+            margin-top: 0px;
         }
 
         .left-box{
@@ -214,141 +222,152 @@
             width: 270px;
         }
 
+         .quantity {
+            min-height: 66px;
+        }
+
+         [data-description] {
+        font-size: 15px;
+
+    }
     }
 </style>
 
 <body>
 
 
-  <section class="data-container">
-    <article class="post-container">
-      <div class="left-box">
-        <h2 data-name></h2>
-        <img data-picture>
-      </div>
-      <div class="right-box">
+    <section class="data-container">
+        <article class="post-container">
+            <div class="left-box">
+                <h2 data-name></h2>
+                <img data-picture>
+            </div>
+            <div class="right-box">
 
-        <div class="selector-wrapper">
-          <div class="size">
-            <h3>Size</h3>
-            <select data-option="option1" class="selector">
-              <option value="Big">Big</option>
-              <option value="Small">Small</option>
-            </select>
-          </div>
-          <div class="set">
-            <h3>Set</h3>
-            <select data-option1="option1" class="selector">
-              <option value="1">1</option>
-              <option value="3">3</option>
-              <option value="5">5</option>
-              <option value=10>10</option>
-            </select>
-          </div>
-        </div>
-        <h3>Quantity</h3>
-        <div class="quantity">
-          <div class="quantity-value-box">
-            <button class="minus-btn" type="button" name="button">
-              -
-            </button>
+                <div class="selector-wrapper">
+                    <div class="size">
+                        <h3>Size</h3>
+                        <select data-option="option1" class="selector">
+                            <option value="Big">Big</option>
+                            <option value="Small">Small</option>
+                        </select>
+                    </div>
+                    <div class="set">
+                        <h3>Set</h3>
+                        <select data-option1="option1" class="selector">
+                            <option value="1">1</option>
+                            <option value="3">3</option>
+                            <option value="5">5</option>
+                            <option value=10>10</option>
+                        </select>
+                    </div>
+                </div>
+                <h3>Quantity</h3>
+                <div class="quantity">
+                    <div class="quantity-value-box">
+                        <button class="minus-btn" type="button" name="button">
+                            -
+                        </button>
 
-            <p><a class="clicks">1</a></p>
+                        <p><a class="clicks">1</a></p>
 
-            <button class="plus-btn" type="button" name="button">
-              +
-            </button>
-          </div>
-          <div class="quantity-buy-button">
-            <button class="buy-button">add to cart</button>
-          </div>
-        </div>
-        <hr>
-
-
-        <div class="data-bottom">
-          <p data-size></p>
-          <p data-price></p>
-        </div>
-        <h2 data-second-name></h2>
-        <p data-description></p>
-      </div>
-    </article>
-  </section>
+                        <button class="plus-btn" type="button" name="button">
+                            +
+                        </button>
+                    </div>
+                    <div class="quantity-buy-button">
+                        <button class="buy-button">add to cart</button>
+                    </div>
+                </div>
+                <hr>
 
 
+                <div class="data-bottom">
+                    <p data-size></p>
+                    <p data-price></p>
+                </div>
+                <h2 data-second-name></h2>
+                <p data-description></p>
+            </div>
+        </article>
+    </section>
 
-  <script>
-    let urlParams = new URLSearchParams(window.location.search);
-    let id = urlParams.get("id");
-    let wpJSON;
-    let wpProductJSON;
-    document.addEventListener("DOMContentLoaded", hentJson);
 
-    console.log(id);
 
-    async function hentJson() {
-      let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/product_post");
-      wpJSON = await myJson.json();
-      visJson();
-    }
+    <script>
+        let urlParams = new URLSearchParams(window.location.search);
+        let id = urlParams.get("id");
+        let wpJSON;
+        let wpProductJSON;
+        document.addEventListener("DOMContentLoaded", hentJson);
 
-    function visJson() {
+        console.log(id);
 
-      let display = document.querySelector(".data-container");
-
-      wpJSON.forEach(post => {
-        if (post.id == id) {
-
-          display.querySelector("[data-name]").textContent = post.acf.name;
-
-          display.querySelector("[data-picture]").src = post.acf.picture;
-
-          display.querySelector("[data-size]").textContent = "EUR: " + post.acf.size;
-
-          display.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
-
-          display.querySelector("[data-description]").textContent = post.acf.description;
-
-          display.querySelector("[data-second-name]").textContent = post.acf.name;
-
-          if (post.acf.type != "Sneakers") {
-            display.querySelector(".selector-wrapper").style.display = "block";
-          }
-
-          let clicks = 1;
-          let totalPrice = post.acf.price;
-          let currentPrice;
-          let finalPrice;
-
-          display.querySelector(".plus-btn").addEventListener("click", plusOne);
-
-          function plusOne() {
-            clicks += 1;
-            currentPrice = clicks * totalPrice;
-            document.querySelector(".clicks").innerHTML = clicks;
-            console.log(currentPrice)
-            display.querySelector("[data-price]").textContent = "Price: " + currentPrice + ",-";
-          }
-
-          display.querySelector(".minus-btn").addEventListener("click", minusOne);
-
-          function minusOne() {
-            if (clicks > 1) {
-              clicks -= 1;
-              finalPrice = (totalPrice * clicks);
-              document.querySelector(".clicks").innerHTML = clicks;
-              console.log(finalPrice)
-              display.querySelector("[data-price]").textContent = "Price: " + finalPrice + ",-";
-            } else {
-              document.querySelector(".clicks").innerHTML = 1;
-
-            }
-          }
+        async function hentJson() {
+            let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/product_post/?per_page=50");
+            wpJSON = await myJson.json();
+            visJson();
         }
-      })
-    };
-  </script>
+
+        function visJson() {
+            let display = document.querySelector(".data-container");
+
+            wpJSON.forEach(post => {
+                if (post.id == id) {
+
+                    display.querySelector("[data-name]").textContent = post.acf.name;
+
+                    display.querySelector("[data-picture]").src = post.acf.picture;
+
+                    if (post.acf.type == "Sneakers") {
+                        display.querySelector("[data-size]").textContent = "EUR: " + post.acf.size;
+                    }
+
+
+                    display.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
+
+                    display.querySelector("[data-description]").textContent = post.acf.description;
+
+                    display.querySelector("[data-second-name]").textContent = post.acf.name;
+
+                    if (post.acf.type != "Sneakers") {
+                        display.querySelector(".selector-wrapper").style.display = "flex";
+                    }
+
+                    let clicks = 1;
+                    let totalPrice = post.acf.price;
+                    let currentPrice;
+                    let finalPrice;
+
+                    display.querySelector(".plus-btn").addEventListener("click", plusOne);
+
+                    function plusOne() {
+                        clicks += 1;
+                        currentPrice = clicks * totalPrice;
+                        document.querySelector(".clicks").innerHTML = clicks;
+                        console.log(currentPrice)
+                        display.querySelector("[data-price]").textContent = "Price: " + currentPrice + ",-";
+                    }
+
+                    display.querySelector(".minus-btn").addEventListener("click", minusOne);
+
+                    function minusOne() {
+                        if (clicks > 1) {
+                            clicks -= 1;
+                            finalPrice = (totalPrice * clicks);
+                            document.querySelector(".clicks").innerHTML = clicks;
+                            console.log(finalPrice)
+                            display.querySelector("[data-price]").textContent = "Price: " + finalPrice + ",-";
+                        } else {
+                            document.querySelector(".clicks").innerHTML = 1;
+
+                        }
+                    }
+                }
+            })
+        };
+
+    </script>
 </body>
 
 </html>

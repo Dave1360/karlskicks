@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+
+    }
+
+    h2 {
+      font-family: 'Open Sans Condensed', sans-serif;
+    }
+
+    p {
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    body {
+      display: grid;
+      grid-template-rows: 1fr auto;
+
+    }
+
+    #posts {
+      padding-top: 50px;
+    }
+
+    .data-container {
+      display: grid;
+      max-width: 400px;
+      margin: 0 auto;
+      grid-gap: 10px;
+
+    }
+
+    .post-container {
+      padding: 1em;
+      box-shadow: 0 0px 40px rgba(44, 48, 65, 0.1);
+      transition: .3s;
+    }
+
+    .post-container:hover {
+      transform: scale(1.08);
+    }
+
+    [data-name] {
+
+      font-size: 22px;
+      /*margin-bottom: 9px;*/
+
+    }
+
+
+    .data-bottom {
+      display: flex;
+      justify-content: space-between;
+
+      margin-bottom: 10px;
+    }
+
+    .data-bottom p {
+      margin: 5px 0 0;
+
+    }
+
+    .data-bottom p {
+      margin: 5px 0 15px;
+
+    }
+
+    .data-container article img {
+      width: 100%;
+    }
+
+    @media screen and (min-width:650px) {
+
+      .data-container {
+        grid-template-columns: 1fr 1fr;
+        max-width: 600px;
+      }
+
+      [data-name] {
+        min-height: 66px;
+        margin-bottom: 0px;
+      }
+    }
+
+    @media screen and (min-width:1000px) {
+
+      .data-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 20px;
+
+      }
+
+      .data-container {
+        max-width: 850px;
+
+      }
+
+    }
+
+    @media screen and (min-width:1300px) {
+
+      .data-container {
+
+        max-width: 1300px;
+
+      }
+
+    }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="filtrering">
+            <button class="menu-item" data-kategori="Menu">All products</button>
+            <button class="menu-item" data-kategori="Cleaning">Cleaning</button>
+            <button class="menu-item" data-kategori="Protection">Protection</button>
+            <button class="menu-item" data-kategori="Restoration">Restoration</button>
+            <button class="menu-item" data-kategori="Kits">Kits</button>
+            <button class="menu-item" data-kategori="Accesories">Accesories</button>
+            <button class="menu-item" data-kategori="Laces">Laces</button>
+            <button class="menu-item" data-kategori="Paint">Paint</button>
+    </div>
+
+     <main id="posts">
+    <div class="container">
+      <section class="data-container"></section>
+    </div>
+  </main>
+
+
+  <template class="data-template">
+    <article class="post-container">
+      <h2 data-name></h2>
+      <img data-picture>
+      <div class="data-bottom">
+        <p data-size></p>
+        <p data-price></p>
+      </div>
+    </article>
+  </template>
+
+    <script>
+    let wpJSON;
+    let dest = document.querySelector(".data-container");
+    let productFilter = "Menu";
+
+
+   document.addEventListener("DOMContentLoaded", hentJson);
+
+
+    async function hentJson() {
+
+      let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/product_post/?per_page=50");
+      wpJSON = await myJson.json();
+      visJson();
+    }
+
+
+
+           document.querySelectorAll(".menu-item").forEach(button => {
+            button.addEventListener("click", filtrering);
+        });
+
+        function filtrering() {
+            dest.textContent = "";
+            productFilter = this.getAttribute("data-kategori");
+            visJson();
+            console.log("filtrering");
+
+        }
+
+    function visJson() {
+
+      let myTemplate = document.querySelector(".data-template");
+
+      wpJSON.forEach(post => {
+
+        if (post.acf.type == productFilter || productFilter == "Menu" && post.acf.type != "Sneakers") {
+
+            let klon = myTemplate.cloneNode(true).content;
+            klon.querySelector("[data-name]").textContent = post.acf.name;
+
+
+            klon.querySelector("[data-picture]").src = post.acf.picture;
+
+            klon.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
+
+            klon.querySelector(".post-container").addEventListener("click", () => {
+              window.location.href = "singleview.html?id=" + post.id;
+
+
+            })
+            dest.appendChild(klon);
+
+        }
+      })
+
+
+    }
+
+    </script>
+
+</body>
+</html>

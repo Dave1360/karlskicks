@@ -2,522 +2,620 @@
 <html lang="da">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <title>Frontpage</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <title>Frontpage</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Source Sans Pro', sans-serif;
 
-        }
+    }
 
-        h2 {
-            font-family: 'Open Sans Condensed', sans-serif;
-        }
+    h2 {
+      font-family: 'Open Sans Condensed', sans-serif;
+    }
 
-        p {
-            font-family: 'Source Sans Pro', sans-serif;
-        }
 
-        body {
-            display: grid;
-            grid-template-rows: 1fr auto;
 
-        }
+    body {
+      display: grid;
+      grid-template-rows: 1fr auto;
 
-        /*                                      6 SNEAKER PÅ FORSIDE STARTER                                     */
+    }
 
-        #posts {
-            padding-top: 50px;
-        }
+    /*                                      6 SNEAKER PÅ FORSIDE STARTER                                     */
 
-        .data-container {
-            display: grid;
-            max-width: 400px;
-            margin: 0 auto;
-            grid-gap: 10px;
+    #posts {
+      padding: 50px 0;
+    }
 
-        }
+    .data-container {
+      display: grid;
+      max-width: 400px;
+      margin: 0 auto;
+      grid-gap: 10px;
 
-        .post-container {
-            padding: 1em;
-            box-shadow: 0 0px 40px rgba(44, 48, 65, 0.1);
-            transition: .3s;
-        }
+    }
 
-        .post-container:hover {
-            transform: scale(1.08);
-        }
+    .post-container {
+      padding: 1em;
+      box-shadow: 0 0px 40px rgba(44, 48, 65, 0.1);
+      transition: .3s;
+    }
 
-        [data-name] {
+    .post-container:hover {
+      transform: scale(1.08);
+    }
 
-            font-size: 22px;
-            /*margin-bottom: 9px;*/
+    [data-name] {
 
-        }
+      font-size: 22px;
 
+    }
 
-        .data-bottom {
-            display: flex;
-            justify-content: space-between;
 
-            margin-bottom: 10px;
-        }
+    .data-bottom {
+      display: flex;
+      justify-content: space-between;
 
-        .data-bottom p {
-            margin: 5px 0 0;
+      margin-bottom: 10px;
+    }
 
-        }
+    .data-bottom p {
+      margin: 5px 0 0;
 
-        .data-bottom p {
-            margin: 5px 0 15px;
+    }
 
-        }
+    .data-bottom p {
+      margin: 5px 0 15px;
 
-        .data-container article img {
-            width: 100%;
-        }
+    }
 
+    .data-container article img {
+      width: 100%;
+    }
 
-        /*                                      6 SNEAKER PÅ FORSIDE SLUTTER                                     */
+    .data-container article video {
+      width: 100%;
+    }
 
 
-        @media screen and (min-width:650px) {
+    /*                                      6 SNEAKER PÅ FORSIDE SLUTTER                                     */
 
-            .data-container {
-                grid-template-columns: 1fr 1fr;
-                max-width: 600px;
-            }
 
-            [data-name] {
-                min-height: 66px;
-                margin-bottom: 0px;
-            }
-        }
+    @media screen and (min-width:650px) {
 
-        @media screen and (min-width:1000px) {
+      .data-container {
+        grid-template-columns: 1fr 1fr;
+        max-width: 600px;
+      }
 
-            .data-container {
-                grid-template-columns: 1fr 1fr 1fr;
-                grid-gap: 20px;
+      [data-name] {
+        min-height: 66px;
+        margin-bottom: 0px;
+      }
+    }
 
-            }
+    @media screen and (min-width:1000px) {
 
-            .data-container {
-                max-width: 850px;
+      .data-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
 
-            }
+      }
 
-        }
+      .data-container {
+        max-width: 850px;
 
-        @media screen and (min-width:1300px) {
+      }
 
-            .data-container {
+    }
 
-                max-width: 1300px;
+    @media screen and (min-width:1300px) {
 
-            }
+      .data-container {
 
-        }
+        max-width: 1300px;
 
+      }
 
-        /*                                      6 SNEAKER PÅ FORSIDE SLUTTER                                     */
+    }
 
 
-        footer {
-            background-color: green;
-            color: yellow;
-            margin-top: 40px;
-        }
+    /*                                      6 SNEAKER PÅ FORSIDE SLUTTER                                     */
 
-        #footerBox1 {
-            display: flex;
-            justify-content: space-between;
-            width: 600px;
-        }
 
-        .infoBox {
-            padding: 10px;
-            flex-basis: 250px;
-        }
+    footer {
+      background-color: #d4d4d4;
+      color: #000;
+      padding: 50px 50px;
+      text-transform: capitalize;
+    }
 
+    #footerBox1 {
+      display: flex;
+      justify-content: space-between;
+      width: 600px;
+    }
 
-        /*                    Miklas:             ;*/
+    .infoBox {
+      padding: 10px;
+      flex-basis: 250px;
+    }
 
 
-        .slideshow {
-            width: 100vw;
-            position: relative;
-            display: none;
+    /*                    Miklas:             ;*/
 
-        }
 
-        .slide {
-            display: none;
-            position: relative;
-        }
+    .slideshow {
+      width: 100vw;
+      position: relative;
+      display: none;
 
-        .slide img {
-            width: 100%;
-            max-height: 590px;
-            transform: rotateY(180deg);
-        }
+    }
 
-        .arrows {
-            position: relative;
-            left: 2px;
-            top: 7px;
+    .slide {
+      display: none;
+      position: relative;
+    }
 
-        }
+    .slide img {
+      width: 100%;
+      max-height: 590px;
+      transform: rotateY(180deg);
+    }
 
-        .prev,
-        .next {
-            color: #575757;
-            font-weight: lighter;
-            font-size: 1em;
-            padding: 10px 15px;
-            margin: 0 -2px;
-            cursor: pointer;
-            background: #dddddd;
-            transition: .4s;
-        }
+    .arrows {
+      position: relative;
+      left: 2px;
+      top: 7px;
 
-        .prev:hover,
-        .next:hover {
-            background: #989898;
-        }
+    }
 
-        .slideBoxContainer {
+    .prev,
+    .next {
+      color: #575757;
+      font-weight: lighter;
+      font-size: 1em;
+      padding: 10px 15px;
+      margin: 0 -2px;
+      cursor: pointer;
+      background: #dddddd;
+      transition: .4s;
+    }
 
-            position: absolute;
-            top: 60%;
-            left: 5%;
+    .prev:hover,
+    .next:hover {
+      background: #989898;
+    }
 
+    .slideBoxContainer {
 
-        }
+      position: absolute;
+      top: 60%;
+      left: 5%;
 
-        .slideBoxContainer .textOnSlide a {
-            text-decoration: none;
-            color: #eadfdf;
-        }
 
-        .textOnSlide {
-            transition: .3s;
-            background-color: #2e2d2d;
-            font-size: 1.5em;
-            text-transform: uppercase;
-            padding: 10px;
+    }
 
-        }
+    .slideBoxContainer .textOnSlide a {
+      text-decoration: none;
+      color: #eadfdf;
+    }
 
-        .textOnSlide:hover {
-            background-color: #9d9b9b;
-        }
+    .textOnSlide {
+      transition: .3s;
+      background-color: #2e2d2d;
+      font-size: 1.5em;
+      text-transform: uppercase;
+      padding: 10px;
 
-        .mobile-nav {
-            display: flex;
-            justify-content: space-between;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: rgba(208, 208, 208, 0.89);
-            z-index: 100;
+    }
 
+    .textOnSlide:hover {
+      background-color: #9d9b9b;
+    }
 
+    .mobile-nav {
+      display: flex;
+      justify-content: space-between;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(7, 22, 139, 0.84);
+      z-index: 100;
 
-        }
+    }
 
-        .icon {
-            padding: 10px 15px;
+    .icon {
+      padding: 10px 15px;
 
-        }
+    }
 
-        .icon img {
-            width: 50px;
-            height: 50px;
-        }
+    .icon img {
+      width: 50px;
+      height: 50px;
+    }
 
-        /*.icon .sneaker-icon {
+    header {
+      width: 100vw;
+      background-color: rgba(7, 22, 139, 0.84);
+    }
+
+    .desktop-nav-container {
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+      padding: 20px;
+    }
+
+    .logo {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .desktop-menu {
+      grid-template-columns: 3fr;
+      display: flex;
+    }
+
+    .logo img {
+      max-width: 50%;
+    }
+
+    .menu-link {
+      text-decoration: none;
+      padding: 28px 20px 0;
+      font-size: 20px;
+      color: white;
+
+    }
+
+    .desktop-menu-list {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+    }
+
+
+
+
+    .desktop-nav-container .icons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /*.icon .sneaker-icon {
       height: 50px;
       width: 80px;
     }*/
 
-        @media screen and (min-width:768px) {
-            .slideshow {
-                display: block;
-            }
-        }
+    @media screen and (min-width:768px) {
+      .slideshow {
+        display: block;
+      }
+    }
 
-        @media screen and (min-width:900px) {
-            .textOnSlide {
-                font-size: 2em;
-            }
-
-            .mobile-nav {
-                display: none;
-            }
-
-        }
-
-        @media screen and (min-width:1300px) {
-            .textOnSlide {
-                font-size: 3em;
-            }
+    @media screen and (min-width:900px) {
+      .textOnSlide {
+        font-size: 2em;
+      }
 
 
 
-            .slide img {
-                max-height: 700px;
-            }
+    }
 
-        }
+    @media screen and (min-width:1024px) {
+      .mobile-nav {
+        display: none;
+      }
+    }
+
+    @media screen and (min-width:1300px) {
+      .textOnSlide {
+        font-size: 3em;
+      }
+
+
+
+      .slide img {
+        max-height: 700px;
+      }
+
+    }
 
 
 
 
-        /* .nav-container {
+    /* .nav-container {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }*/
-    </style>
+  </style>
 </head>
 
 <body>
 
-    <header>
-        <div class="desktop-nav-container">
-            <div class="logo">
+  <header>
+    <div class="desktop-nav-container">
+      <div class="logo">
+        <img src="pics/logo_hvid.png" alt="">
 
-            </div>
-            <nav class="desktop-menu">
+      </div>
+      <nav class="desktop-menu">
 
-            </nav>
+        <ul class="desktop-menu-list">
+          <li class="menu-link">
+            <a>Home</a>
+          </li>
+
+          <li class="menu-link">
+            <a>Sneakers</a>
+          </li>
+
+          <li class="menu-link">
+            <a>Products</a>
+          </li>
+
+          <li class="menu-link">
+            <a>About</a>
+          </li>
+        </ul>
+
+      </nav>
 
 
-            <div class="icons">
-                <div class="functions">
+      <div class="icons">
+        <div class="functions">
 
-                </div>
-                <div class="socials">
-
-                </div>
-            </div>
         </div>
+        <div class="socials">
 
-
-        <nav class="mobile-nav">
-            <div class="icon">
-                <img src="pics/k_sort.png" alt="">
-            </div>
-            <div class="icon">
-                <img class="sneaker-icon" src="pics/sneaker-icon.png" alt="">
-            </div>
-            <div class="icon">
-                <img src="pics/products-icon.png" alt="">
-            </div>
-            <div class="icon">
-                <img src="pics/basket-icon.png" alt="">
-            </div>
-        </nav>
-    </header>
-
-    <div class="slideshow">
-
-
-        <div class="slide fade">
-
-            <img src="kk2.jpg" alt="">
-            <div class="slideBoxContainer">
-                <div class="textOnSlide">
-                    <a href="https://illvid.dk/dyr/insekter/sover-insekter">
-                        <p>
-                            Har du nogensinde overvejet om insekter sover?
-                        </p>
-                    </a>
-                </div>
-                <div class="arrows">
-                    <a class="prev" onclick="plusOne(-1)">&#10094;</a>
-                    <a class="next" onclick="plusOne(1)">&#10095;</a>
-                </div>
-            </div>
         </div>
-        <div class="slide fade">
-
-            <img src="kk-3.jpg" alt="">
-            <div class="slideBoxContainer">
-                <div class="textOnSlide">
-                    <a href="https://illvid.dk/dyr/insekter/sover-insekter">
-                        <p>
-                            Har du nogensinde overvejet om insekter sover?
-                        </p>
-                    </a>
-                </div>
-                <div class="arrows">
-                    <a class="prev" onclick="plusOne(-1)">&#10094;</a>
-                    <a class="next" onclick="plusOne(1)">&#10095;</a>
-                </div>
-            </div>
-        </div>
-
-
+      </div>
     </div>
 
-    <main id="posts">
-        <div class="container">
-            <section class="data-container"></section>
+
+    <nav class="mobile-nav">
+      <div class="icon">
+        <img src="pics/k_sort.png" alt="">
+      </div>
+      <div class="icon">
+        <img class="sneaker-icon" src="pics/sneaker-icon.png" alt="">
+      </div>
+      <div class="icon">
+        <img src="pics/products-icon.png" alt="">
+      </div>
+      <div class="icon">
+        <img src="pics/basket-icon.png" alt="">
+      </div>
+    </nav>
+  </header>
+
+  <div class="slideshow">
+
+
+    <div class="slide fade">
+
+      <img src="kk2.jpg" alt="">
+      <div class="slideBoxContainer">
+        <div class="textOnSlide">
+          <a href="https://illvid.dk/dyr/insekter/sover-insekter">
+            <p>
+              Har du nogensinde overvejet om insekter sover?
+            </p>
+          </a>
         </div>
-    </main>
-
-
-    <template class="data-template">
-        <article class="post-container">
-            <h2 data-name></h2>
-            <img data-picture>
-            <div class="data-bottom">
-                <p data-size></p>
-                <p data-price></p>
-            </div>
-        </article>
-    </template>
-
-
-    <footer>
-        <div id="footerBox1">
-            <div class="infoBox">
-                <h3>contact</h3>
-                <p><a href="https://www.google.dk/maps?q=Sankt+Peders+Str%C3%A6de+47+1453+Copenhagen+K.&um=1&ie=UTF-8&sa=X&ved=0ahUKEwiM3YLlwYvfAhVG3CwKHUrkBccQ_AUIDygC">Sankt Peders Stræde 47 1453 Copenhagen K</a></p><br>
-                <p>Got any questions?</p>
-                <p> <a href="tel:+4528935375">Mobile: +45 28 93 53 75</a></p><br>
-                <a href="mailto:Info@karlskicks.com">E-mail: Info@karlskicks.com</a>
-                <a href="https://www.facebook.com/KarlsKicks-437898033055186/">Facebook: KarlsKicks</a>
-                <p>We look forward to hear from you!</p><br>
-                <p>VAT: DK38981982</p>
-            </div>
-            <div class="infoBox">
-                <h3>overview</h3><br>
-                <p>Search</p><br>
-                <p>About KarlsKicks</p><br>
-                <p>Terms &amp; Conditions</p><br>
-                <p>Please Consider</p>
-            </div>
+        <div class="arrows">
+          <a class="prev" onclick="plusOne(-1)">&#10094;</a>
+          <a class="next" onclick="plusOne(1)">&#10095;</a>
         </div>
-    </footer>
+      </div>
+    </div>
+    <div class="slide fade">
+
+      <img src="kk-3.jpg" alt="">
+      <div class="slideBoxContainer">
+        <div class="textOnSlide">
+          <a href="https://illvid.dk/dyr/insekter/sover-insekter">
+            <p>
+              Har du nogensinde overvejet om insekter sover?
+            </p>
+          </a>
+        </div>
+        <div class="arrows">
+          <a class="prev" onclick="plusOne(-1)">&#10094;</a>
+          <a class="next" onclick="plusOne(1)">&#10095;</a>
+        </div>
+      </div>
+    </div>
 
 
-    <script>
-        /*                           DAVID KODE STARTER - 6 SNEAKER POST PÅ FORSIDE                               */
-        let wpJSON;
-        let dest = document.querySelector(".data-container");
+  </div>
+
+  <main id="posts">
+    <div class="<container></container>">
+      <section class="data-container"></section>
+    </div>
+  </main>
+
+
+  <template class="data-template">
+    <article class="post-container">
+      <h2 data-name></h2>
+      <img data-picture>
+      <video data-video onmouseover="play(this)" onmouseout="reset(this)"></video>
+      <div class="data-bottom">
+        <p data-size></p>
+        <p data-price></p>
+      </div>
+    </article>
+  </template>
+
+
+  <footer>
+    <div id="footerBox1">
+      <div class="infoBox">
+        <h3>contact</h3>
+        <p><a href="https://www.google.dk/maps?q=Sankt+Peders+Str%C3%A6de+47+1453+Copenhagen+K.&um=1&ie=UTF-8&sa=X&ved=0ahUKEwiM3YLlwYvfAhVG3CwKHUrkBccQ_AUIDygC">Sankt Peders Stræde 47 1453 Copenhagen K</a></p><br>
+        <p>Got any questions?</p>
+        <p> <a href="tel:+4528935375">Mobile: +45 28 93 53 75</a></p><br>
+        <a href="mailto:Info@karlskicks.com">E-mail: Info@karlskicks.com</a>
+        <a href="https://www.facebook.com/KarlsKicks-437898033055186/">Facebook: KarlsKicks</a>
+        <p>We look forward to hear from you!</p><br>
+        <p>VAT: DK38981982</p>
+      </div>
+      <div class="infoBox">
+        <h3>overview</h3><br>
+        <p>Search</p><br>
+        <p>About KarlsKicks</p><br>
+        <p>Terms &amp; Conditions</p><br>
+        <p>Please Consider</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    /*                           DAVID KODE STARTER - 6 SNEAKER POST PÅ FORSIDE                               */
+    let wpJSON;
+    let dest = document.querySelector(".data-container");
 
 
 
-        document.addEventListener("DOMContentLoaded", hentJson);
+
+    document.addEventListener("DOMContentLoaded", hentJson);
 
 
 
-        async function hentJson() {
+    async function hentJson() {
 
-            let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/product_post/?per_page=50");
-            wpJSON = await myJson.json();
-            visJson();
-        }
+      let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/product_post/?per_page=50");
+      wpJSON = await myJson.json();
+      visJson();
+    }
 
-        function visJson() {
+    function visJson() {
 
-            let taeller = 0;
-            let myTemplate = document.querySelector(".data-template");
+      let taeller = 0;
+      let myTemplate = document.querySelector(".data-template");
 
-            wpJSON.forEach(post => {
-
-                if (post.acf.type == "Sneakers") {
-
-                    taeller++;
-
-                    if (taeller <= 6) {
-                        let klon = myTemplate.cloneNode(true).content;
-                        klon.querySelector("[data-name]").textContent = post.acf.name;
+      wpJSON.forEach(post => {
 
 
-                        klon.querySelector("[data-picture]").src = post.acf.picture;
 
-                        klon.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
-
-                        klon.querySelector("[data-size]").textContent = "EUR: " + post.acf.size;
+        if (post.acf.type == "Sneakers") {
 
 
-                        klon.querySelector(".post-container").addEventListener("click", () => {
-                            window.location.href = "singleview.html?id=" + post.id;
+          taeller++;
+
+          if (taeller <= 6) {
+            let klon = myTemplate.cloneNode(true).content;
+            klon.querySelector("[data-name]").textContent = post.acf.name;
 
 
-                        })
-                        dest.appendChild(klon);
-                    }
-                }
+            klon.querySelector("[data-picture]").src = post.acf.picture;
+
+            if (post.acf.picture == false) {
+              klon.querySelector("[data-video]").src = post.acf.video;
+              klon.querySelector("[data-picture]").style.display = "none";
+            } else {
+              klon.querySelector("[data-video]").style.display = "none";
+            }
+
+
+            klon.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
+
+            klon.querySelector("[data-size]").textContent = "EUR: " + post.acf.size;
+
+
+            klon.querySelector(".post-container").addEventListener("click", () => {
+              window.location.href = "singleview.html?id=" + post.id;
+
+
             })
-
-
-        }
-
-
-        /*                           DAVID KODE SLUTTER - 6 SNEAKER POST PÅ FORSIDE                        */
-
-        /*                           Miklas Slideshow Starter                                       */
-
-        let slideNumber = 1;
-        let slides = document.querySelectorAll(".slide");
-
-        function showSlides(n) {
-            let i;
-
-            if (n > slides.length) {
-                slideNumber = 1
-            }
-            if (n < 1) {
-                slideNumber = slides.length
-            }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-
-            slides[slideNumber - 1].style.display = "block";
-
-
+            dest.appendChild(klon);
+          }
 
         }
+      })
 
-        showSlides(slideNumber);
 
 
-        function plusOne(n) {
-            showSlides(slideNumber += n);
-        }
+    }
 
 
 
 
-        function autoSlide() {
+    /*                           DAVID KODE SLUTTER - 6 SNEAKER POST PÅ FORSIDE                        */
 
-            if (slideNumber <= slides.length) {
-                slideNumber++;
-            }
-            if (slideNumber > slides.length) {
-                slideNumber = 1;
-            }
+    /*                           Miklas Slideshow Starter                                       */
+
+    let slideNumber = 1;
+    let slides = document.querySelectorAll(".slide");
+
+    function showSlides(n) {
+      let i;
+
+      if (n > slides.length) {
+        slideNumber = 1
+      }
+      if (n < 1) {
+        slideNumber = slides.length
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      slides[slideNumber - 1].style.display = "block";
 
 
 
-            showSlides(slideNumber);
+    }
+
+    showSlides(slideNumber);
+
+
+    function plusOne(n) {
+      showSlides(slideNumber += n);
+    }
 
 
 
-        }
+
+    function autoSlide() {
+
+      if (slideNumber <= slides.length) {
+        slideNumber++;
+      }
+      if (slideNumber > slides.length) {
+        slideNumber = 1;
+      }
 
 
-        setInterval(autoSlide, 5000);
-    </script>
+
+      showSlides(slideNumber);
+
+
+
+    }
+
+
+    function reset(videoReset) {
+      videoReset.currentTime = 0;
+      videoReset.pause();
+    }
+
+    function play(videoPlay) {
+      videoPlay.play();
+    }
+
+    setInterval(autoSlide, 5000);
+  </script>
 </body>
 
 </html>

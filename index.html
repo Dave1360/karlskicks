@@ -114,6 +114,10 @@
 
       }
 
+     #footerBox1 {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
     }
 
     @media screen and (min-width:1300px) {
@@ -138,15 +142,20 @@
     }
 
     #footerBox1 {
-      display: flex;
-      justify-content: space-between;
-      width: 600px;
+        display: grid;
+        grid-template-rows: 1fr;
+        width: 100%;
     }
 
     .infoBox {
-      padding: 10px;
-      flex-basis: 250px;
+        text-align: center;
     }
+
+      .infoBox a {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+      }
 
 
     /*                    Miklas:             ;*/
@@ -460,19 +469,20 @@
   <footer>
     <div id="footerBox1">
       <div class="infoBox">
-        <h3>contact</h3>
+        <h3>contact</h3><br>
         <p><a href="https://www.google.dk/maps?q=Sankt+Peders+Str%C3%A6de+47+1453+Copenhagen+K.&um=1&ie=UTF-8&sa=X&ved=0ahUKEwiM3YLlwYvfAhVG3CwKHUrkBccQ_AUIDygC">Sankt Peders Stræde 47 1453 Copenhagen K</a></p><br>
         <p>Got any questions?</p>
         <p> <a href="tel:+4528935375">Mobile: +45 28 93 53 75</a></p><br>
-        <a href="mailto:Info@karlskicks.com">E-mail: Info@karlskicks.com</a>
-        <a href="https://www.facebook.com/KarlsKicks-437898033055186/">Facebook: KarlsKicks</a>
+        </div>
+        <div class="infoBox">
+        <h3>Information</h3>
+        <br><a href="mailto:Info@karlskicks.com">E-mail: Info@karlskicks.com</a><br>
+        <p><a href="https://www.facebook.com/KarlsKicks-437898033055186/">Facebook: KarlsKicks</a></p><br>
         <p>We look forward to hear from you!</p><br>
-        <p>VAT: DK38981982</p>
-      </div>
+        <p>VAT: DK38981982</p><br>
+        </div>
       <div class="infoBox">
         <h3>overview</h3><br>
-        <p>Search</p><br>
-        <p>About KarlsKicks</p><br>
         <p>Terms &amp; Conditions</p><br>
         <p>Please Consider</p>
       </div>

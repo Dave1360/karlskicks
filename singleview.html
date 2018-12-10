@@ -54,7 +54,6 @@
     .data-bottom {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 10px;
     }
 
     .data-bottom p {
@@ -67,10 +66,13 @@
 
     }
 
-    .data-container article img {
-        width: 100%;
-    }
 
+    .data-container article img {
+        display: block;
+        margin: auto;
+        max-height: 100%;
+        max-width: 100%;
+    }
 
     .selector {
         width: 165px;
@@ -79,7 +81,10 @@
         margin: 0 0 10px;
         border: none;
         font-family: 'Open Sans Condensed', sans-serif;
-        font-size: 17px;
+        font-size: 20px;
+        border-radius: 0;
+        -webkit-appearance: none;
+        padding-left: 10px;
     }
 
     .selector-wrapper {
@@ -240,7 +245,9 @@
         <article class="post-container">
             <div class="left-box">
                 <h2 data-name></h2>
+                <div class="image-wrapper">
                 <img data-picture>
+                </div>
             </div>
             <div class="right-box">
 

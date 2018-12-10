@@ -63,14 +63,11 @@
 
     .data-bottom p {
         margin: 5px 0 15px;
-
     }
-
 
     .data-container article img {
         display: block;
         margin: auto;
-        max-height: 100%;
         max-width: 100%;
     }
 
@@ -370,6 +367,9 @@
 
                         }
                     }
+                    if (post.acf.type == "Sneakers") {
+                    display.querySelector(".data-container article img").style.width = "100%";
+                        }
                 }
             })
         };

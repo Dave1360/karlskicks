@@ -53,16 +53,12 @@
     }
 
     [data-name] {
-
       font-size: 22px;
-
     }
-
 
     .data-bottom {
       display: flex;
       justify-content: space-between;
-
       margin-bottom: 10px;
     }
 
@@ -88,43 +84,7 @@
     /*                                      6 SNEAKER PÅ FORSIDE SLUTTER                                     */
 
 
-    @media screen and (min-width:650px) {
 
-      .data-container {
-        grid-template-columns: 1fr 1fr;
-        max-width: 600px;
-      }
-
-      [data-name] {
-        min-height: 66px;
-        margin-bottom: 0px;
-      }
-    }
-
-    @media screen and (min-width:1000px) {
-
-      .data-container {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 20px;
-
-      }
-
-      .data-container {
-        max-width: 850px;
-
-      }
-
-    }
-
-    @media screen and (min-width:1300px) {
-
-      .data-container {
-
-        max-width: 1300px;
-
-      }
-
-    }
 
 
     /*                                      6 SNEAKER PÅ FORSIDE SLUTTER                                     */
@@ -238,8 +198,7 @@
     }
 
     .icon img {
-      width: 50px;
-      height: 50px;
+      max-height: 50px;
     }
 
     header {
@@ -248,9 +207,11 @@
     }
 
     .desktop-nav-container {
+
       display: grid;
       grid-template-columns: 1fr 3fr 1fr;
       padding: 20px;
+      display: none;
     }
 
     .logo {
@@ -261,6 +222,7 @@
     .desktop-menu {
       grid-template-columns: 3fr;
       display: flex;
+
     }
 
     .logo img {
@@ -268,9 +230,13 @@
     }
 
     .menu-link {
+      padding: 10px 20px 0;
+
+    }
+
+    .menu-link a {
       text-decoration: none;
-      padding: 28px 20px 0;
-      font-size: 20px;
+      font-size: 25px;
       color: white;
 
     }
@@ -281,18 +247,42 @@
       list-style: none;
     }
 
-
-
-
     .desktop-nav-container .icons {
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
 
-    /*.icon .sneaker-icon {
+    .mobile-nav .icon .sneaker-icon {
       height: 50px;
       width: 80px;
-    }*/
+    }
+
+    .icons {
+      margin: 0 10px;
+
+    }
+
+    .icons img {
+      width: 24px;
+      padding: 2px;
+
+    }
+
+
+
+    @media screen and (min-width:650px) {
+
+      .data-container {
+        grid-template-columns: 1fr 1fr;
+        max-width: 600px;
+      }
+
+      [data-name] {
+        min-height: 66px;
+        margin-bottom: 0px;
+      }
+
+    }
 
     @media screen and (min-width:768px) {
       .slideshow {
@@ -305,36 +295,61 @@
         font-size: 2em;
       }
 
-
-
     }
 
     @media screen and (min-width:1024px) {
       .mobile-nav {
         display: none;
       }
+
+
+      .data-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+
+      }
+
+      .data-container {
+        max-width: 850px;
+
+      }
+
+      .desktop-nav-container {
+        display: grid;
+      }
+
     }
 
     @media screen and (min-width:1300px) {
+
+      .data-container {
+
+        max-width: 1300px;
+
+      }
+
       .textOnSlide {
         font-size: 3em;
       }
-
-
 
       .slide img {
         max-height: 700px;
       }
 
+      .menu-link {
+        padding: 28px 20px 0;
+
+      }
+
+      .menu-link a {
+        text-decoration: none;
+        font-size: 30px;
+        color: white;
+
+      }
+
     }
 
-
-
-
-    /* .nav-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }*/
   </style>
 </head>
 
@@ -350,19 +365,19 @@
 
         <ul class="desktop-menu-list">
           <li class="menu-link">
-            <a>Home</a>
+            <a href="index.html">Home</a>
           </li>
 
           <li class="menu-link">
-            <a>Sneakers</a>
+            <a href="sneakers.html">Sneakers</a>
           </li>
 
           <li class="menu-link">
-            <a>Products</a>
+            <a href="products.html">Products</a>
           </li>
 
           <li class="menu-link">
-            <a>About</a>
+            <a href="about.html">About</a>
           </li>
         </ul>
 
@@ -375,6 +390,9 @@
         </div>
         <div class="socials">
 
+       <img src="pics/facebook.png" alt="">
+
+       <img src="pics/instagram.png" alt="">
         </div>
       </div>
     </div>
@@ -382,16 +400,16 @@
 
     <nav class="mobile-nav">
       <div class="icon">
-        <img src="pics/k_sort.png" alt="">
+        <a href="index.html"><img src="pics/k_hvid.png" alt=""></a>
       </div>
       <div class="icon">
-        <img class="sneaker-icon" src="pics/sneaker-icon.png" alt="">
+        <a href="sneaker.html"><img class="sneaker-icon" src="pics/sneaker_icon.png" alt=""></a>
       </div>
       <div class="icon">
-        <img src="pics/products-icon.png" alt="">
+        <a href="products.html"><img src="pics/spray_icon.png" alt=""></a>
       </div>
       <div class="icon">
-        <img src="pics/basket-icon.png" alt="">
+        <img src="pics/basket_icon.png" alt="">
       </div>
     </nav>
   </header>
@@ -438,9 +456,9 @@
   </div>
 
   <main id="posts">
-    <div class="<container></container>">
-      <section class="data-container"></section>
-    </div>
+      <section class="data-container">
+
+      </section>
   </main>
 
 

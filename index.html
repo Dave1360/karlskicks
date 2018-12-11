@@ -275,7 +275,19 @@
 
     }
 
+      .video-container {
+          position: relative;
+          height: 250px;
+          width: 100vw;
+          overflow: hidden;
 
+      }
+
+      .video-container video {
+          position: relative;
+          width: 100%;
+          bottom: 120%;
+      }
 
     @media screen and (min-width:650px) {
 
@@ -485,6 +497,10 @@
     </article>
   </template>
 
+<div class="video-container">
+   <div class="overlay"></div>
+   <video src="Karl-color.mp4" autoplay muted nocontrols loop></video>
+</div>
 
   <footer>
     <div id="footerBox1">

@@ -71,6 +71,12 @@
         max-width: 100%;
     }
 
+    .data-container article video {
+        display: block;
+        margin: auto;
+        width: 100%;
+    }
+
     .selector {
         width: 165px;
         height: 50px;
@@ -157,9 +163,10 @@
 
 }
 
-    .plus-btn:active, .minus-btn:active
+    .plus-btn:hover,
+    .minus-btn:hover
    {
-      background-color: rgb(211, 217, 222);
+     background: #989898;
 
 }
     .plus-btn:focus, .minus-btn:focus {
@@ -243,6 +250,7 @@
             <div class="left-box">
                 <h2 data-name></h2>
                 <div class="image-wrapper">
+                <video data-video onmouseover="play(this)" onmouseout="reset(this)"></video>
                 <img data-picture>
                 </div>
             </div>
@@ -323,6 +331,14 @@
 
                     display.querySelector("[data-picture]").src = post.acf.picture;
 
+                     if (post.acf.picture == false) {
+                         display.querySelector("[data-video]").src = post.acf.video;
+                         display.querySelector("[data-picture]").style.display = "none";
+                     } else {
+                         display.querySelector("[data-video]").style.display = "none";
+            }
+
+
                     if (post.acf.type == "Sneakers") {
                         display.querySelector("[data-size]").textContent = "EUR: " + post.acf.size;
                     }
@@ -373,6 +389,15 @@
                 }
             })
         };
+
+         function reset(videoReset) {
+      videoReset.currentTime = 0;
+      videoReset.pause();
+    }
+
+    function play(videoPlay) {
+      videoPlay.play();
+    }
 
     </script>
 </body>

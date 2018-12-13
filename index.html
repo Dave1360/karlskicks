@@ -169,7 +169,7 @@
 
         header {
             width: 100vw;
-            background-color: rgb(7, 22, 139);
+
         }
 
         header a {
@@ -179,19 +179,35 @@
         .desktop-nav-container {
 
             display: grid;
-            grid-template-columns: 1fr 3fr 1fr;
-            padding: 20px;
             display: none;
+            background-color: #e2e2e2;
+
+        }
+
+        .desktop-nav-row1 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px 0 10px;
+
+        }
+        .desktop-nav-row2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            background-color: rgb(7, 22, 139);
+            padding: 20px 0 0;
         }
 
         .logo {
-            grid-template-columns: 1fr;
-            text-align: center;
+            grid-column: span 1;
         }
 
         .desktop-menu {
-            grid-template-columns: 3fr;
+            grid-column: span 3;
             display: flex;
+            width: 1300px;
+            margin: 0 auto;
 
         }
 
@@ -201,14 +217,13 @@
         }
 
         .menu-link {
-            padding: 10px 20px 0;
-
+            padding: 0px 50px 10px 0;
         }
 
         .menu-link a {
             text-decoration: none;
-            font-size: 25px;
             color: white;
+            font-size: 1.3em;
 
         }
 
@@ -219,7 +234,9 @@
         .desktop-menu-list {
             display: flex;
             flex-direction: row;
+            justify-content: flex-start;
             list-style: none;
+
         }
 
         .desktop-nav-container .icons {
@@ -245,7 +262,13 @@
         }
 
         .socials {
-            margin-left: 10px;
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .socials img {
+            padding: 0 5px;
         }
 
         .functions {
@@ -324,6 +347,7 @@
         }
 
         @media screen and (min-width:768px) {
+
             .slideshow {
                 display: block;
             }
@@ -333,7 +357,6 @@
             .textOnSlide {
                 font-size: 2em;
             }
-
         }
 
         @media screen and (min-width:1024px) {
@@ -344,7 +367,6 @@
             .data-container {
                 grid-template-columns: 1fr 1fr 1fr;
                 grid-gap: 20px;
-
             }
 
             .desktop-nav-container {
@@ -379,14 +401,11 @@
                 max-height: 700px;
             }
 
-            .menu-link {
-                padding: 28px 20px 0;
 
-            }
 
             .menu-link a {
                 text-decoration: none;
-                font-size: 30px;
+
                 color: white;
 
             }
@@ -409,9 +428,66 @@
 
     <header>
         <div class="desktop-nav-container">
+            <div class="desktop-nav-row1">
+                <div class="logo">
+                    <a href=""><img src="pics/logo_hvid.png" alt=""></a>
+                </div>
+                <div class="icons">
+                    <div class="functions">
+
+                        <a href=""><img src="pics/search_icon.png" alt=""></a>
+                        <a href=""><img src="pics/basket_icon.png" alt=""></a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="desktop-nav-row2">
+
+                <nav class="desktop-menu">
+
+
+                    <ul class="desktop-menu-list">
+                        <li class="menu-link">
+                            <a href="index.html">Home</a>
+                        </li>
+
+                        <li class="menu-link">
+                            <a href="sneakers.html">Sneakers</a>
+                        </li>
+
+                        <li class="menu-link">
+                            <a href="about.html">Customize</a>
+                        </li>
+
+                        <li class="menu-link">
+                            <a href="products.html">Products</a>
+                        </li>
+
+                        <li class="menu-link">
+                            <a href="about.html">About</a>
+                        </li>
+
+                    </ul>
+                     <div class="socials">
+                            <a href="https://www.facebook.com/KarlsKicks-437898033055186/" target="_blank"><img src="pics/facebook.png" alt=""></a>
+                            <a href="https://www.instagram.com/karlskicks/?hl=en" target="_blank"><img src="pics/instagram.png" alt=""></a>
+                        </div>
+
+                </nav>
+            </div>
+        </div>
+
+        <!--<div class="desktop-nav-container">
             <div class="logo">
                 <a href=""><img src="pics/logo_hvid.png" alt=""></a>
+            </div>
+            <div class="icons">
+                <div class="functions">
 
+                    <a href=""><img src="pics/search_icon.png" alt=""></a>
+                    <a href=""><img src="pics/basket_icon.png" alt=""></a>
+
+                </div>
             </div>
             <nav class="desktop-menu">
 
@@ -431,29 +507,17 @@
                     <li class="menu-link">
                         <a href="about.html">About</a>
                     </li>
+                    <li class="menu-link socials">
+                        <a href="https://www.facebook.com/KarlsKicks-437898033055186/" target="_blank"><img src="pics/facebook.png" alt=""></a>
+                        <a href="https://www.instagram.com/karlskicks/?hl=en" target="_blank"><img src="pics/instagram.png" alt=""></a>
+                    </li>
                 </ul>
 
             </nav>
 
-            <div class="icons">
-                <div class="functions">
 
-                    <a href="https://www.facebook.com/KarlsKicks-437898033055186/" target="_blank"><img src="pics/facebook.png" alt=""></a>
-
-                    <a href="https://www.instagram.com/karlskicks/?hl=en" target="_blank"><img src="pics/instagram.png" alt=""></a>
-
-                </div>
-                <div class="socials">
-
-                    <a href=""><img src="pics/search_icon.png" alt=""></a>
-
-                    <a href=""><img src="pics/basket_icon.png" alt=""></a>
-
-
-                </div>
-            </div>
         </div>
-
+-->
         <nav class="mobile-nav">
             <div class="icon">
                 <a href="index.html"><img src="pics/k_hvid.png" alt=""></a>

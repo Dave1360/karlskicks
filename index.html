@@ -336,6 +336,7 @@
             position: absolute;
             color: #eadfdf;
             font-size: 1.1em;
+            padding: 10px;
             width: 100%;
 
         }
@@ -445,6 +446,47 @@
                 grid-template-columns: 1fr 1fr 1fr;
                 width: 100%;
             }
+
+            .video-container {
+            height: 250px;
+        }
+
+        .nyhedsbrev-container {
+            bottom: 15%;
+            z-index: 200;
+            color: #eadfdf;
+            left: 25%;
+            font-size: 1.1em;
+            padding: 10px;
+            width: 50%;
+        }
+
+            .overlay {
+                display: block;
+            }
+
+            .video-container video {
+                display: block;
+                bottom: 25%;
+            }
+
+            .text-submit-wrapper {
+            max-width: 250px;
+            padding: 10px;
+
+        }
+
+           input[type=text] {
+            width: 150px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+
+        }
+
+          input[type=submit] {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
         }
 
         @media screen and (min-width:768px) {
@@ -492,39 +534,9 @@
             #footerBox1 {
                 grid-template-columns: 1fr 1fr 1fr;
             }
-             .video-container {
-            height: 250px;
-        }
-         .nyhedsbrev-container {
-            bottom: 15%;
-            z-index: 200;
-            color: #eadfdf;
-            left: 25%;
-            font-size: 1.3em;
-            padding: 10px;
-            width: 50%;
-        }
-             .overlay {
-                display: block;
+            .nyhedsbrev-container {
+                font-size: 1.7em;
             }
-             .video-container video {
-                display: block;
-                bottom: 25%;
-            }
-             .text-submit-wrapper {
-            max-width: 250px;
-            padding: 10px;
-         }
-            input[type=text] {
-            width: 150px;
-            margin-top: 0px;
-            margin-bottom: 0px;
-         }
-           input[type=submit] {
-            margin-top: 0px;
-            margin-bottom: 0px;
-        }
-
 
         }
 
@@ -571,26 +583,48 @@
                 text-align: center;
                 margin-top: 10px;
             }
+
             .video-container {
             height: 450px;
         }
-  .nyhedsbrev-container {
-            font-size: 2.4em;
-     bottom: 25%;
+
+         .nyhedsbrev-container {
+            font-size: 1.8;
+            bottom: 25%;
+            width: 50%;
+
         }
-                      .text-submit-wrapper {
+
+
+        .text-submit-wrapper {
             max-width: 350px;
             padding: 10px;
-         }
-            input[type=text] {
+
+        }
+
+           input[type=text] {
             width: 250px;
             margin-top: 0px;
             margin-bottom: 0px;
-         }
-           input[type=submit] {
+
+        }
+
+          input[type=submit] {
             margin-top: 0px;
             margin-bottom: 0px;
         }
+
+            .menu-link a {
+                text-decoration: none;
+                color: white;
+
+            }
+
+            #footerBox1 {
+                grid-template-columns: 1fr 1fr 1fr 2fr;
+                width: 100%;
+            }
+
 
         }
     </style>
@@ -887,6 +921,7 @@
         }
 
         setInterval(autoSlide, 5000);
+
     </script>
 </body>
 

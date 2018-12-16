@@ -2,14 +2,15 @@
 <html lang="da">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <title>Frontpage</title>
-  <style>
-    * {
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="pics/favicon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Frontpage</title>
+    <style>
+        * {
             margin: 0;
             padding: 0;
             font-family: 'Source Sans Pro', sans-serif;
@@ -185,7 +186,7 @@
 
             display: grid;
             display: none;
-            background-color: #e2e2e2;
+            background-color: #ffffff;
 
         }
 
@@ -313,17 +314,18 @@
           font-size: 15px;
         }
 
-    .cart-container {
-      display: flex;
-      margin-left: 50px;
-    }
+        .cart-container {
+          display: flex;
+          margin-left: 50px;
+        }
 
-    .cart-container p {
-      padding: 5px;
-    }
+        .cart-container p {
+          padding: 5px;
+        }
+
         .video-container {
             position: relative;
-            height: 450px;
+            height: 150px;
             width: 100vw;
             overflow: hidden;
 
@@ -332,12 +334,13 @@
         .nyhedsbrev-container {
             background-color: #2e2d2d;
             position: absolute;
-            bottom: 30%;
-            z-index: 200;
             color: #eadfdf;
-            left: 25%;
-            font-size: 3em;
-            text-transform: uppercase;
+            font-size: 1.1em;
+            width: 100%;
+
+        }
+
+        .nyhedsbrev-container p {
             padding: 10px;
         }
 
@@ -345,7 +348,7 @@
             display: flex;
             justify-content: space-between;
             max-width: 300px;
-            margin: 0 auto;
+            padding: 10px;
 
         }
 
@@ -385,12 +388,14 @@
             bottom: 0;
             left: 0;
             z-index: 100;
+            display: none;
         }
 
         .video-container video {
             position: relative;
             width: 100%;
             bottom: 70%;
+            display: none;
         }
 
         footer {
@@ -398,6 +403,8 @@
             color: #000;
             padding: 50px 50px;
         }
+
+
 
 
         #footerBox1 {
@@ -485,6 +492,40 @@
             #footerBox1 {
                 grid-template-columns: 1fr 1fr 1fr;
             }
+             .video-container {
+            height: 250px;
+        }
+         .nyhedsbrev-container {
+            bottom: 15%;
+            z-index: 200;
+            color: #eadfdf;
+            left: 25%;
+            font-size: 1.3em;
+            padding: 10px;
+            width: 50%;
+        }
+             .overlay {
+                display: block;
+            }
+             .video-container video {
+                display: block;
+                bottom: 25%;
+            }
+             .text-submit-wrapper {
+            max-width: 250px;
+            padding: 10px;
+         }
+            input[type=text] {
+            width: 150px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+         }
+           input[type=submit] {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+
         }
 
         @media screen and (min-width:1300px) {
@@ -516,7 +557,6 @@
 
             .menu-link a {
                 text-decoration: none;
-
                 color: white;
 
             }
@@ -531,343 +571,323 @@
                 text-align: center;
                 margin-top: 10px;
             }
+            .video-container {
+            height: 450px;
+        }
+  .nyhedsbrev-container {
+            font-size: 2.4em;
+     bottom: 25%;
+        }
+                      .text-submit-wrapper {
+            max-width: 350px;
+            padding: 10px;
+         }
+            input[type=text] {
+            width: 250px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+         }
+           input[type=submit] {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
         }
     </style>
 </head>
 
 <body>
 
-  <header>
-    <div class="desktop-nav-container">
-      <div class="desktop-nav-row1">
-        <div class="logo">
-          <a href=""><img src="pics/logo_hvid.png" alt=""></a>
-        </div>
-        <div class="icons">
-          <div class="functions">
-            <div class="search-container">
-              <span class="search"></span>
-              <input placeholder="Search">
-            </div>
-            <div class="cart-container">
-              <div class="cart">
-                <a href=""><img src="pics/basket_icon.png" alt=""></a>
-              </div>
-              <p>Cart</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="desktop-nav-row2">
-
-        <nav class="desktop-menu">
-
-
-          <ul class="desktop-menu-list">
-            <li class="menu-link">
-              <a href="index.html">Home</a>
-            </li>
-
-            <li class="menu-link">
-              <a href="sneakers.html">Sneakers</a>
-            </li>
-
-            <li class="menu-link">
-              <a href="customization.html">Customize</a>
-            </li>
-
-            <li class="menu-link">
-              <a href="products.html">Miscellaneous</a>
-            </li>
-
-            <li class="menu-link">
-              <a href="about.html">About</a>
-            </li>
-
-          </ul>
-          <div class="socials">
-            <a href="https://www.facebook.com/KarlsKicks-437898033055186/" target="_blank"><img src="pics/facebook.png" alt=""></a>
-            <a href="https://www.instagram.com/karlskicks/?hl=en" target="_blank"><img src="pics/instagram.png" alt=""></a>
-          </div>
-
-        </nav>
-      </div>
-    </div>
-
-    <!--<div class="desktop-nav-container">
-            <div class="logo">
-                <a href=""><img src="pics/logo_hvid.png" alt=""></a>
-            </div>
-            <div class="icons">
-                <div class="functions">
-
-                    <a href=""><img src="pics/search_icon.png" alt=""></a>
-                    <a href=""><img src="pics/basket_icon.png" alt=""></a>
-
+    <header>
+        <div class="desktop-nav-container">
+            <div class="desktop-nav-row1">
+                <div class="logo">
+                    <a href=""><img src="pics/logo_sort.png" alt=""></a>
+                </div>
+                <div class="icons">
+                    <div class="functions">
+                        <div class="search-container">
+                            <span class="search"></span>
+                            <input placeholder="Search">
+                        </div>
+                        <div class="cart-container">
+                            <div class="cart">
+                                <a href=""><img src="pics/basket_icon.png" alt=""></a>
+                            </div>
+                            <p>Cart</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <nav class="desktop-menu">
+            <div class="desktop-nav-row2">
 
-                <ul class="desktop-menu-list">
-                    <li class="menu-link">
-                        <a href="index.html">Home</a>
-                    </li>
+                <nav class="desktop-menu">
 
-                    <li class="menu-link">
-                        <a href="sneakers.html">Sneakers</a>
-                    </li>
 
-                    <li class="menu-link">
-                        <a href="products.html">Products</a>
-                    </li>
+                    <ul class="desktop-menu-list">
+                        <li class="menu-link">
+                            <a href="index.html">Home</a>
+                        </li>
 
-                    <li class="menu-link">
-                        <a href="about.html">About</a>
-                    </li>
-                    <li class="menu-link socials">
+                        <li class="menu-link">
+                            <a href="sneakers.html">Sneakers</a>
+                        </li>
+
+                        <li class="menu-link">
+                            <a href="customization.html">Customize</a>
+                        </li>
+
+                        <li class="menu-link">
+                            <a href="products.html">Miscellaneous</a>
+                        </li>
+
+                        <li class="menu-link">
+                            <a href="about.html">About</a>
+                        </li>
+
+                    </ul>
+                    <div class="socials">
                         <a href="https://www.facebook.com/KarlsKicks-437898033055186/" target="_blank"><img src="pics/facebook.png" alt=""></a>
                         <a href="https://www.instagram.com/karlskicks/?hl=en" target="_blank"><img src="pics/instagram.png" alt=""></a>
-                    </li>
-                </ul>
+                    </div>
 
-            </nav>
-
-
+                </nav>
+            </div>
         </div>
--->
-    <nav class="mobile-nav">
-      <div class="icon">
-        <a href="index.html"><img src="pics/k_hvid.png" alt=""></a>
-      </div>
-      <div class="icon">
-        <a href="sneaker.html"><img class="sneaker-icon" src="pics/sneaker_icon.png" alt=""></a>
-      </div>
-      <div class="icon">
-        <a href="products.html"><img src="pics/spray_icon.png" alt=""></a>
-      </div>
-      <div class="icon">
-        <img src="pics/basket_icon.png" alt="">
-      </div>
-    </nav>
-  </header>
 
-  <div class="slideshow">
+        <nav class="mobile-nav">
+            <div class="icon">
+                <a href="index.html"><img src="pics/k_hvid.png" alt=""></a>
+            </div>
+            <div class="icon">
+                <a href="sneaker.html"><img class="sneaker-icon" src="pics/sneaker_icon.png" alt=""></a>
+            </div>
+            <div class="icon">
+                <a href="products.html"><img src="pics/spray_icon.png" alt=""></a>
+            </div>
+            <div class="icon">
+                <img src="pics/basket_icon.png" alt="">
+            </div>
+        </nav>
+    </header>
 
-    <div class="slide fade">
+    <div class="slideshow">
 
-      <img src="pics/karl-slideshow1.jpg" alt="">
-      <div class="slideBoxContainer">
-        <div class="textOnSlide">
-          <a href="https://illvid.dk/dyr/insekter/sover-insekter">
-            <p>
-              Har du nogensinde overvejet om insekter sover?
-            </p>
-          </a>
+        <div class="slide fade">
+
+            <img src="pics/karl-slideshow1.jpg" alt="">
+            <div class="slideBoxContainer">
+                <div class="textOnSlide">
+                    <a href="https://illvid.dk/dyr/insekter/sover-insekter">
+                        <p>
+                            Har du nogensinde overvejet om insekter sover?
+                        </p>
+                    </a>
+                </div>
+                <div class="arrows">
+                    <a class="prev" onclick="plusOne(-1)">&#10094;</a>
+                    <a class="next" onclick="plusOne(1)">&#10095;</a>
+                </div>
+            </div>
         </div>
-        <div class="arrows">
-          <a class="prev" onclick="plusOne(-1)">&#10094;</a>
-          <a class="next" onclick="plusOne(1)">&#10095;</a>
+        <div class="slide fade">
+
+            <img src="kk-3.jpg" alt="">
+            <div class="slideBoxContainer">
+                <div class="textOnSlide">
+                    <a href="https://illvid.dk/dyr/insekter/sover-insekter">
+                        <p>
+                            Har du nogensinde overvejet om insekter sover?
+                        </p>
+                    </a>
+                </div>
+                <div class="arrows">
+                    <a class="prev" onclick="plusOne(-1)">&#10094;</a>
+                    <a class="next" onclick="plusOne(1)">&#10095;</a>
+                </div>
+            </div>
         </div>
-      </div>
+
     </div>
-    <div class="slide fade">
 
-      <img src="kk-3.jpg" alt="">
-      <div class="slideBoxContainer">
-        <div class="textOnSlide">
-          <a href="https://illvid.dk/dyr/insekter/sover-insekter">
-            <p>
-              Har du nogensinde overvejet om insekter sover?
-            </p>
-          </a>
+    <main id="posts">
+        <section class="data-container">
+
+        </section>
+    </main>
+
+    <template class="data-template">
+        <article class="post-container">
+            <h2 data-name></h2>
+            <img data-picture>
+            <video data-video onmouseover="playVideo(this)" onmouseout="resetVideo(this)"></video>
+            <div class="data-bottom">
+                <p data-size></p>
+                <p data-price></p>
+            </div>
+        </article>
+    </template>
+
+    <div class="video-container">
+        <div class="nyhedsbrev-container">
+            <p>Vil du være opdateret på det seneste nye?<br> Så tilmed dig vores nyhedsbrev lige her</p>
+            <div class="text-submit-wrapper">
+                <input type="text" placeholder="Email">
+                <input type="submit" value="Submit">
+            </div>
         </div>
-        <div class="arrows">
-          <a class="prev" onclick="plusOne(-1)">&#10094;</a>
-          <a class="next" onclick="plusOne(1)">&#10095;</a>
+        <div class="overlay"></div>
+        <video src="MVI_7120.mp4" autoplay muted nocontrols loop></video>
+    </div>
+
+    <footer>
+        <div id="footerBox1">
+            <div class="infoBox">
+                <h3>Contact</h3><br>
+                <p>Got any questions?</p>
+                <br><a href="mailto:Info@karlskicks.com">E-mail: Info@karlskicks.com</a><br>
+                <p><a href="https://www.facebook.com/KarlsKicks-437898033055186/">Facebook: KarlsKicks</a></p><br>
+                <p>We look forward to hear from you!</p><br>
+                <p> <a href="tel:+4528935375">Mobile: +45 28 93 53 75</a></p><br>
+            </div>
+            <div class="infoBox">
+                <h3>Information</h3><br>
+                <p><a href="https://www.google.dk/maps?q=Sankt+Peders+Str%C3%A6de+47+1453+Copenhagen+K.&um=1&ie=UTF-8&sa=X&ved=0ahUKEwiM3YLlwYvfAhVG3CwKHUrkBccQ_AUIDygC">Sankt Peders Stræde 47 1453 Copenhagen K</a></p><br>
+                <p>VAT: DK38981982</p><br>
+                <h4>Åbningstider</h4><br>
+                <p>Tuesday-Friday: 10am - 5:30pm</p>
+                <p>Saturday-Sunday: 10am - 3pm</p>
+            </div>
+            <div class="infoBox">
+                <h3>Overview</h3><br>
+                <p>Terms &amp; Conditions</p><br>
+                <p>Please Consider</p>
+            </div>
+            <div class="footer-image-container">
+                <img src="reviews.png">
+            </div>
         </div>
-      </div>
-    </div>
-
-  </div>
-
-  <main id="posts">
-    <section class="data-container">
-
-    </section>
-  </main>
-
-  <template class="data-template">
-    <article class="post-container">
-      <h2 data-name></h2>
-      <img data-picture>
-      <video data-video onmouseover="playVideo(this)" onmouseout="resetVideo(this)"></video>
-      <div class="data-bottom">
-        <p data-size></p>
-        <p data-price></p>
-      </div>
-    </article>
-  </template>
-
-  <div class="video-container">
-    <div class="nyhedsbrev-container">
-      <p>Vil du være opdateret på det seneste nye?<br> Så tilmed dig vores nyhedsbrev lige her</p>
-      <div class="text-submit-wrapper">
-        <input type="text" placeholder="Email">
-        <input type="submit" value="Submit">
-      </div>
-    </div>
-    <div class="overlay"></div>
-    <video src="MVI_7120.mp4" autoplay muted nocontrols loop></video>
-  </div>
-
-  <footer>
-    <div id="footerBox1">
-      <div class="infoBox">
-        <h3>Contact</h3><br>
-        <p>Got any questions?</p>
-        <br><a href="mailto:Info@karlskicks.com">E-mail: Info@karlskicks.com</a><br>
-        <p><a href="https://www.facebook.com/KarlsKicks-437898033055186/">Facebook: KarlsKicks</a></p><br>
-        <p>We look forward to hear from you!</p><br>
-        <p> <a href="tel:+4528935375">Mobile: +45 28 93 53 75</a></p><br>
-      </div>
-      <div class="infoBox">
-        <h3>Information</h3><br>
-        <p><a href="https://www.google.dk/maps?q=Sankt+Peders+Str%C3%A6de+47+1453+Copenhagen+K.&um=1&ie=UTF-8&sa=X&ved=0ahUKEwiM3YLlwYvfAhVG3CwKHUrkBccQ_AUIDygC">Sankt Peders Stræde 47 1453 Copenhagen K</a></p><br>
-        <p>VAT: DK38981982</p><br>
-        <h4>Åbningstider</h4><br>
-        <p>Tuesday-Friday: 10am - 5:30pm</p>
-        <p>Saturday-Sunday: 10am - 3pm</p>
-      </div>
-      <div class="infoBox">
-        <h3>Overview</h3><br>
-        <p>Terms &amp; Conditions</p><br>
-        <p>Please Consider</p>
-      </div>
-      <div class="footer-image-container">
-        <img src="reviews.png">
-      </div>
-    </div>
-  </footer>
+    </footer>
 
 
-  <script>
-    /*                           DAVID KODE STARTER - 6 SNEAKER POST PÅ FORSIDE                               */
-    let wpJSON;
-    let dest = document.querySelector(".data-container");
+    <script>
+        /*                           DAVID KODE STARTER - 6 SNEAKER POST PÅ FORSIDE                               */
+        let wpJSON;
+        let dest = document.querySelector(".data-container");
 
 
 
 
-    document.addEventListener("DOMContentLoaded", hentJson);
+        document.addEventListener("DOMContentLoaded", hentJson);
 
 
 
-    async function hentJson() {
+        async function hentJson() {
 
-      let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/product_post/?per_page=50");
-      wpJSON = await myJson.json();
-      visJson();
-    }
+            let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/product_post/?per_page=50");
+            wpJSON = await myJson.json();
+            visJson();
+        }
 
-    function visJson() {
+        function visJson() {
 
-      let taeller = 0;
-      let myTemplate = document.querySelector(".data-template");
+            let taeller = 0;
+            let myTemplate = document.querySelector(".data-template");
 
-      wpJSON.forEach(post => {
-
-
-
-        if (post.acf.type == "Sneakers") {
+            wpJSON.forEach(post => {
 
 
-          taeller++;
 
-          if (taeller <= 6) {
-            let klon = myTemplate.cloneNode(true).content;
-            klon.querySelector("[data-name]").textContent = post.acf.name;
+                if (post.acf.type == "Sneakers") {
 
 
-            klon.querySelector("[data-picture]").src = post.acf.picture;
+                    taeller++;
 
-            if (post.acf.picture == false) {
-              klon.querySelector("[data-video]").src = post.acf.video;
-              klon.querySelector("[data-picture]").style.display = "none";
-            } else {
-              klon.querySelector("[data-video]").style.display = "none";
+                    if (taeller <= 6) {
+                        let klon = myTemplate.cloneNode(true).content;
+                        klon.querySelector("[data-name]").textContent = post.acf.name;
+
+
+                        klon.querySelector("[data-picture]").src = post.acf.picture;
+
+                        if (post.acf.picture == false) {
+                            klon.querySelector("[data-video]").src = post.acf.video;
+                            klon.querySelector("[data-picture]").style.display = "none";
+                        } else {
+                            klon.querySelector("[data-video]").style.display = "none";
+                        }
+
+
+                        klon.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
+
+                        klon.querySelector("[data-size]").textContent = "EUR: " + post.acf.size;
+
+
+                        klon.querySelector(".post-container").addEventListener("click", () => {
+                            window.location.href = "singleview.html?id=" + post.id;
+
+
+                        })
+                        dest.appendChild(klon);
+                    }
+                }
+            })
+        }
+
+        let slideNumber = 1;
+        let slides = document.querySelectorAll(".slide");
+
+        function showSlides(n) {
+            let i;
+
+            if (n > slides.length) {
+                slideNumber = 1
+            }
+            if (n < 1) {
+                slideNumber = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
             }
 
+            slides[slideNumber - 1].style.display = "block";
 
-            klon.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
-
-            klon.querySelector("[data-size]").textContent = "EUR: " + post.acf.size;
-
-
-            klon.querySelector(".post-container").addEventListener("click", () => {
-              window.location.href = "singleview.html?id=" + post.id;
-
-
-            })
-            dest.appendChild(klon);
-          }
         }
-      })
-    }
 
-    let slideNumber = 1;
-    let slides = document.querySelectorAll(".slide");
-
-    function showSlides(n) {
-      let i;
-
-      if (n > slides.length) {
-        slideNumber = 1
-      }
-      if (n < 1) {
-        slideNumber = slides.length
-      }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-
-      slides[slideNumber - 1].style.display = "block";
-
-    }
-
-    showSlides(slideNumber);
+        showSlides(slideNumber);
 
 
-    function plusOne(n) {
-      showSlides(slideNumber += n);
-    }
+        function plusOne(n) {
+            showSlides(slideNumber += n);
+        }
 
-    function autoSlide() {
+        function autoSlide() {
 
-      if (slideNumber <= slides.length) {
-        slideNumber++;
-      }
-      if (slideNumber > slides.length) {
-        slideNumber = 1;
-      }
+            if (slideNumber <= slides.length) {
+                slideNumber++;
+            }
+            if (slideNumber > slides.length) {
+                slideNumber = 1;
+            }
 
-      showSlides(slideNumber);
+            showSlides(slideNumber);
 
-    }
+        }
 
 
 
-    function resetVideo(videoReset) {
-      videoReset.currentTime = 0;
-      videoReset.pause();
-    }
+        function resetVideo(videoReset) {
+            videoReset.currentTime = 0;
+            videoReset.pause();
+        }
 
-    function playVideo(videoPlay) {
-      videoPlay.play();
+        function playVideo(videoPlay) {
+            videoPlay.play();
 
-    }
+        }
 
-    setInterval(autoSlide, 5000);
-  </script>
+        setInterval(autoSlide, 5000);
+    </script>
 </body>
 
 </html>

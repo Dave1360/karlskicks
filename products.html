@@ -1,240 +1,550 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="icon" type="image/png" sizes="16x16" href="pics/favicon.png">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="16x16" href="pics/favicon.png">
+  <title>Document</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Source Sans Pro', sans-serif;
 
-        }
+    }
 
-        h2 {
-            font-family: 'Open Sans Condensed', sans-serif;
-        }
+    h2 {
+      font-family: 'Open Sans Condensed', sans-serif;
+    }
 
-        p {
-            font-family: 'Source Sans Pro', sans-serif;
-        }
+    p {
+      font-family: 'Source Sans Pro', sans-serif;
+    }
 
-        body {
-            display: grid;
-            grid-template-rows: 1fr auto;
+    body {
+      display: grid;
+      grid-template-rows: 1fr auto;
 
-        }
+    }
 
-        #posts {
-            padding-top: 50px;
-        }
+    #posts {
+      padding-top: 50px;
+    }
 
-        .data-container {
-            display: grid;
-            max-width: 400px;
-            margin: 0 auto;
-            grid-gap: 10px;
+    .data-container {
+      display: grid;
+      max-width: 400px;
+      margin: 0 auto;
+      grid-gap: 10px;
 
-        }
+    }
 
-        .post-container {
-            padding: 1em;
-            box-shadow: 0 0px 40px rgba(44, 48, 65, 0.1);
-            transition: .3s;
-            position: relative;
-        }
+    .post-container {
+      padding: 1em;
+      box-shadow: 0 0px 40px rgba(44, 48, 65, 0.1);
+      transition: .3s;
+      position: relative;
+      cursor: pointer;
+    }
 
-        .post-container:hover {
-            transform: scale(1.08);
-        }
+    .post-container:hover {
+      transform: scale(1.08);
+    }
 
-        [data-name] {
+    [data-name] {
 
-            font-size: 22px;
-            /*margin-bottom: 9px;*/
+      font-size: 22px;
 
-        }
+    }
 
 
-        .data-bottom {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
+    .data-bottom {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
 
-        .data-bottom p {
-            margin: 5px 0 0;
+    .data-bottom p {
+      margin: 5px 0 0;
 
-        }
+    }
 
-        .data-bottom p {
-            margin: 5px 0 15px;
-        }
+    .data-bottom p {
+      margin: 5px 0 15px;
+    }
 
-        .data-container article .image-wrapper {
-            height: 235px;
-        }
+    .data-container article .image-wrapper {
+      height: 235px;
+    }
 
-        .data-container article img {
-            display: block;
-            margin: auto;
-            max-height: 100%;
-            max-width: 100%;
-        }
+    .data-container article img {
+      display: block;
+      margin: auto;
+      max-height: 100%;
+      max-width: 100%;
+    }
 
-        .filtrering {
-            text-align: center;
-           margin: 10px;
-        }
+    .filtrering {
+      text-align: center;
+      margin: 20px 0 0px;
+    }
 
-        .menu-item {
-            padding: 7px 10px;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
 
-        }
+    .menu-item {
+      border: 2px solid transparent;
+      background-color: transparent;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
 
-        .menu-item:focus {
-            outline: 0px;
-            border-bottom: 1px solid black;
-        }
+    .menu-item:hover {
+      border-color: rgba(72, 18, 18, 0.68);
+    }
 
-        @media screen and (min-width:650px) {
+    .menu-item:focus {
+      border-color: rgba(72, 18, 18, 0.68);
+    }
 
-            .data-container {
-                grid-template-columns: 1fr 1fr;
-                max-width: 600px;
-            }
+    .mobile-nav {
+      display: flex;
+      justify-content: space-between;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(7, 22, 139, 0.84);
+      z-index: 100;
 
-            [data-name] {
-                min-height: 66px;
-                margin-bottom: 0px;
-            }
-        }
+    }
 
-        @media screen and (min-width:1000px) {
+    .icon {
+      padding: 10px 15px;
 
-            .data-container {
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-                grid-gap: 20px;
+    }
 
-            }
+    .icon img {
+      max-height: 50px;
+    }
 
-            .data-container {
-                max-width: 850px;
+    header {
+      width: 100vw;
 
-            }
+    }
 
-        }
+    header a {
+      cursor: pointer;
+    }
 
-        @media screen and (min-width:1300px) {
+    .desktop-nav-container {
 
-            .data-container {
+      display: grid;
+      display: none;
+      background-color: #ffffff;
 
-                max-width: 1300px;
+    }
 
-            }
+    .desktop-nav-row1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 20px 0 15px;
 
-        }
-    </style>
+    }
+
+    .desktop-nav-row2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background-color: #07168b;
+      padding: 20px 0 0;
+    }
+
+    .logo {
+      grid-column: span 1;
+    }
+
+    .desktop-menu {
+      grid-column: span 3;
+      display: flex;
+      width: 1300px;
+      margin: 0 auto;
+
+    }
+
+
+    .logo img {
+      max-width: 50%;
+    }
+
+    .menu-link {
+      padding: 0px 50px 10px 0;
+    }
+
+    .menu-link a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.3em;
+      transition: .3s;
+
+    }
+
+    .menu-link a:hover {
+      color: #2c2c2c;
+
+    }
+
+    .desktop-menu-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      list-style: none;
+
+    }
+
+    .desktop-nav-container .icons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-start: 3;
+    }
+
+    .mobile-nav .icon .sneaker-icon {
+      height: 50px;
+      width: 80px;
+    }
+
+    .icons {
+      display: flex;
+      flex-direction: row;
+      align-self: center;
+      margin: 0px 1s0px;
+
+    }
+
+    .icons img {
+      width: 24px;
+      height: 24px;
+      padding: 2px;
+
+    }
+
+    .socials {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
+    .socials img {
+      padding: 0 5px;
+    }
+
+    .functions {
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+
+    }
+
+    .search {
+      background-image: url(pics/search_icon.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: right;
+      width: 60%;
+      height: 60%;
+    }
+
+
+    .search-container {
+      position: relative;
+      width: 100%;
+    }
+
+    .search-container input {
+      text-indent: 10px;
+      width: 150px;
+      height: 25px;
+    }
+
+    .search-container .search {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 15px;
+    }
+
+    .cart-container {
+      display: flex;
+      margin-left: 50px;
+    }
+
+    .cart-container p {
+      padding: 5px;
+    }
+
+    @media screen and (min-width:650px) {
+
+      .data-container {
+        grid-template-columns: 1fr 1fr;
+        max-width: 600px;
+      }
+
+      [data-name] {
+        min-height: 66px;
+        margin-bottom: 0px;
+      }
+    }
+
+    @media screen and (min-width:1024px) {
+
+      .data-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 20px;
+
+      }
+
+      .data-container {
+        max-width: 850px;
+
+      }
+
+      .desktop-nav-row1 {
+        max-width: 1300px;
+
+      }
+
+      .desktop-menu {
+        width: 1300px;
+      }
+
+      .menu-link a {
+        text-decoration: none;
+        color: white;
+
+      }
+
+      .mobile-nav {
+        display: none;
+      }
+
+      .desktop-nav-container {
+        display: grid;
+      }
+
+      .desktop-nav-row1 {
+        max-width: 850px;
+
+      }
+
+      .desktop-menu {
+        width: 850px;
+      }
+
+      .menu-item {
+        padding: 10px 20px;
+      }
+
+    }
+
+    @media screen and (min-width:1300px) {
+
+      .data-container {
+
+        max-width: 1300px;
+
+      }
+
+      .desktop-nav-row1 {
+        max-width: 1300px;
+
+      }
+
+      .desktop-menu {
+        width: 1300px;
+      }
+
+      .menu-link a {
+        text-decoration: none;
+        color: white;
+
+      }
+    }
+
+
+    }
+
+  </style>
 
 </head>
 
 <body>
+  <header>
+    <div class="desktop-nav-container">
+      <div class="desktop-nav-row1">
+        <div class="logo">
+          <a href=""><img src="pics/logo_sort.png" alt=""></a>
+        </div>
+        <div class="icons">
+          <div class="functions">
+            <div class="search-container">
+              <span class="search"></span>
+              <input placeholder="Search">
+            </div>
+            <div class="cart-container">
+              <div class="cart">
+                <a href=""><img src="pics/basket_icon.png" alt=""></a>
+              </div>
+              <p>Cart</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="desktop-nav-row2">
 
-    <div class="filtrering">
-        <button class="menu-item" data-kategori="Menu">All products</button>
-        <button class="menu-item" data-kategori="Cleaning">Cleaning</button>
-        <button class="menu-item" data-kategori="Protection">Protection</button>
-        <button class="menu-item" data-kategori="Restoration">Restoration</button>
-        <button class="menu-item" data-kategori="Kits">Kits</button>
-        <button class="menu-item" data-kategori="Accesories">Accesories</button>
-        <button class="menu-item" data-kategori="Laces">Laces</button>
-        <button class="menu-item" data-kategori="Paint">Paint</button>
+        <nav class="desktop-menu">
+
+
+          <ul class="desktop-menu-list">
+            <li class="menu-link">
+              <a href="index.html">Home</a>
+            </li>
+
+            <li class="menu-link">
+              <a href="sneakers.html">Sneakers</a>
+            </li>
+
+            <li class="menu-link">
+              <a href="customization.html">Customize</a>
+            </li>
+
+            <li class="menu-link">
+              <a href="products.html">Miscellaneous</a>
+            </li>
+
+            <li class="menu-link">
+              <a href="about.html">About</a>
+            </li>
+
+          </ul>
+          <div class="socials">
+            <a href="https://www.facebook.com/KarlsKicks-437898033055186/" target="_blank"><img src="pics/facebook.png" alt=""></a>
+            <a href="https://www.instagram.com/karlskicks/?hl=en" target="_blank"><img src="pics/instagram.png" alt=""></a>
+            <a href=""><img src="pics/snapchat.png" alt=""></a>
+          </div>
+
+        </nav>
+      </div>
     </div>
 
-    <main id="posts">
-        <div class="container">
-            <section class="data-container"></section>
-        </div>
-    </main>
+    <nav class="mobile-nav">
+      <div class="icon">
+        <a href="index.html"><img src="pics/k_hvid.png" alt=""></a>
+      </div>
+      <div class="icon">
+        <a href="sneaker.html"><img class="sneaker-icon" src="pics/sneaker_icon.png" alt=""></a>
+      </div>
+      <div class="icon">
+        <a href="products.html"><img src="pics/spray_icon.png" alt=""></a>
+      </div>
+      <div class="icon">
+        <img src="pics/basket_icon.png" alt="">
+      </div>
+    </nav>
+  </header>
+
+  <div class="filtrering">
+    <button class="menu-item" data-kategori="Menu">All products</button>
+    <button class="menu-item" data-kategori="Cleaning">Cleaning</button>
+    <button class="menu-item" data-kategori="Protection">Protection</button>
+    <button class="menu-item" data-kategori="Restoration">Restoration</button>
+    <button class="menu-item" data-kategori="Kits">Kits</button>
+    <button class="menu-item" data-kategori="Laces">Laces</button>
+    <button class="menu-item" data-kategori="Paint">Paint</button>
+  </div>
+
+  <main id="posts">
+    <div class="container">
+      <section class="data-container"></section>
+    </div>
+  </main>
 
 
-    <template class="data-template">
-        <article class="post-container">
-            <h2 data-name></h2>
-            <div class="image-wrapper">
-                <img data-picture>
-            </div>
-            <div class="data-bottom">
-                <p data-size></p>
-                <p data-price></p>
-            </div>
-        </article>
-    </template>
+  <template class="data-template">
+    <article class="post-container">
+      <h2 data-name></h2>
+      <div class="image-wrapper">
+        <img data-picture>
+      </div>
+      <div class="data-bottom">
+        <p data-size></p>
+        <p data-price></p>
+      </div>
+    </article>
+  </template>
 
-    <script>
-        let wpJSON;
-        let dest = document.querySelector(".data-container");
-        let productFilter = "Menu";
-
-
-        document.addEventListener("DOMContentLoaded", hentJson);
+  <script>
+    let wpJSON;
+    let dest = document.querySelector(".data-container");
+    let productFilter = "Menu";
 
 
-        async function hentJson() {
+    document.addEventListener("DOMContentLoaded", hentJson);
 
-            let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/product_post/?per_page=50");
-            wpJSON = await myJson.json();
-            visJson();
+
+    async function hentJson() {
+
+      let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/product_post/?per_page=50");
+      wpJSON = await myJson.json();
+      visJson();
+    }
+
+
+
+    document.querySelectorAll(".menu-item").forEach(button => {
+      button.addEventListener("click", filtrering);
+    });
+
+    function filtrering() {
+      dest.textContent = "";
+      productFilter = this.getAttribute("data-kategori");
+      visJson();
+      console.log("filtrering");
+
+    }
+
+    function visJson() {
+
+      let myTemplate = document.querySelector(".data-template");
+
+      wpJSON.forEach(post => {
+
+        if (post.acf.type == productFilter || productFilter == "Menu" && post.acf.type != "Sneakers") {
+
+          let klon = myTemplate.cloneNode(true).content;
+          klon.querySelector("[data-name]").textContent = post.acf.name;
+
+
+          klon.querySelector("[data-picture]").src = post.acf.picture;
+
+          klon.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
+
+          klon.querySelector(".post-container").addEventListener("click", () => {
+            window.location.href = "singleview.html?id=" + post.id;
+
+
+          })
+          dest.appendChild(klon);
+
         }
+      })
 
 
+    }
 
-        document.querySelectorAll(".menu-item").forEach(button => {
-            button.addEventListener("click", filtrering);
-        });
-
-        function filtrering() {
-            dest.textContent = "";
-            productFilter = this.getAttribute("data-kategori");
-            visJson();
-            console.log("filtrering");
-
-        }
-
-        function visJson() {
-
-            let myTemplate = document.querySelector(".data-template");
-
-            wpJSON.forEach(post => {
-
-                if (post.acf.type == productFilter || productFilter == "Menu" && post.acf.type != "Sneakers") {
-
-                    let klon = myTemplate.cloneNode(true).content;
-                    klon.querySelector("[data-name]").textContent = post.acf.name;
-
-
-                    klon.querySelector("[data-picture]").src = post.acf.picture;
-
-                    klon.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
-
-                    klon.querySelector(".post-container").addEventListener("click", () => {
-                        window.location.href = "singleview.html?id=" + post.id;
-
-
-                    })
-                    dest.appendChild(klon);
-
-                }
-            })
-
-
-        }
-    </script>
+  </script>
 
 </body>
+
 </html>

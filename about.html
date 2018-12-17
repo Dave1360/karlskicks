@@ -1,69 +1,425 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="16x16" href="pics/favicon.png">
-    <title>Document</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: 'Source Sans Pro', sans-serif;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="16x16" href="pics/favicon.png">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Source Sans Pro', sans-serif;
 
-        }
+    }
 
-        h1 {
-            font-family: 'Open Sans Condensed', sans-serif;
-        }
+    h1 {
+      font-family: 'Open Sans Condensed', sans-serif;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      margin: 0 auto;
+      max-width: 400px;
+
+    }
+
+    .container div {
+
+      grid-gap: 10px;
+      padding: 1em;
+
+    }
+
+    p {
+      line-height: 1.5em;
+    }
+
+    .picture {
+      text-align: center;
+    }
+
+    .picture img {
+      max-width: 100%;
+    }
+
+    .mobile-nav {
+      display: flex;
+      justify-content: space-between;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(7, 22, 139, 0.84);
+      z-index: 100;
+
+    }
+
+    .icon {
+      padding: 10px 15px;
+
+    }
+
+    .icon img {
+      max-height: 50px;
+    }
+
+    header {
+      width: 100vw;
+
+    }
+
+    header a {
+      cursor: pointer;
+    }
+
+    .desktop-nav-container {
+
+      display: grid;
+      display: none;
+      background-color: #ffffff;
+
+    }
+
+    .desktop-nav-row1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 20px 0 15px;
+
+    }
+
+    .desktop-nav-row2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background-color: #07168b;
+      padding: 20px 0 0;
+    }
+
+    .logo {
+      grid-column: span 1;
+    }
+
+    .desktop-menu {
+      grid-column: span 3;
+      display: flex;
+      width: 1300px;
+      margin: 0 auto;
+
+    }
 
 
-        .about-karl {
-            max-width: 400px;
-            padding: 1em;
-            box-shadow: 0 0px 40px rgba(44, 48, 65, 0.1);
-            margin: auto;
-            margin-top: 30px;
-        }
+    .logo img {
+      max-width: 50%;
+    }
 
-        .about-karl h1 {
-            text-transform: uppercase;
-        }
+    .menu-link {
+      padding: 0px 50px 10px 0;
+    }
 
-        @media screen and (min-width:1300px) {
+    .menu-link a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.3em;
+      transition: .3s;
 
-            .about-karl {
-                max-width: 900px;
-            }
+    }
 
-        }
-    </style>
+    .menu-link a:hover {
+      color: #2c2c2c;
+
+    }
+
+    .desktop-menu-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      list-style: none;
+
+    }
+
+    .desktop-nav-container .icons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-start: 3;
+    }
+
+    .mobile-nav .icon .sneaker-icon {
+      height: 50px;
+      width: 80px;
+    }
+
+    .icons {
+      display: flex;
+      flex-direction: row;
+      align-self: center;
+      margin: 0px 1s0px;
+
+    }
+
+    .icons img {
+      width: 24px;
+      height: 24px;
+      padding: 2px;
+
+    }
+
+    .socials {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
+    .socials img {
+      padding: 0 5px;
+    }
+
+    .functions {
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+
+    }
+
+    .search {
+      background-image: url(pics/search_icon.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: right;
+      width: 60%;
+      height: 60%;
+    }
+
+
+    .search-container {
+      position: relative;
+      width: 100%;
+    }
+
+    .search-container input {
+      text-indent: 10px;
+      width: 150px;
+      height: 25px;
+    }
+
+    .search-container .search {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 15px;
+    }
+
+    .cart-container {
+      display: flex;
+      margin-left: 50px;
+    }
+
+    .cart-container p {
+      padding: 5px;
+    }
+
+    @media screen and (min-width:650px) {
+      .container {
+        max-width: 600px;
+      }
+    }
+
+    @media screen and (min-width:1024px) {
+
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        max-width: 850px;
+        padding-top: 25px;
+      }
+
+      .about-karl {
+        grid-column: span 2;
+        grid-row: 1;
+
+      }
+
+      .picture {
+        grid-column: span 2;
+        grid-row: span 2;
+
+
+      }
+
+      .picture img {
+        max-width: 90%;
+        padding-top: 4.5em;
+      }
+
+      .history {
+        grid-column: span 2;
+      }
+
+      .mobile-nav {
+        display: none;
+      }
+
+      .desktop-nav-container {
+        display: grid;
+      }
+
+      .desktop-nav-row1 {
+        max-width: 850px;
+
+      }
+
+      .desktop-menu {
+        width: 850px;
+      }
+
+    }
+
+    @media screen and (min-width: 1300px) {
+
+      .container {
+        max-width: 1300px;
+      }
+
+      .picture {
+        text-align: center;
+      }
+
+      .picture img {
+        max-width: 65%;
+      }
+
+
+
+      .desktop-nav-row1 {
+        max-width: 1300px;
+
+      }
+
+      .desktop-menu {
+        width: 1300px;
+      }
+
+      .menu-link a {
+        text-decoration: none;
+        color: white;
+
+      }
+
+    }
+
+  </style>
 </head>
 
 <body>
+  <header>
+    <div class="desktop-nav-container">
+      <div class="desktop-nav-row1">
+        <div class="logo">
+          <a href=""><img src="pics/logo_sort.png" alt=""></a>
+        </div>
+        <div class="icons">
+          <div class="functions">
+            <div class="search-container">
+              <span class="search"></span>
+              <input placeholder="Search">
+            </div>
+            <div class="cart-container">
+              <div class="cart">
+                <a href=""><img src="pics/basket_icon.png" alt=""></a>
+              </div>
+              <p>Cart</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="desktop-nav-row2">
 
-    <div class="about-karl">
-        <h1>about karlskicks</h1><br>
-        <p> KarlsKicks® is a Danish brand established in a suburb of Copenhagen in 2015 by Karl Faurholt. Before Karlskicks®, Karl simply wanted to restore his own old beat-up sneakers, and when he posted the first result on social media, he was met with so much positive energy and response that he decided to start his own business. The goal was to make customs and restorations from your good old worn sneakers to high-end limited sneakers.</p><br>
-        <h2>History</h2>
-        <p> Starting small with various of simple jobs on worn shoes, Karlskicks® gradually became a well-known brand in Denmark, and steadily Karl moved on to making customs on Adidas Yeezy 350, Adidas Ultra Boost, and lots of other high-end brands. Some of the customs received a great deal of attention, resulting in articles in newspapers and magazines, among them the popular men’s magazine Euroman.</p><br>
-
-        <p> KarlsKicks® also has a store in the city center of Copenhagen where we sell everything from the most hyped high-end sneakers to some of the most spectacular customs in Europe, either by second hand/pre-owned, bespoke, deadstock (DS) or originals (OG).</p><br>
-
-        <p> KarlsKicks® is the supplier of KAPS® products in Denmark.</p><br>
-
-        <p>To get in contact with KarlsKicks® contact us through our Facebook page, or by writing us: info@karlskicks.com</p><br>
-
-        <p>To see the greatest customs and follow the daily work of KarlsKicks®, look at our Facebook and Instagram page: Karlskicks</p><br>
+        <nav class="desktop-menu">
 
 
-        <p> Best regards,</p><br>
+          <ul class="desktop-menu-list">
+            <li class="menu-link">
+              <a href="index.html">Home</a>
+            </li>
 
-        <p> Karl Faurholt</p><br>
+            <li class="menu-link">
+              <a href="sneakers.html">Sneakers</a>
+            </li>
 
+            <li class="menu-link">
+              <a href="customization.html">Customize</a>
+            </li>
+
+            <li class="menu-link">
+              <a href="products.html">Miscellaneous</a>
+            </li>
+
+            <li class="menu-link">
+              <a href="about.html">About</a>
+            </li>
+
+          </ul>
+          <div class="socials">
+            <a href="https://www.facebook.com/KarlsKicks-437898033055186/" target="_blank"><img src="pics/facebook.png" alt=""></a>
+            <a href="https://www.instagram.com/karlskicks/?hl=en" target="_blank"><img src="pics/instagram.png" alt=""></a>
+            <a href=""><img src="pics/snapchat.png" alt=""></a>
+          </div>
+
+        </nav>
+      </div>
     </div>
 
+    <nav class="mobile-nav">
+      <div class="icon">
+        <a href="index.html"><img src="pics/k_hvid.png" alt=""></a>
+      </div>
+      <div class="icon">
+        <a href="sneaker.html"><img class="sneaker-icon" src="pics/sneaker_icon.png" alt=""></a>
+      </div>
+      <div class="icon">
+        <a href="products.html"><img src="pics/spray_icon.png" alt=""></a>
+      </div>
+      <div class="icon">
+        <img src="pics/basket_icon.png" alt="">
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="about-karl">
+      <h1>about karlskicks</h1>
+      <p> KarlsKicks® is a Danish brand established in a suburb of Copenhagen in 2015 by Karl Faurholt. Before Karlskicks®, Karl simply wanted to restore his own old beat-up sneakers, and when he posted the first result on social media, he was met with so much positive energy and response that he decided to start his own business. The goal was to make customs and restorations from your good old worn sneakers to high-end limited sneakers.</p>
+    </div>
+    <div class="picture">
+      <img src="pics/fucking_vend_dig.JPG" alt="">
+    </div>
+    <div class="history">
+      <h1>History</h1>
+      <p> Starting small with various of simple jobs on worn shoes, Karlskicks® gradually became a well-known brand in Denmark, and steadily Karl moved on to making customs on Adidas Yeezy 350, Adidas Ultra Boost, and lots of other high-end brands. Some of the customs received a great deal of attention, resulting in articles in newspapers and magazines, among them the popular men’s magazine Euroman.</p><br>
+
+      <p> KarlsKicks® also has a store in the city center of Copenhagen where we sell everything from the most hyped high-end sneakers to some of the most spectacular customs in Europe, either by second hand/pre-owned, bespoke, deadstock (DS) or originals (OG).</p><br>
+
+      <p> KarlsKicks® is the supplier of KAPS® products in Denmark.</p>
+
+      <p>To get in contact with KarlsKicks® contact us through our Facebook page, or by writing us: info@karlskicks.com</p>
+
+      <p>To see the greatest customs and follow the daily work of KarlsKicks®, look at our Facebook and Instagram page: Karlskicks</p><br>
+
+
+      <p> Best regards,</p>
+
+      <p> Karl Faurholt</p>
+
+    </div>
+  </div>
+
 </body>
+
 </html>

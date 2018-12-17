@@ -2,37 +2,58 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-      <link rel="icon" type="image/png" sizes="16x16" href="pics/favicon.png">
-    <title>Document</title>
-    <style>
-        * {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="16x16" href="pics/favicon.png">
+  <title>Document</title>
+  <style>
+    * {
             margin: 0;
             padding: 0;
             font-family: 'Source Sans Pro', sans-serif;
 
         }
 
+
+
         h2,
-        h1 {
+        h1,
+        h3,
+        h4 {
             font-family: 'Open Sans Condensed', sans-serif;
             text-align: center;
             text-transform: uppercase;
-            font-size: 25px;
-            margin-top: 20px;
+            font-size: 2em;
+            margin: 0 auto;
+
+
         }
+        h1 {
+            padding: 50px 0 0;
+        }
+
 
         h3 {
             font-family: 'Open Sans Condensed', sans-serif;
             text-transform: uppercase;
+            padding: 30px 0;
+
         }
+
+
 
         label {
             font-family: 'Open Sans Condensed', sans-serif;
+            font-weight: bold;
+          font-size: 1.4em;
         }
+
+    input, select {
+
+    }
+
 
         .before-after-image-wrapper {
             padding: 1em;
@@ -56,19 +77,18 @@
 
         .progress-container {
             max-width: 400px;
-            padding: 1em;
             margin: 0 auto;
+            text-align: center;
+
 
         }
 
         .progress-container img {
-            width: 100%;
-            margin-bottom: 30px;
+            width: 80%;
         }
 
         .progress-container h2 {
-            margin-bottom: 10px;
-            margin-top: 0;
+
         }
 
 
@@ -79,8 +99,7 @@
         }
 
         .contact-formular h2 {
-            margin-bottom: 5px;
-            margin-top: 0;
+
         }
 
         .contact-container {
@@ -88,7 +107,7 @@
             padding: 1em;
         }
 
-        input[type=text], select, textarea{
+        input[type="text"], select, textarea{
             width: 100%;
             border: 1px solid #ccc;
             border-radius: 2px;
@@ -96,13 +115,18 @@
             margin-bottom: 16px;
             resize: none;
             text-indent: 5px;
+            font-size: 1.2em;
 
+        }
+
+        input::placeholder, textarea::placeholder, select{
+          color: rgba(38, 38, 38, 0.6);
         }
 
         option {
             width: 100%;
             font-family: 'Open Sans Condensed', sans-serif;
-            font-size: 15px;
+            font-size: 1em;
             font-weight: bold;
         }
 
@@ -119,7 +143,179 @@
              background-color: rgba(88, 27, 27, 0.89);
         }
 
-        @media screen and (min-width:767px) {
+        .mobile-nav {
+            display: flex;
+            justify-content: space-between;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(7, 22, 139, 0.84);
+            z-index: 100;
+
+        }
+
+        .icon {
+            padding: 10px 15px;
+
+        }
+
+        .icon img {
+            max-height: 50px;
+        }
+
+        header {
+            width: 100vw;
+
+        }
+
+        header a {
+            cursor: pointer;
+        }
+
+        .desktop-nav-container {
+
+            display: grid;
+            display: none;
+            background-color: #ffffff;
+
+        }
+
+        .desktop-nav-row1 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px 0 15px;
+
+        }
+        .desktop-nav-row2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            background-color: #07168b;
+            padding: 20px 0 0;
+        }
+
+        .logo {
+            grid-column: span 1;
+        }
+
+        .desktop-menu {
+            grid-column: span 3;
+            display: flex;
+            width: 1300px;
+            margin: 0 auto;
+
+        }
+
+
+        .logo img {
+            max-width: 50%;
+        }
+
+        .menu-link {
+            padding: 0px 50px 20px 0;
+        }
+
+        .menu-link a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.3em;
+            transition: .3s;
+
+        }
+
+        .menu-link a:hover {
+            color: #2c2c2c;
+
+        }
+
+        .desktop-menu-list {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            list-style: none;
+
+        }
+
+        .desktop-nav-container .icons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+          grid-column-start: 3;
+        }
+
+        .mobile-nav .icon .sneaker-icon {
+            height: 50px;
+            width: 80px;
+        }
+
+        .icons {
+            display: flex;
+            flex-direction: row;
+            align-self: center;
+            margin: 0px 1s0px;
+
+        }
+
+        .icons img {
+            width: 24px;
+            height: 24px;
+            padding: 2px;
+
+        }
+
+        .socials {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .socials img {
+            padding: 0 5px;
+        }
+
+        .functions {
+          display: flex;
+          width: 100%;
+          justify-content: flex-end;
+
+        }
+        .search {
+          background-image: url(pics/search_icon.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: right;
+          width: 60%;
+          height: 60%;
+        }
+
+
+        .search-container {
+          position: relative;
+          width: 100%;
+        }
+        .search-container input {
+          text-indent: 10px;
+          width: 150px;
+          height: 25px;
+        }
+
+        .search-container .search {
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          font-size: 15px;
+        }
+
+        .cart-container {
+          display: flex;
+          margin-left: 50px;
+        }
+
+        .cart-container p {
+          padding: 5px;
+        }
+
+        @media screen and (min-width:768px) {
 
             h2,
             h1 {
@@ -143,7 +339,7 @@
              .contact-formular {
                max-width: 600px;
         }
-    }
+        }
 
         @media screen and (min-width:1024px) {
 
@@ -151,64 +347,173 @@
                 max-width: 900px;
             }
 
-                .progress-container {
-            max-width: 800px;
-        }
+            .progress-container {
+                max-width: 800px;
+            }
 
             .contact-formular {
-               max-width: 800px;
-        }
+                max-width: 800px;
+            }
+
+            .mobile-nav {
+                display: none;
+      }
+
+      .desktop-nav-container {
+        display: grid;
+      }
+
+      .desktop-nav-row1 {
+        max-width: 850px;
+
+      }
+
+      .desktop-menu {
+        width: 850px;
+      }
     }
+    @media screen and (min-width: 1300px) {
+      .desktop-nav-row1 {
+        max-width: 1300px;
+
+      }
+
+      .desktop-menu {
+        width: 1300px;
+      }
+
+      .menu-link a {
+        text-decoration: none;
+        color: white;
+
+      }
+
+    }
+
 
     </style>
 </head>
 
 <body>
 
-    <main>
-        <div class="before-after-image-container">
-            <h1>full restoration or customization</h1>
-            <h2>499 DKK</h2>
-            <div class="before-after-image-wrapper">
-                <div class="before-image">
-                    <h3>Before</h3>
-                    <img src="pics/before-gucci.jpg" alt="Before gucci got clean">
-                </div>
-                <div class="after-image">
-                    <h3>After</h3>
-                    <img src="pics/after-gucci.jpg" alt="After gucci got clean">
-                </div>
+  <header>
+    <div class="desktop-nav-container">
+      <div class="desktop-nav-row1">
+        <div class="logo">
+          <a href=""><img src="pics/logo_sort.png" alt=""></a>
+        </div>
+        <div class="icons">
+          <div class="functions">
+            <div class="search-container">
+              <span class="search"></span>
+              <input placeholder="Search">
             </div>
-        </div>
-
-        <div class="progress-container">
-            <h2>Process</h2>
-            <img src="pics/progress.png" alt="Cleaning progress">
-        </div>
-
-        <div class="contact-formular">
-            <h2>Contact us</h2>
-            <div class="contact-container">
-                <label for="fname">Full Name</label>
-                <input type="text" class="fname" name="fullname" placeholder="Your name">
-
-                <label for="category">Category</label>
-                <select class="category" name="category">
-                    <option value="restoration">Restoration</option>
-                    <option value="customization">Customization</option>
-                </select>
-
-                <label for="subject">Subject</label>
-                <textarea class="subject" name="subject" placeholder="What can we do for you?" style="height: 200px;" maxlength="200"></textarea>
-
-                <input type="submit" value="Submit">
+            <div class="cart-container">
+              <div class="cart">
+                <a href=""><img src="pics/basket_icon.png" alt=""></a>
+              </div>
+              <p>Cart</p>
             </div>
+          </div>
         </div>
+      </div>
+      <div class="desktop-nav-row2">
+
+        <nav class="desktop-menu">
+
+
+          <ul class="desktop-menu-list">
+            <li class="menu-link">
+              <a href="index.html">Home</a>
+            </li>
+
+            <li class="menu-link">
+              <a href="sneakers.html">Sneakers</a>
+            </li>
+
+            <li class="menu-link">
+              <a href="customization.html">Customize</a>
+            </li>
+
+            <li class="menu-link">
+              <a href="products.html">Miscellaneous</a>
+            </li>
+
+            <li class="menu-link">
+              <a href="about.html">About</a>
+            </li>
+
+          </ul>
+          <div class="socials">
+            <a href="https://www.facebook.com/KarlsKicks-437898033055186/" target="_blank"><img src="pics/facebook.png" alt=""></a>
+            <a href="https://www.instagram.com/karlskicks/?hl=en" target="_blank"><img src="pics/instagram.png" alt=""></a>
+            <a href=""><img src="pics/snapchat.png" alt=""></a>
+          </div>
+
+        </nav>
+      </div>
+    </div>
+
+    <nav class="mobile-nav">
+      <div class="icon">
+        <a href="index.html"><img src="pics/k_hvid.png" alt=""></a>
+      </div>
+      <div class="icon">
+        <a href="sneaker.html"><img class="sneaker-icon" src="pics/sneaker_icon.png" alt=""></a>
+      </div>
+      <div class="icon">
+        <a href="products.html"><img src="pics/spray_icon.png" alt=""></a>
+      </div>
+      <div class="icon">
+        <img src="pics/basket_icon.png" alt="">
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="before-after-image-container">
+      <h1>full restoration or customization</h1>
+      <h2>499 DKK</h2>
+      <div class="before-after-image-wrapper">
+        <div class="before-image">
+          <h4>Before</h4>
+          <img src="pics/before-gucci.jpg" alt="Before gucci got clean">
+        </div>
+        <div class="after-image">
+          <h4>After</h4>
+          <img src="pics/after-gucci.jpg" alt="After gucci got clean">
+        </div>
+      </div>
+    </div>
+
+    <div class="progress-container">
+      <h3>Process</h3>
+      <img src="pics/progress.png" alt="Cleaning progress">
+    </div>
+
+    <div class="contact-formular">
+      <h3>Contact us</h3>
+      <div class="contact-container">
+        <label for="fname">Full Name</label>
+        <input type="text" class="fname" name="fullname" placeholder="Your name">
+
+        <label for="category">Category</label>
+        <select class="category" name="category">
+          <option value="restoration">Restoration</option>
+          <option value="customization">Customization</option>
+        </select>
+
+        <label for="subject">Subject</label>
+        <textarea class="subject" name="subject" placeholder="What can we do for you?" style="height: 200px;" maxlength="200"></textarea>
+
+        <input type="submit" value="Submit">
+      </div>
+    </div>
 
 
 
 
-    </main>
+  </main>
 
 
 </body>

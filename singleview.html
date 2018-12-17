@@ -11,7 +11,16 @@
 </head>
 
 <style>
-  h2 {
+
+     * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Source Sans Pro', sans-serif;
+
+        }
+
+  h2,
+    h1{
         font-family: 'Open Sans Condensed', sans-serif;
     }
 
@@ -36,7 +45,7 @@
 
     .post-container {
         padding: 1em;
-
+        box-shadow: 0 0px 40px rgba(44, 48, 65, 0.1);
     }
 
     [data-name] {
@@ -102,7 +111,6 @@
         color: #666;
         text-transform: uppercase;
         font-size: 20px;
-
     }
 
     .buy-button {
@@ -126,6 +134,7 @@
     [data-description] {
         font-size: 13px;
         line-height: 1.5;
+        padding-top: 10px;
     }
 
     .quantity {
@@ -173,6 +182,24 @@
     .plus-btn:focus, .minus-btn:focus {
         outline: 0;
     }
+    .buy-more-container h1 {
+        text-align: center;
+        padding: 70px 0 20px;
+        font-size: 2.5em;
+    }
+
+    .buy-more {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 1200px;
+        grid-gap: 10px;
+        margin: 0 auto;
+
+    }
+    .buy-more img {
+        max-width: 100%;
+    }
+
 
     @media screen and (min-width:413px) {
         .buy-button {
@@ -304,9 +331,20 @@
       </div>
     </article>
   </section>
-
-
-
+<div class="buy-more-container">
+<h1>You may also like...</h1>
+<div class="buy-more">
+    <div class="buy-more-box">
+        <img data-second src="http://via.placeholder.com/600x500">
+    </div>
+    <div class="buy-more-box">
+         <img data-second src="http://via.placeholder.com/600x500">
+    </div>
+    <div class="buy-more-box">
+         <img data-second src="http://via.placeholder.com/600x500">
+    </div>
+</div>
+</div>
   <script>
     let urlParams = new URLSearchParams(window.location.search);
     let id = urlParams.get("id");
@@ -331,6 +369,7 @@
           display.querySelector("[data-name]").textContent = post.acf.name;
 
           display.querySelector("[data-picture]").src = post.acf.picture;
+
 
           if (post.acf.picture == false) {
             display.querySelector("[data-video]").src = post.acf.video;

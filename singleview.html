@@ -191,12 +191,26 @@
     .buy-more {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        max-width: 1200px;
-        grid-gap: 10px;
-        margin: 0 auto;
-        margin-bottom: 50px;
-
+        max-width: 600px;
+        grid-gap: 30px;
+        margin: 20px auto 50px;
     }
+
+    .buy-more-box {
+        box-shadow: 0 0px 40px rgba(44, 48, 65, 0.1);
+        text-align: center;
+    }
+
+    .buy-more-box h2 {
+        padding: 0 0 5px;
+    }
+
+    .buy-more-box p {
+        padding: 0 0 15px;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+
     .buy-more img {
         max-width: 100%;
     }
@@ -336,13 +350,19 @@
 <h1>You may also like...</h1>
 <div class="buy-more">
     <div class="buy-more-box">
-        <img data-second src="http://via.placeholder.com/600x500">
+        <img data-second src="pics/yellowbuster.png">
+        <h2>Yellow Buster</h2>
+        <p>45,-</p>
     </div>
     <div class="buy-more-box">
-         <img data-second src="http://via.placeholder.com/600x500">
+         <img data-second src="pics/nanoprotector.png">
+         <h2>Nano Protector</h2>
+         <p>49,-</p>
     </div>
     <div class="buy-more-box">
-         <img data-second src="http://via.placeholder.com/600x500">
+         <img data-second src="pics/sneakerprotector.png">
+         <h2>Sneaker Protector</h2>
+         <p>59,-</p>
     </div>
 </div>
 </div>

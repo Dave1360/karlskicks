@@ -7,7 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="16x16" href="pics/favicon.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
     <title>Frontpage</title>
     <style>
         * {
@@ -153,179 +154,6 @@
             background-color: #9d9b9b;
         }
 
-        .mobile-nav {
-            display: flex;
-            justify-content: space-between;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: rgba(7, 22, 139, 0.84);
-            z-index: 1000000;
-
-        }
-
-        .icon {
-            padding: 10px 15px;
-
-        }
-
-        .icon img {
-            max-height: 50px;
-            max-width: 70px;
-        }
-
-        header {
-            width: 100vw;
-
-        }
-
-        header a {
-            cursor: pointer;
-        }
-
-        .desktop-nav-container {
-
-            display: grid;
-            display: none;
-            background-color: #ffffff;
-
-        }
-
-        .desktop-nav-row1 {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 20px 0 15px;
-
-        }
-        .desktop-nav-row2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            background-color: #07168b;
-            padding: 20px 0 0;
-        }
-
-        .logo {
-            grid-column: span 1;
-        }
-
-        .desktop-menu {
-            grid-column: span 3;
-            display: flex;
-            width: 1300px;
-            margin: 0 auto;
-
-        }
-
-
-        .logo img {
-            max-width: 50%;
-        }
-
-        .menu-link {
-            padding: 0px 50px 20px 0;
-        }
-
-        .menu-link a {
-            text-decoration: none;
-            color: white;
-            font-size: 1.3em;
-            transition: .3s;
-
-        }
-
-        .menu-link a:hover {
-            color: #9d9b9b;
-
-        }
-
-        .desktop-menu-list {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            list-style: none;
-
-        }
-
-        .desktop-nav-container .icons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-column-start: 3;
-        }
-
-        .mobile-nav .icon .sneaker-icon {
-            height: 50px;
-            width: 80px;
-        }
-
-        .icons {
-            display: flex;
-            flex-direction: row;
-            align-self: center;
-            margin: 0px 10px;
-
-        }
-
-        .icons img {
-            width: 24px;
-            height: 24px;
-            padding: 2px;
-
-        }
-
-        .socials {
-            display: flex;
-            justify-content: flex-end;
-            width: 100%;
-        }
-
-        .socials img {
-            padding: 0 5px;
-        }
-
-        .functions {
-          display: flex;
-          width: 100%;
-          justify-content: flex-end;
-
-        }
-        .search {
-          background-image: url(pics/search_icon.png);
-          background-repeat: no-repeat;
-          background-size: contain;
-          background-position: right;
-          width: 60%;
-          height: 60%;
-        }
-
-
-        .search-container {
-          position: relative;
-          width: 100%;
-        }
-        .search-container input {
-          text-indent: 10px;
-          width: 150px;
-          height: 25px;
-        }
-
-        .search-container .search {
-          position: absolute;
-          top: 5px;
-          right: 5px;
-          font-size: 15px;
-        }
-
-        .cart-container {
-          display: flex;
-          margin-left: 50px;
-        }
-
-        .cart-container p {
-          padding: 5px;
-        }
-
         .video-container {
             position: relative;
             height: 150px;
@@ -402,36 +230,6 @@
             display: none;
         }
 
-        footer {
-            background-color: #fefefe;
-            color: #000;
-            padding: 50px 50px;
-        }
-
-
-
-
-        #footerBox1 {
-            display: grid;
-            grid-template-rows: 1fr;
-            width: 100%;
-        }
-
-        .infoBox a {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .infoBox h3 {
-            padding-bottom: 5px;
-            padding-top: 15px;
-        }
-
-        .footer-image-container img{
-            padding-top: 20px;
-        }
-
         #modal {
                 background-color: rgba(18, 42, 105, 0.9);
                 width: 100vw;
@@ -483,11 +281,6 @@
             [data-name] {
                 min-height: 66px;
                 margin-bottom: 0px;
-            }
-
-            #footerBox1 {
-                grid-template-columns: 1fr 1fr 1fr;
-                width: 100%;
             }
 
             .video-container {
@@ -552,37 +345,19 @@
         }
 
         @media screen and (min-width:1024px) {
-            .mobile-nav {
-                display: none;
-            }
+
 
             .data-container {
                 grid-template-columns: 1fr 1fr 1fr;
                 grid-gap: 20px;
             }
-
-            .desktop-nav-container {
-                display: grid;
-            }
-
             .data-container {
                 grid-template-columns: 1fr 1fr 1fr;
                 grid-gap: 20px;
                 max-width: 850px;
 
             }
-            .desktop-nav-row1 {
-              max-width: 850px;
 
-            }
-
-          .desktop-menu {
-              width: 850px;
-          }
-
-            #footerBox1 {
-                grid-template-columns: 1fr 1fr 1fr;
-            }
             .nyhedsbrev-container {
 
              font-size: 1.7em;
@@ -601,15 +376,6 @@
 
         @media screen and (min-width:1300px) {
 
-          .desktop-nav-row1 {
-            max-width: 1300px;
-
-          }
-
-          .desktop-menu {
-            width: 1300px;
-          }
-
             .data-container {
 
                 max-width: 1300px;
@@ -622,25 +388,6 @@
 
             .slide img {
                 max-height: 700px;
-            }
-
-
-
-            .menu-link a {
-                text-decoration: none;
-                color: white;
-
-            }
-
-            #footerBox1 {
-                grid-template-columns: 1fr 1fr 1fr 2fr;
-                width: 100%;
-            }
-
-
-            .footer-image-container {
-                text-align: center;
-                margin-top: 10px;
             }
 
             .video-container {
@@ -671,13 +418,6 @@
             margin-bottom: 0px;
         }
 
-
-
-            #footerBox1 {
-                grid-template-columns: 1fr 1fr 1fr 2fr;
-                width: 100%;
-            }
-
             #modal {
                 padding-top: 5vw;
             }
@@ -691,6 +431,9 @@
 </head>
 
 <body>
+
+   <?php include "header.html"; ?>
+
     <section id="modal">
 
 
@@ -703,84 +446,6 @@
         </div>
 
     </section>
-    <header>
-        <div class="desktop-nav-container">
-            <div class="desktop-nav-row1">
-                <div class="logo">
-                    <a href=""><img src="pics/logo_sort.png" alt=""></a>
-                </div>
-                <div class="icons">
-                    <div class="functions">
-                        <div class="search-container">
-                            <span class="search"></span>
-                            <input placeholder="Search">
-                        </div>
-                        <div class="cart-container">
-                            <div class="cart">
-                                <a href=""><img src="pics/basket_icon.png" alt=""></a>
-                            </div>
-                            <p>Cart</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="desktop-nav-row2">
-
-                <nav class="desktop-menu">
-
-
-                    <ul class="desktop-menu-list">
-                        <li class="menu-link">
-                            <a href="index.html">Home</a>
-                        </li>
-
-                        <li class="menu-link">
-                            <a href="sneakers.html">Sneakers</a>
-                        </li>
-
-                        <li class="menu-link">
-                            <a href="customization.html">Customize</a>
-                        </li>
-
-                        <li class="menu-link">
-                            <a href="products.html">Miscellaneous</a>
-                        </li>
-
-                        <li class="menu-link">
-                            <a href="about.html">About</a>
-                        </li>
-
-                    </ul>
-                    <div class="socials">
-                        <a href="https://www.facebook.com/KarlsKicks-437898033055186/" target="_blank"><img src="pics/facebook.png" alt=""></a>
-                        <a href="https://www.instagram.com/karlskicks/?hl=en" target="_blank"><img src="pics/instagram.png" alt=""></a>
-                        <a href="#" class="snapchat-link"><img src="pics/snapchat.png" alt=""></a>
-                    </div>
-
-                </nav>
-            </div>
-        </div>
-
-        <nav class="mobile-nav">
-            <div class="icon">
-                <a href="index.html"><img src="pics/k_hvid.png" alt=""></a>
-            </div>
-            <div class="icon">
-                <a href="sneakers.html"><img class="sneaker-icon" src="pics/sneaker_icon.png" alt=""></a>
-            </div>
-            <div class="icon">
-                <a href="customization.html"><img src="pics/custom_icon.png" alt=""></a>
-            </div>
-
-            <div class="icon">
-                <a href="products.html"><img src="pics/spray_icon.png" alt=""></a>
-            </div>
-            <div class="icon">
-                <img src="pics/basket_icon_hvid.png" alt="">
-            </div>
-        </nav>
-    </header>
-
 
     <div class="slideshow">
         <div class="slide fade">
@@ -962,35 +627,7 @@
         <video src="MVI_7120.mp4" autoplay muted nocontrols loop></video>
     </div>
 
-    <footer>
-        <div id="footerBox1">
-            <div class="infoBox">
-                <h3>Contact</h3><br>
-                <p>Got any questions?</p>
-                <br><a href="mailto:Info@karlskicks.com">E-mail: Info@karlskicks.com</a><br>
-                <p><a href="https://www.facebook.com/KarlsKicks-437898033055186/">Facebook: KarlsKicks</a></p><br>
-                <p>We look forward to hearing from you!</p><br>
-                <p> <a href="tel:+4528935375">Mobile: +45 28 93 53 75</a></p><br>
-            </div>
-            <div class="infoBox">
-                <h3>Information</h3><br>
-                <p><a href="https://www.google.dk/maps?q=Sankt+Peders+Str%C3%A6de+47+1453+Copenhagen+K.&um=1&ie=UTF-8&sa=X&ved=0ahUKEwiM3YLlwYvfAhVG3CwKHUrkBccQ_AUIDygC">Sankt Peders Stræde 47 <br>1453 Copenhagen K</a></p><br>
-                <p>VAT: DK38981982</p><br>
-                <h4>Åbningstider</h4><br>
-                <p>Tuesday-Friday: 10am - 5:30pm</p>
-                <p>Saturday-Sunday: 10am - 3pm</p>
-            </div>
-            <div class="infoBox">
-                <h3>Overview</h3><br>
-                <p>Terms &amp; Conditions</p><br>
-                <p>Please Consider</p>
-            </div>
-            <div class="footer-image-container">
-                <img src="reviews.png">
-            </div>
-        </div>
-    </footer>
-
+<?php include "footer.html"; ?>
 
     <script>
         /*                           DAVID KODE STARTER - 6 SNEAKER POST PÅ FORSIDE                               */

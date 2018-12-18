@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="16x16" href="pics/favicon.png">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
     <title>Document</title>
 </head>
 
@@ -286,7 +288,7 @@
 </style>
 
 <body>
-
+   <?php include "header.html"; ?>
 
     <section class="data-container">
         <article class="post-container">
@@ -367,6 +369,8 @@
             </div>
         </div>
     </div>
+
+    <?php include "footer.html"; ?>
     <script>
         let urlParams = new URLSearchParams(window.location.search);
         let id = urlParams.get("id");

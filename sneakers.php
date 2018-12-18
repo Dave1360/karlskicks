@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="icon" type="image/png" sizes="16x16" href="pics/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="pics/favicon.png">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
     <title>Document</title>
 </head>
 
@@ -26,8 +30,6 @@
       grid-template-rows: 1fr auto;
 
     }
-
-    /*                                      6 SNEAKER PÅ FORSIDE STARTER                                     */
 
     #posts {
       padding: 50px 0;
@@ -84,10 +86,6 @@
       width: 100%;
     }
 
-
-    /*                                      6 SNEAKER PÅ FORSIDE SLUTTER                                     */
-
-
     @media screen and (min-width:650px) {
 
       .data-container {
@@ -108,11 +106,6 @@
         max-width: 850px;
 
       }
-
-     #footerBox1 {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
     }
 
     @media screen and (min-width:1300px) {
@@ -125,6 +118,7 @@
 
 </style>
 <body>
+   <?php include "header.html"; ?>
 
      <main id="posts">
         <div class="container">
@@ -147,7 +141,7 @@
         </article>
     </template>
 
-
+<?php include "footer.html"; ?>
       <script>
         let wpJSON;
         let dest = document.querySelector(".data-container");

@@ -236,7 +236,7 @@
         }
 
         .menu-link a:hover {
-            color: #9d9b9b;
+            color: #2c2c2c;
 
         }
 
@@ -766,7 +766,7 @@
                 <a href="index.html"><img src="pics/k_hvid.png" alt=""></a>
             </div>
             <div class="icon">
-                <a href="sneaker.html"><img class="sneaker-icon" src="pics/sneaker_icon.png" alt=""></a>
+                <a href="sneakers.html"><img class="sneaker-icon" src="pics/sneaker_icon.png" alt=""></a>
             </div>
             <div class="icon">
                 <a href="customization.html"><img src="pics/custom_icon.png" alt=""></a>
@@ -942,7 +942,7 @@
         <article class="post-container">
             <h2 data-name></h2>
             <img data-picture>
-            <video playsinline data-video onmouseover="playVideo(this)" onmouseout="resetVideo(this)"></video>
+            <video data-video onmouseover="playVideo(this)" onmouseout="resetVideo(this)"></video>
             <div class="data-bottom">
                 <p data-size></p>
                 <p data-price></p>
@@ -1032,13 +1032,15 @@
 
                         klon.querySelector("[data-picture]").src = post.acf.picture;
 
-                        if (post.acf.picture == false) {
+
+                        let showPicture = window.matchMedia("(min-width: 768px)");
+
+                        if(showPicture.matches) {
                             klon.querySelector("[data-video]").src = post.acf.video;
                             klon.querySelector("[data-picture]").style.display = "none";
                         } else {
-                            klon.querySelector("[data-video]").style.display = "none";
+                            klon.querySelector("[data-video]").style.display = "none"
                         }
-
 
                         klon.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
 

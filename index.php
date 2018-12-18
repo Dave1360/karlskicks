@@ -441,7 +441,7 @@
 
 
         <div id="modal_content">
-            <img src="pics/snapchat-modal.png" alt="">
+            <img src="pics/snapchat-modal.png" alt="Snapchat modal view picture">
 
         </div>
 
@@ -450,7 +450,7 @@
     <div class="slideshow">
         <div class="slide fade">
 
-            <img src="pics/slideshow/ss.jpg" alt="">
+            <img src="pics/slideshow/ss.jpg" alt="Slideshow picture 1">
             <div class="slideBoxContainer">
                 <div class="textOnSlide">
                     <a href="https://illvid.dk/dyr/insekter/sover-insekter">
@@ -468,7 +468,7 @@
 
         <div class="slide fade">
 
-            <img src="pics/slideshow/asd.jpg" alt="  ">
+            <img src="pics/slideshow/asd.jpg" alt="Slideshow picture 2">
             <div class="slideBoxContainer">
                 <div class="textOnSlide">
                     <a href="https://illvid.dk/dyr/insekter/sover-insekter">
@@ -486,7 +486,7 @@
 
         <div class="slide fade">
 
-            <img src="pics/slideshow/dkf.jpg" alt="">
+            <img src="pics/slideshow/dkf.jpg" alt="Slideshow picture 3">
             <div class="slideBoxContainer">
                 <div class="textOnSlide">
                     <a href="https://illvid.dk/dyr/insekter/sover-insekter">
@@ -504,7 +504,7 @@
 
         <div class="slide fade">
 
-            <img src="pics/slideshow/ght.jpg" alt="">
+            <img src="pics/slideshow/ght.jpg" alt="Slideshow picture 4">
             <div class="slideBoxContainer">
                 <div class="textOnSlide">
                     <a href="https://illvid.dk/dyr/insekter/sover-insekter">
@@ -522,7 +522,7 @@
 
         <div class="slide fade">
 
-            <img src="pics/slideshow/hhj.jpg" alt="">
+            <img src="pics/slideshow/hhj.jpg" alt="Slideshow picture 5">
             <div class="slideBoxContainer">
                 <div class="textOnSlide">
                     <a href="https://illvid.dk/dyr/insekter/sover-insekter">
@@ -540,7 +540,7 @@
 
         <div class="slide fade">
 
-            <img src="pics/slideshow/slideshow.jpg" alt="">
+            <img src="pics/slideshow/slideshow.jpg" alt="Slideshow picture 6">
             <div class="slideBoxContainer">
                 <div class="textOnSlide">
                     <a href="https://illvid.dk/dyr/insekter/sover-insekter">
@@ -558,7 +558,7 @@
 
         <div class="slide fade">
 
-            <img src="pics/slideshow/karl-slideshow1.jpg" alt="">
+            <img src="pics/slideshow/karl-slideshow1.jpg" alt="Slideshow picture 7">
             <div class="slideBoxContainer">
                 <div class="textOnSlide">
                     <a href="https://illvid.dk/dyr/insekter/sover-insekter">
@@ -576,7 +576,7 @@
 
         <div class="slide fade">
 
-            <img src="pics/slideshow/ssd.jpg" alt="">
+            <img src="pics/slideshow/ssd.jpg" alt="Slideshow picture 8">
             <div class="slideBoxContainer">
                 <div class="textOnSlide">
                     <a href="https://illvid.dk/dyr/insekter/sover-insekter">
@@ -606,7 +606,7 @@
     <template class="data-template">
         <article class="post-container">
             <h2 data-name></h2>
-            <img data-picture>
+            <img data-picture alt="Frontpage shoes">
             <video data-video onmouseover="playVideo(this)" onmouseout="resetVideo(this)"></video>
             <div class="data-bottom">
                 <p data-size></p>

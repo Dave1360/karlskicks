@@ -295,7 +295,7 @@
             <div class="left-box">
                 <h2 data-name></h2>
                 <div class="image-wrapper">
-                    <img data-picture>
+                    <img data-picture alt="Picture of a shoe or product">
                     <video data-video onmouseover="play(this)" onmouseout="reset(this)"></video>
 
                 </div>
@@ -353,17 +353,17 @@
         <h1>You may also like...</h1>
         <div class="buy-more">
             <div class="buy-more-box">
-                <img data-second src="pics/yellowbuster.png">
+                <img data-second src="pics/yellowbuster.png" alt="picture of Yellow Buster">
                 <h2>Yellow Buster</h2>
                 <p>45,-</p>
             </div>
             <div class="buy-more-box">
-                <img data-second src="pics/nanoprotector.png">
+                <img data-second src="pics/nanoprotector.png" alt="Picture of Nano protector">
                 <h2>Nano Protector</h2>
                 <p>49,-</p>
             </div>
             <div class="buy-more-box">
-                <img data-second src="pics/sneakerprotector.png">
+                <img data-second src="pics/sneakerprotector.png" alt="Picture of Sneaker protector">
                 <h2>Sneaker Protector</h2>
                 <p>59,-</p>
             </div>

@@ -183,7 +183,7 @@
     <article class="post-container">
       <h2 data-name></h2>
       <div class="image-wrapper">
-        <img data-picture>
+        <img data-picture alt="Picture of Karls products">
       </div>
       <div class="data-bottom">
         <p data-size></p>

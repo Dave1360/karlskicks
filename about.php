@@ -118,7 +118,7 @@
       <p> KarlsKicks® is a Danish brand established in a suburb of Copenhagen in 2015 by Karl Faurholt. Before Karlskicks®, Karl simply wanted to restore his own old beat-up sneakers, and when he posted the first result on social media, he was met with so much positive energy and response that he decided to start his own business. The goal was to make customs and restorations from your good old worn sneakers to high-end limited sneakers.</p>
     </div>
     <div class="picture">
-      <img src="pics/fucking_vend_dig.JPG" alt="">
+      <img src="pics/fucking_vend_dig.JPG" alt="Picture of karl and his shop">
     </div>
     <div class="history">
       <h1>History</h1>

@@ -129,6 +129,22 @@
             padding: 0 5px;
         }
 
+
+        .socials-on-mobile {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            background-color: #07168b;
+    }
+
+.socials-on-mobile-container {
+    margin-right: 20px;
+}
+
+        .socials-on-mobile img {
+            padding: 5px;
+    }
+
         .functions {
           display: flex;
           width: 100%;
@@ -175,6 +191,10 @@
     .mobile-nav {
                 display: none;
             }
+
+    .socials-on-mobile {
+        display: none;
+    }
     .desktop-nav-row1 {
               max-width: 850px;
 

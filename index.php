@@ -2,16 +2,16 @@
 <html lang="da">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="16x16" href="pics/favicon.png">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="footer.css">
-    <title>Frontpage</title>
-    <style>
-        * {
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="16x16" href="pics/favicon.png">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="footer.css">
+  <title>Frontpage</title>
+  <style>
+    * {
             margin: 0;
             padding: 0;
             font-family: 'Source Sans Pro', sans-serif;
@@ -432,335 +432,337 @@
 
 <body>
 
-   <?php include "header.html"; ?>
+  <?php include "header.html"; ?>
 
-    <section id="modal">
-
-
-        <button class="modal-button" id="close">&#10006;</button>
+  <section id="modal">
 
 
-        <div id="modal_content">
-            <img src="pics/snapchat-modal.png" alt="Snapchat modal view picture">
+    <button class="modal-button" id="close">&#10006;</button>
 
+
+    <div id="modal_content">
+      <img src="pics/snapchat-modal.png" alt="Snapchat modal view picture">
+
+    </div>
+
+  </section>
+
+  <div class="slideshow">
+    <div class="slide fade">
+
+      <img src="pics/slideshow/ss.jpg" alt="Slideshow picture 1">
+      <div class="slideBoxContainer">
+        <div class="textOnSlide">
+          <a href="https://illvid.dk/dyr/insekter/sover-insekter">
+            <p>
+              Stand out with sneaks from KarlsKicks
+            </p>
+          </a>
         </div>
+        <div class="arrows">
+          <a class="prev" onclick="plusOne(-1)">&#10094;</a>
+          <a class="next" onclick="plusOne(1)">&#10095;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide fade">
+
+      <img src="pics/slideshow/asd.jpg" alt="Slideshow picture 2">
+      <div class="slideBoxContainer">
+        <div class="textOnSlide">
+          <a href="https://illvid.dk/dyr/insekter/sover-insekter">
+            <p>
+              Stand out with sneaks from KarlsKicks
+            </p>
+          </a>
+        </div>
+        <div class="arrows">
+          <a class="prev" onclick="plusOne(-1)">&#10094;</a>
+          <a class="next" onclick="plusOne(1)">&#10095;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide fade">
+
+      <img src="pics/slideshow/dkf.jpg" alt="Slideshow picture 3">
+      <div class="slideBoxContainer">
+        <div class="textOnSlide">
+          <a href="https://illvid.dk/dyr/insekter/sover-insekter">
+            <p>
+              Stand out with sneaks from KarlsKicks
+            </p>
+          </a>
+        </div>
+        <div class="arrows">
+          <a class="prev" onclick="plusOne(-1)">&#10094;</a>
+          <a class="next" onclick="plusOne(1)">&#10095;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide fade">
+
+      <img src="pics/slideshow/ght.jpg" alt="Slideshow picture 4">
+      <div class="slideBoxContainer">
+        <div class="textOnSlide">
+          <a href="https://illvid.dk/dyr/insekter/sover-insekter">
+            <p>
+              Stand out with sneaks from KarlsKicks
+            </p>
+          </a>
+        </div>
+        <div class="arrows">
+          <a class="prev" onclick="plusOne(-1)">&#10094;</a>
+          <a class="next" onclick="plusOne(1)">&#10095;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide fade">
+
+      <img src="pics/slideshow/hhj.jpg" alt="Slideshow picture 5">
+      <div class="slideBoxContainer">
+        <div class="textOnSlide">
+          <a href="https://illvid.dk/dyr/insekter/sover-insekter">
+            <p>
+              Stand out with sneaks from KarlsKicks
+            </p>
+          </a>
+        </div>
+        <div class="arrows">
+          <a class="prev" onclick="plusOne(-1)">&#10094;</a>
+          <a class="next" onclick="plusOne(1)">&#10095;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide fade">
+
+      <img src="pics/slideshow/slideshow.jpg" alt="Slideshow picture 6">
+      <div class="slideBoxContainer">
+        <div class="textOnSlide">
+          <a href="https://illvid.dk/dyr/insekter/sover-insekter">
+            <p>
+              Stand out with sneaks from KarlsKicks
+            </p>
+          </a>
+        </div>
+        <div class="arrows">
+          <a class="prev" onclick="plusOne(-1)">&#10094;</a>
+          <a class="next" onclick="plusOne(1)">&#10095;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide fade">
+
+      <img src="pics/slideshow/karl-slideshow1.jpg" alt="Slideshow picture 7">
+      <div class="slideBoxContainer">
+        <div class="textOnSlide">
+          <a href="https://illvid.dk/dyr/insekter/sover-insekter">
+            <p>
+              Stand out with sneaks from KarlsKicks
+            </p>
+          </a>
+        </div>
+        <div class="arrows">
+          <a class="prev" onclick="plusOne(-1)">&#10094;</a>
+          <a class="next" onclick="plusOne(1)">&#10095;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide fade">
+
+      <img src="pics/slideshow/ssd.jpg" alt="Slideshow picture 8">
+      <div class="slideBoxContainer">
+        <div class="textOnSlide">
+          <a href="https://illvid.dk/dyr/insekter/sover-insekter">
+            <p>
+              Stand out with sneaks from KarlsKicks
+            </p>
+          </a>
+        </div>
+        <div class="arrows">
+          <a class="prev" onclick="plusOne(-1)">&#10094;</a>
+          <a class="next" onclick="plusOne(1)">&#10095;</a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+  <main id="posts">
+    <section class="data-container">
 
     </section>
+  </main>
 
-    <div class="slideshow">
-        <div class="slide fade">
+  <template class="data-template">
+    <article class="post-container">
+      <h2 data-name></h2>
+      <img data-picture alt="Frontpage shoes">
+      <video data-video onmouseover="playVideo(this)" onmouseout="resetVideo(this)"></video>
+      <div class="data-bottom">
+        <p data-size></p>
+        <p data-price></p>
+      </div>
+    </article>
+  </template>
 
-            <img src="pics/slideshow/ss.jpg" alt="Slideshow picture 1">
-            <div class="slideBoxContainer">
-                <div class="textOnSlide">
-                    <a href="https://illvid.dk/dyr/insekter/sover-insekter">
-                        <p>
-                           Stand out with sneaks from KarlsKicks
-                        </p>
-                    </a>
-                </div>
-                <div class="arrows">
-                    <a class="prev" onclick="plusOne(-1)">&#10094;</a>
-                    <a class="next" onclick="plusOne(1)">&#10095;</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="slide fade">
-
-            <img src="pics/slideshow/asd.jpg" alt="Slideshow picture 2">
-            <div class="slideBoxContainer">
-                <div class="textOnSlide">
-                    <a href="https://illvid.dk/dyr/insekter/sover-insekter">
-                        <p>
-                           Stand out with sneaks from KarlsKicks
-                        </p>
-                    </a>
-                </div>
-                <div class="arrows">
-                    <a class="prev" onclick="plusOne(-1)">&#10094;</a>
-                    <a class="next" onclick="plusOne(1)">&#10095;</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="slide fade">
-
-            <img src="pics/slideshow/dkf.jpg" alt="Slideshow picture 3">
-            <div class="slideBoxContainer">
-                <div class="textOnSlide">
-                    <a href="https://illvid.dk/dyr/insekter/sover-insekter">
-                        <p>
-                           Stand out with sneaks from KarlsKicks
-                        </p>
-                    </a>
-                </div>
-                <div class="arrows">
-                    <a class="prev" onclick="plusOne(-1)">&#10094;</a>
-                    <a class="next" onclick="plusOne(1)">&#10095;</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="slide fade">
-
-            <img src="pics/slideshow/ght.jpg" alt="Slideshow picture 4">
-            <div class="slideBoxContainer">
-                <div class="textOnSlide">
-                    <a href="https://illvid.dk/dyr/insekter/sover-insekter">
-                        <p>
-                           Stand out with sneaks from KarlsKicks
-                        </p>
-                    </a>
-                </div>
-                <div class="arrows">
-                    <a class="prev" onclick="plusOne(-1)">&#10094;</a>
-                    <a class="next" onclick="plusOne(1)">&#10095;</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="slide fade">
-
-            <img src="pics/slideshow/hhj.jpg" alt="Slideshow picture 5">
-            <div class="slideBoxContainer">
-                <div class="textOnSlide">
-                    <a href="https://illvid.dk/dyr/insekter/sover-insekter">
-                        <p>
-                           Stand out with sneaks from KarlsKicks
-                        </p>
-                    </a>
-                </div>
-                <div class="arrows">
-                    <a class="prev" onclick="plusOne(-1)">&#10094;</a>
-                    <a class="next" onclick="plusOne(1)">&#10095;</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="slide fade">
-
-            <img src="pics/slideshow/slideshow.jpg" alt="Slideshow picture 6">
-            <div class="slideBoxContainer">
-                <div class="textOnSlide">
-                    <a href="https://illvid.dk/dyr/insekter/sover-insekter">
-                        <p>
-                           Stand out with sneaks from KarlsKicks
-                        </p>
-                    </a>
-                </div>
-                <div class="arrows">
-                    <a class="prev" onclick="plusOne(-1)">&#10094;</a>
-                    <a class="next" onclick="plusOne(1)">&#10095;</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="slide fade">
-
-            <img src="pics/slideshow/karl-slideshow1.jpg" alt="Slideshow picture 7">
-            <div class="slideBoxContainer">
-                <div class="textOnSlide">
-                    <a href="https://illvid.dk/dyr/insekter/sover-insekter">
-                        <p>
-                            Stand out with sneaks from KarlsKicks
-                        </p>
-                    </a>
-                </div>
-                <div class="arrows">
-                    <a class="prev" onclick="plusOne(-1)">&#10094;</a>
-                    <a class="next" onclick="plusOne(1)">&#10095;</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="slide fade">
-
-            <img src="pics/slideshow/ssd.jpg" alt="Slideshow picture 8">
-            <div class="slideBoxContainer">
-                <div class="textOnSlide">
-                    <a href="https://illvid.dk/dyr/insekter/sover-insekter">
-                        <p>
-                           Stand out with sneaks from KarlsKicks
-                        </p>
-                    </a>
-                </div>
-                <div class="arrows">
-                    <a class="prev" onclick="plusOne(-1)">&#10094;</a>
-                    <a class="next" onclick="plusOne(1)">&#10095;</a>
-                </div>
-            </div>
-        </div>
-
-
-
-
+  <div class="video-container">
+    <div class="nyhedsbrev-container">
+      <p>Sign up for exclusive offers, latest product info and more!</p>
+      <div class="text-submit-wrapper">
+        <input type="text" placeholder="Email">
+        <input type="submit" value="Submit">
+      </div>
     </div>
+    <div class="overlay"></div>
+    <video src="MVI_7120.mp4" autoplay muted nocontrols loop></video>
+  </div>
 
-    <main id="posts">
-        <section class="data-container">
+  <?php include "footer.html"; ?>
 
-        </section>
-    </main>
-
-    <template class="data-template">
-        <article class="post-container">
-            <h2 data-name></h2>
-            <img data-picture alt="Frontpage shoes">
-            <video data-video onmouseover="playVideo(this)" onmouseout="resetVideo(this)"></video>
-            <div class="data-bottom">
-                <p data-size></p>
-                <p data-price></p>
-            </div>
-        </article>
-    </template>
-
-    <div class="video-container">
-        <div class="nyhedsbrev-container">
-            <p>Sign up for exclusive offers, latest product info and more!</p>
-            <div class="text-submit-wrapper">
-                <input type="text" placeholder="Email">
-                <input type="submit" value="Submit">
-            </div>
-        </div>
-        <div class="overlay"></div>
-        <video src="MVI_7120.mp4" autoplay muted nocontrols loop></video>
-    </div>
-
-<?php include "footer.html"; ?>
-
-    <script>
-        /*                           DAVID KODE STARTER - 6 SNEAKER POST PÅ FORSIDE                               */
-        let wpJSON;
-        let dest = document.querySelector(".data-container");
+  <script>
+    /*                           DAVID KODE STARTER - 6 SNEAKER POST PÅ FORSIDE                               */
+    let wpJSON;
+    let dest = document.querySelector(".data-container");
 
 
 
 
-        document.addEventListener("DOMContentLoaded", hentJson);
-        document.querySelector(".snapchat-link").addEventListener("click", visModal);
+    document.addEventListener("DOMContentLoaded", hentJson);
+    document.querySelector(".snapchat-link").addEventListener("click", visModal);
 
 
-        async function hentJson() {
+    async function hentJson() {
 
-            let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/product_post/?per_page=50");
-            wpJSON = await myJson.json();
-            visJson();
-        }
+      let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/product_post/?per_page=50");
+      wpJSON = await myJson.json();
+      visJson();
+    }
 
-        function visJson() {
+    function visJson() {
 
-            let taeller = 0;
-            let myTemplate = document.querySelector(".data-template");
+      let taeller = 0;
+      let myTemplate = document.querySelector(".data-template");
 
-            wpJSON.forEach(post => {
-
-
-
-                if (post.acf.type == "Sneakers") {
+      wpJSON.forEach(post => {
 
 
-                    taeller++;
 
-                    if (taeller <= 6) {
-                        let klon = myTemplate.cloneNode(true).content;
-                        klon.querySelector("[data-name]").textContent = post.acf.name;
+        if (post.acf.type == "Sneakers") {
 
 
-                        klon.querySelector("[data-picture]").src = post.acf.picture;
+          taeller++;
+
+          if (taeller <= 6) {
+            let klon = myTemplate.cloneNode(true).content;
+            klon.querySelector("[data-name]").textContent = post.acf.name;
 
 
-                        let showPicture = window.matchMedia("(min-width: 768px)");
-
-                        if(showPicture.matches) {
-                            klon.querySelector("[data-video]").src = post.acf.video;
-                            klon.querySelector("[data-picture]").style.display = "none";
-                        } else {
-                            klon.querySelector("[data-video]").style.display = "none"
-                        }
-
-                        klon.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
-
-                        klon.querySelector("[data-size]").textContent = "EUR: " + post.acf.size;
 
 
-                        klon.querySelector(".post-container").addEventListener("click", () => {
-                            window.location.href = "singleview.php?id=" + post.id;
+
+            let showPicture = window.matchMedia("(min-width: 768px)");
+
+            if (showPicture.matches) {
+              klon.querySelector("[data-video]").src = post.acf.video;
+              klon.querySelector("[data-picture]").style.display = "none";
+            } else {
+              klon.querySelector("[data-video]").style.display = "none"
+              klon.querySelector("[data-picture]").src = post.acf.picture;
+            }
+
+            klon.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
+
+            klon.querySelector("[data-size]").textContent = "EUR: " + post.acf.size;
 
 
-                        })
-                        dest.appendChild(klon);
-                    }
-                }
+            klon.querySelector(".post-container").addEventListener("click", () => {
+              window.location.href = "singleview.php?id=" + post.id;
+
+
             })
+            dest.appendChild(klon);
+          }
         }
+      })
+    }
 
-        let slideNumber = 1;
-        let slides = document.querySelectorAll(".slide");
+    let slideNumber = 1;
+    let slides = document.querySelectorAll(".slide");
 
-        function showSlides(n) {
-            let i;
+    function showSlides(n) {
+      let i;
 
-            if (n > slides.length) {
-                slideNumber = 1
-            }
-            if (n < 1) {
-                slideNumber = slides.length
-            }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
+      if (n > slides.length) {
+        slideNumber = 1
+      }
+      if (n < 1) {
+        slideNumber = slides.length
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
 
-            slides[slideNumber - 1].style.display = "block";
+      slides[slideNumber - 1].style.display = "block";
 
-        }
+    }
 
-        showSlides(slideNumber);
-
-
-        function plusOne(n) {
-            showSlides(slideNumber += n);
-        }
-
-        function autoSlide() {
-
-            if (slideNumber <= slides.length) {
-                slideNumber++;
-            }
-            if (slideNumber > slides.length) {
-                slideNumber = 1;
-            }
-
-            showSlides(slideNumber);
-
-        }
-        let modal = document.querySelector("#modal");
-
-        function visModal() {
-            modal.classList.add("vis");
-            document.querySelector("#close").addEventListener("click", skjulModal);
-            console.log("Hej");
-        }
-
-        function skjulModal() {
-            modal.classList.remove("vis");
-
-        }
+    showSlides(slideNumber);
 
 
+    function plusOne(n) {
+      showSlides(slideNumber += n);
+    }
 
-        function resetVideo(videoReset) {
-            videoReset.currentTime = 0;
-            videoReset.pause();
-        }
+    function autoSlide() {
 
-        function playVideo(videoPlay) {
-            videoPlay.play();
+      if (slideNumber <= slides.length) {
+        slideNumber++;
+      }
+      if (slideNumber > slides.length) {
+        slideNumber = 1;
+      }
 
-        }
+      showSlides(slideNumber);
 
-        setInterval(autoSlide, 5000);
-    </script>
+    }
+    let modal = document.querySelector("#modal");
+
+    function visModal() {
+      modal.classList.add("vis");
+      document.querySelector("#close").addEventListener("click", skjulModal);
+      console.log("Hej");
+    }
+
+    function skjulModal() {
+      modal.classList.remove("vis");
+
+    }
+
+
+
+    function resetVideo(videoReset) {
+      videoReset.currentTime = 0;
+      videoReset.pause();
+    }
+
+    function playVideo(videoPlay) {
+      videoPlay.play();
+
+    }
+
+    setInterval(autoSlide, 5000);
+
+  </script>
 </body>
 
 </html>

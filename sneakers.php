@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="pics/favicon.png">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
-    <title>Document</title>
+    <title>Sneakers</title>
 </head>
 
 <style>
@@ -183,7 +183,7 @@
                     klon.querySelector("[data-price]").textContent = "Price: " + post.acf.price + ",-";
 
                     klon.querySelector(".post-container").addEventListener("click", () => {
-                        window.location.href = "singleview.html?id=" + post.id;
+                        window.location.href = "singleview.php?id=" + post.id;
 
 
                     })

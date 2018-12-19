@@ -617,7 +617,7 @@
 
     <div class="video-container">
         <div class="nyhedsbrev-container">
-            <p>Vil du være opdateret på det seneste nye?<br> Så tilmed dig vores nyhedsbrev lige her</p>
+            <p>Sign up for exclusive offers, latest product info and more!</p>
             <div class="text-submit-wrapper">
                 <input type="text" placeholder="Email">
                 <input type="submit" value="Submit">
@@ -685,7 +685,7 @@
 
 
                         klon.querySelector(".post-container").addEventListener("click", () => {
-                            window.location.href = "singleview.html?id=" + post.id;
+                            window.location.href = "singleview.php?id=" + post.id;
 
 
                         })

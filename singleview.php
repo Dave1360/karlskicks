@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="pics/favicon.png">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
-    <title>Document</title>
+    <title>Product</title>
 </head>
 
 <style>
@@ -48,6 +48,7 @@
     .post-container {
         padding: 1em;
         box-shadow: 0 0px 40px rgba(44, 48, 65, 0.1);
+        margin-top: 60px;
     }
 
     [data-name] {
@@ -394,8 +395,7 @@
 
                     display.querySelector("[data-name]").textContent = post.acf.name;
 
-                    display.querySelector("[data-picture]").src = post.acf.picture;
-
+                      display.querySelector("[data-picture]").src = post.acf.picture;
 
                     let showPicture = window.matchMedia("(min-width: 768px)");
 

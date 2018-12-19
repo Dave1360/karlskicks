@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="pics/favicon.png">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
-  <title>Document</title>
+  <title>Customization</title>
   <style>
     * {
             margin: 0;

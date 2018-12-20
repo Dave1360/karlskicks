@@ -10,283 +10,290 @@
   <link rel="stylesheet" href="header.css">
   <link rel="stylesheet" href="footer.css">
   <title>Product</title>
-</head>
 
-<style>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Source Sans Pro', sans-serif;
 
-  * {
-            margin: 0;
-            padding: 0;
-            font-family: 'Source Sans Pro', sans-serif;
+    }
 
-        }
-
-  h2,
-    h1{
-        font-family: 'Open Sans Condensed', sans-serif;
+    h2,
+    h1 {
+      font-family: 'Open Sans Condensed', sans-serif;
     }
 
     p {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 15px;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 15px;
     }
 
     hr {
-        border-color: #f7f7f7;
-        border-style: solid;
-        border-width: 1px;
+      border-color: #f7f7f7;
+      border-style: solid;
+      border-width: 1px;
+
     }
 
     .data-container {
-        display: grid;
-        max-width: 400px;
-        margin: 0 auto;
-        grid-gap: 10px;
+      display: grid;
+      max-width: 400px;
+      margin: 0 auto;
+      grid-gap: 10px;
 
     }
 
     .post-container {
-        padding: 1em;
-        box-shadow: 0 0px 40px rgba(44, 48, 65, 0.1);
-        margin-top: 60px;
+      padding: 1em;
+      box-shadow: 0 0px 40px rgba(44, 48, 65, 0.1);
+      margin-top: 60px;
+
     }
 
     [data-name] {
-        font-size: 25px;
-        margin-bottom: 9px;
+      font-size: 25px;
+      margin-bottom: 9px;
+
     }
 
     [data-price],
     [data-size] {
-        font-size: 25px;
-        font-family: 'Open Sans Condensed', sans-serif;
-    }
+      font-size: 25px;
+      font-family: 'Open Sans Condensed', sans-serif;
 
+    }
 
     .data-bottom {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .data-bottom p {
-        margin: 5px 0 0;
+      display: flex;
+      justify-content: space-between;
 
     }
 
     .data-bottom p {
-        margin: 5px 0 15px;
+      margin: 5px 0 0;
+
+    }
+
+    .data-bottom p {
+      margin: 5px 0 15px;
     }
 
     .data-container article img {
-        display: block;
-        margin: auto;
-        max-width: 100%;
+      display: block;
+      margin: auto;
+      max-width: 100%;
     }
 
     .data-container article video {
-        display: block;
-        margin: auto;
-        width: 100%;
+      display: block;
+      margin: auto;
+      width: 100%;
     }
 
     .selector {
-        width: 165px;
-        height: 50px;
-        background-color: #E1E8EE;
-        margin: 0 0 10px;
-        border: none;
-        font-family: 'Open Sans Condensed', sans-serif;
-        font-size: 20px;
-        border-radius: 0;
-        -webkit-appearance: none;
-        padding-left: 10px;
+      width: 165px;
+      height: 50px;
+      background-color: #E1E8EE;
+      margin: 0 0 10px;
+      border: none;
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-size: 20px;
+      border-radius: 0;
+      -webkit-appearance: none;
+      padding-left: 10px;
     }
 
     .selector-wrapper {
-        display: flex;
-        justify-content: space-between;
-        display: none;
+      display: flex;
+      justify-content: space-between;
+      display: none;
     }
 
     .right-box h3 {
-        margin-bottom: 4px;
-        font-family: 'Open Sans Condensed', sans-serif;
-        color: #666;
-        text-transform: uppercase;
-        font-size: 20px;
+      margin-bottom: 4px;
+      font-family: 'Open Sans Condensed', sans-serif;
+      color: #666;
+      text-transform: uppercase;
+      font-size: 20px;
     }
 
     .buy-button {
-        width: 240px;
-        height: 50px;
-        background: black;
-        color: white;
-        text-transform: uppercase;
-        font-size: 20px;
-        border: none;
-        font-family: 'Open Sans Condensed', sans-serif;
-        cursor: pointer;
+      width: 240px;
+      height: 50px;
+      background: black;
+      color: white;
+      text-transform: uppercase;
+      font-size: 20px;
+      border: none;
+      font-family: 'Open Sans Condensed', sans-serif;
+      cursor: pointer;
 
     }
 
     [data-second-name] {
-        font-size: 20px;
+      font-size: 20px;
       margin: 0;
     }
 
     [data-description] {
-        font-size: 13px;
-        line-height: 1.5;
-        padding-top: 10px;
+      font-size: 13px;
+      line-height: 1.5;
+      padding-top: 10px;
     }
 
     .quantity {
-        margin-bottom: 10px;
-         width: 100%;
-        display: flex;
-        font-size: 20px;
-}
+      margin-bottom: 10px;
+      width: 100%;
+      display: flex;
+      font-size: 20px;
+    }
 
     .quantity-value-box {
-        display: flex;
-        padding-right: 10px;
+      display: flex;
+      padding-right: 10px;
     }
 
-     .quantity p {
-        background-color:  #E1E8EE;
-        width: 30px;
-        height: 50px;
-        text-align: center;
-        vertical-align: middle;
-        line-height: 50px;
-        margin: 0;
-        font-family: 'Open Sans Condensed', sans-serif;
-        border-left: 0.8px solid rgba(199, 199, 199, 0.67);
-        border-right: 0.8px solid rgba(199, 199, 199, 0.67);
-         font-size: 25px;
+    .quantity p {
+      background-color: #E1E8EE;
+      width: 30px;
+      height: 50px;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 50px;
+      margin: 0;
+      font-family: 'Open Sans Condensed', sans-serif;
+      border-left: 0.8px solid rgba(199, 199, 199, 0.67);
+      border-right: 0.8px solid rgba(199, 199, 199, 0.67);
+      font-size: 25px;
     }
 
-    .plus-btn, .minus-btn {
-        width: 30px;
-        height: 50px;
-        background-color: #E1E8EE;
-        border: none;
-        cursor: pointer;
-        font-size: 20px;
+    .plus-btn,
+    .minus-btn {
+      width: 30px;
+      height: 50px;
+      background-color: #E1E8EE;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
 
-}
+    }
 
     .plus-btn:hover,
-    .minus-btn:hover
-   {
-     background: #989898;
+    .minus-btn:hover {
+      background: #989898;
 
-}
-    .plus-btn:focus, .minus-btn:focus {
-        outline: 0;
     }
+
+    .plus-btn:focus,
+    .minus-btn:focus {
+      outline: 0;
+    }
+
     .buy-more-container h1 {
-        text-align: center;
-        padding: 70px 0 20px;
-        font-size: 2.5em;
+      text-align: center;
+      padding: 70px 0 20px;
+      font-size: 2.5em;
     }
 
     .buy-more {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        max-width: 600px;
-        grid-gap: 30px;
-        margin: 20px auto 50px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      max-width: 600px;
+      grid-gap: 30px;
+      margin: 20px auto 50px;
     }
 
     .buy-more-box {
-        box-shadow: 0 0px 40px rgba(44, 48, 65, 0.1);
-        text-align: center;
+      box-shadow: 0 0px 40px rgba(44, 48, 65, 0.1);
+      text-align: center;
     }
 
     .buy-more-box h2 {
-        padding: 0 0 5px;
+      padding: 0 0 5px;
     }
 
     .buy-more-box p {
-        padding: 0 0 15px;
-        font-weight: bold;
-        font-size: 1.1em;
+      padding: 0 0 15px;
+      font-weight: bold;
+      font-size: 1.1em;
     }
 
     .buy-more img {
-        max-width: 100%;
+      max-width: 100%;
     }
 
 
     @media screen and (min-width:413px) {
-        .buy-button {
-            width: 270px;
-        }
+      .buy-button {
+        width: 270px;
+      }
     }
 
     @media screen and (min-width:1000px) {
-           .data-container {
-            max-width: 1000px;
-        }
+      .data-container {
+        max-width: 1000px;
+      }
 
-        .post-container {
-            display: flex;
-        }
+      .post-container {
+        display: flex;
+      }
 
-        .right-box {
-            flex-basis: 450px;
-            margin: auto;
-            padding-top: 60px;
-        }
-        .left-box{
-            flex-basis: 450px;
-        }
+      .right-box {
+        flex-basis: 450px;
+        margin: auto;
+        padding-top: 60px;
+      }
 
-           .right-box h3 {
-            margin-top: 0px;
-        }
+      .left-box {
+        flex-basis: 450px;
+      }
 
-        .buy-button {
-            width: 370px;
-        }
+      .right-box h3 {
+        margin-top: 0px;
+      }
+
+      .buy-button {
+        width: 370px;
+      }
 
     }
 
     @media screen and (min-width:1300px) {
 
-        .data-container {
-            max-width: 1200px;
-        }
+      .data-container {
+        max-width: 1200px;
+      }
 
-        .right-box {
-            flex-basis: 550px;
-            margin-top: 0px;
-        }
+      .right-box {
+        flex-basis: 550px;
+        margin-top: 0px;
+      }
 
-        .left-box{
-            flex-basis: 550px;
+      .left-box {
+        flex-basis: 550px;
 
-        }
+      }
 
-        .buy-button {
-            width: 450px;
-        }
+      .buy-button {
+        width: 450px;
+      }
 
-        .selector {
-            width: 270px;
-        }
+      .selector {
+        width: 270px;
+      }
 
-         .quantity {
-            min-height: 66px;
-        }
+      .quantity {
+        min-height: 66px;
+      }
 
-         [data-description] {
+      [data-description] {
         font-size: 15px;
+      }
+    }
 
-    }
-    }
-</style>
+  </style>
+</head>
 
 <body>
   <?php include "header.html"; ?>
@@ -377,9 +384,8 @@
     let id = urlParams.get("id");
     let wpJSON;
     let wpProductJSON;
-    document.addEventListener("DOMContentLoaded", hentJson);
 
-    console.log(id);
+    document.addEventListener("DOMContentLoaded", hentJson);
 
     async function hentJson() {
       let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/product_post/?per_page=50");
@@ -400,17 +406,17 @@
           if (showPicture.matches) {
             display.querySelector("[data-video]").src = post.acf.video;
             display.querySelector("[data-picture]").style.display = "none";
-              if (post.acf.video == false) {
-                display.querySelector("[data-picture]").src = post.acf.picture;
-                display.querySelector("[data-picture]").style.display = "block";
+            if (post.acf.video == false) {
+              display.querySelector("[data-picture]").src = post.acf.picture;
+              display.querySelector("[data-picture]").style.display = "block";
 
             }
           } else {
             display.querySelector("[data-video]").style.display = "none"
             display.querySelector("[data-picture]").src = post.acf.picture;
-              if (post.acf.video == false) {
-                display.querySelector("[data-picture]").src = post.acf.picture;
-                display.querySelector("[data-picture]").style.display = "block";
+            if (post.acf.video == false) {
+              display.querySelector("[data-picture]").src = post.acf.picture;
+              display.querySelector("[data-picture]").style.display = "block";
 
             }
           }
@@ -442,7 +448,6 @@
             clicks += 1;
             currentPrice = clicks * totalPrice;
             document.querySelector(".clicks").innerHTML = clicks;
-            console.log(currentPrice)
             display.querySelector("[data-price]").textContent = "Price: " + currentPrice + ",-";
           }
 
@@ -453,7 +458,6 @@
               clicks -= 1;
               finalPrice = (totalPrice * clicks);
               document.querySelector(".clicks").innerHTML = clicks;
-              console.log(finalPrice)
               display.querySelector("[data-price]").textContent = "Price: " + finalPrice + ",-";
             } else {
               document.querySelector(".clicks").innerHTML = 1;

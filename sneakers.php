@@ -116,7 +116,6 @@
     }
 
   }
-
 </style>
 
 <body>
@@ -127,7 +126,6 @@
       <section class="data-container"></section>
     </div>
   </main>
-
 
   <template class="data-template">
     <article class="post-container">
@@ -156,7 +154,6 @@
       wpJSON = await myJson.json();
       visJson();
     }
-
 
     function visJson() {
 
@@ -188,13 +185,11 @@
           klon.querySelector(".post-container").addEventListener("click", () => {
             window.location.href = "singleview.php?id=" + post.id;
 
-
           })
           dest.appendChild(klon);
 
         }
-      })
-
+      });
 
     }
 

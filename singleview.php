@@ -388,7 +388,7 @@
     document.addEventListener("DOMContentLoaded", hentJson);
 
     async function hentJson() {
-      let myJson = await fetch("http://mboegvald.dk/kea/karlskicks/wordpress/wp-json/wp/v2/product_post/?per_page=50");
+      let myJson = await fetch("http://mboegvald.dk/kea/wordpress_mappe/wordpress/wp-json/wp/v2/product_post/?per_page=50");
       wpJSON = await myJson.json();
       visJson();
     }
